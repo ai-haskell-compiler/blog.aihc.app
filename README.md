@@ -43,7 +43,10 @@ account. It can modify other Workers in that account too. Wrangler's local OAuth
 not a substitute for a CI API token. Never commit tokens or put them in workflow files.
 
 The committed Wrangler configuration serves `dist/` and attaches `blog.aihc.app`
-as a custom domain. Cloudflare manages DNS and TLS. GitHub Actions owns deployment;
+as a custom domain. Cloudflare manages DNS and TLS. CI uploads a version tagged
+with its run ID and deploys that exact version to all traffic, preserving domain
+routing. Changes to domain routing require a manual `npm run deploy` using a
+login with zone permissions. GitHub Actions owns deployment;
 leave Workers Builds disconnected to avoid duplicate deployments.
 
 For a manual deployment, authenticate with `npx wrangler login` and run `npm run deploy`.

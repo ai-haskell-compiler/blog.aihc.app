@@ -1,0 +1,12 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { publishedPosts, displayDate } from '../../lib/posts';
+export async function getStaticPaths() { return (await publishedPosts()).map(post => ({ params: { id: post.id }, props: { post } })); }
+interface Props { post: CollectionEntry<'posts'>; }
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+<Layout title={post.data.title} description={post.data.description}>
+<article><a class="back" href="/">← All writing</a><div class="article-heading"><time datetime={post.data.date.toISOString()}>{displayDate(post.data.date)}</time><h1>{post.data.title}</h1><p>{post.data.description}</p></div><div class="prose"><Content /></div></article>
+</Layout>

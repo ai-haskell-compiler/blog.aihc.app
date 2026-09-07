@@ -1,0 +1,22 @@
+---
+import '../styles/global.css';
+interface Props { title: string; description?: string; }
+const { title, description = 'Notes from the AI Haskell Compiler project.' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width" />
+<title>{title} · AI Haskell Compiler</title>
+<meta name="description" content={description} /><link rel="canonical" href={canonical} />
+<meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:url" content={canonical} />
+<link rel="alternate" type="application/rss+xml" title="AI Haskell Compiler" href="/rss.xml" />
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header><a class="brand" href="/">λ <span>AI Haskell Compiler</span></a><nav aria-label="Main"><a href="/">Journal</a><a href="https://github.com/ai-haskell-compiler">GitHub ↗</a></nav></header>
+<main id="content"><slot /></main>
+<footer><span>AI Haskell Compiler</span><a href="/rss.xml">RSS feed ↗</a></footer>
+</body>
+</html>

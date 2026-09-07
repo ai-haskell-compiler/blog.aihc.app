@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { publishedPosts, postUrl, displayDate } from '../lib/posts';
+const posts = await publishedPosts();
+---
+<Layout title="Journal">
+<section class="intro"><p class="eyebrow">THE PROJECT JOURNAL</p><h1>AI Haskell Compiler</h1><p>Notes on Haskell, compilers, and building with AI.</p></section>
+<section aria-labelledby="posts"><h2 id="posts" class="section-label">Latest writing</h2>
+{posts.length ? <ol class="posts">{posts.map(post => <li><time datetime={post.data.date.toISOString()}>{displayDate(post.data.date)}</time><div><h2><a href={postUrl(post.id)}>{post.data.title}</a></h2><p>{post.data.description}</p></div></li>)}</ol> : <p class="empty">No posts yet. Follow the RSS feed for new writing.</p>}
+</section>
+</Layout>

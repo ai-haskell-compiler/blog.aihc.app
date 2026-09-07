@@ -14,7 +14,7 @@ const { Content } = await render(post);
 <article>
   <a class="back" href="/"><span aria-hidden="true">← </span>All writing</a>
   <header class="article-heading">
-    <p class="meta"><time datetime={post.data.date.toISOString()}>{displayDate(post.data.date)}</time><span aria-hidden="true">·</span><span>{readingTime(post.body)}</span></p>
+    <p class="meta"><span>By {post.data.author}</span><span aria-hidden="true">·</span><time datetime={post.data.date.toISOString()}>{displayDate(post.data.date)}</time><span aria-hidden="true">·</span><span>{readingTime(post.body)}</span></p>
     <h1>{post.data.title}</h1>
     <p class="lede">{post.data.description}</p>
   </header>

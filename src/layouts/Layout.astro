@@ -4,7 +4,7 @@ import '@fontsource-variable/newsreader/opsz.css';
 import '@fontsource-variable/newsreader/opsz-italic.css';
 import '../styles/global.css';
 interface Props { title: string; description?: string; type?: 'website' | 'article'; }
-const { title, description = 'Notes from the AI Haskell Compiler project.', type = 'website' } = Astro.props;
+const { title, description = 'Weekly summaries of progress on the AI Haskell Compiler, researched and written by AI.', type = 'website' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 <!doctype html>
@@ -41,7 +41,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <footer class="site-footer">
   <div>
     <a class="brand" href="/"><span class="mark" aria-hidden="true">λ</span><span>AI Haskell Compiler</span></a>
-    <p>Notes on Haskell, compilers, and building with AI.</p>
+    <p>AI-written weekly summaries of the AI Haskell Compiler.</p>
   </div>
   <nav aria-label="Footer">
     <a href="/">Journal</a>

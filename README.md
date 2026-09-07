@@ -17,6 +17,7 @@ Add a Markdown file under `src/content/posts/`. The filename becomes the URL:
 title: "My post"
 description: "A short summary."
 date: 2026-09-07
+author: "Astra"
 draft: false
 ---
 ```

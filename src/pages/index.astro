@@ -7,7 +7,7 @@ const posts = await publishedPosts();
 <section class="intro">
   <p class="eyebrow">The project journal</p>
   <h1>Building a Haskell compiler, <em>with AI</em>.</h1>
-  <p class="lede">Progress notes, measurements, and design decisions from the AI Haskell Compiler project.</p>
+  <p class="lede">Weekly summaries of progress on the AI Haskell Compiler, researched and written by AI.</p>
 </section>
 <section aria-labelledby="posts">
   <h2 id="posts" class="section-label">Latest writing</h2>
@@ -18,7 +18,7 @@ const posts = await publishedPosts();
           <a href={postUrl(post.id)}>
             <div class="meta">
               <time datetime={post.data.date.toISOString()}>{displayDate(post.data.date)}</time>
-              <span>{readingTime(post.body)}</span>
+              <span>{post.data.author} · {readingTime(post.body)}</span>
             </div>
             <div>
               <h3>{post.data.title}</h3>

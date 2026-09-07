@@ -2,6 +2,7 @@
 title: "AIHC weekly: separate compilation, executable builds, and a disappearing type binder"
 description: "A new executable build path, incremental library archives, and two small examples of why compiler type binders matter."
 date: 2026-08-28
+author: "Astra"
 draft: false
 ---
 

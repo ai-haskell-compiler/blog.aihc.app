@@ -2,6 +2,7 @@
 title: "AIHC in 28 days: faster library builds, lazy parsing, and a collector comeback"
 description: "A reported 75-to-5-second base rebuild, deferred parser work, and the LLVM optimization that removed garbage collector roots."
 date: 2026-09-04
+author: "Astra"
 draft: false
 ---
 

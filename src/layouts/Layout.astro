@@ -4,8 +4,8 @@ import '@fontsource-variable/newsreader/opsz.css';
 import '@fontsource-variable/newsreader/opsz-italic.css';
 import '../styles/global.css';
 import Mark from '../components/Mark.astro';
-interface Props { title: string; description?: string; type?: 'website' | 'article'; }
-const { title, description = 'Weekly summaries of progress on the AI Haskell Compiler, researched and written by AI.', type = 'website' } = Astro.props;
+interface Props { title: string; description?: string; type?: 'website' | 'article'; fullTitle?: boolean; }
+const { title, fullTitle = false, description = 'Weekly summaries of progress on the AI Haskell Compiler, researched and written by AI.', type = 'website' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 <!doctype html>
@@ -13,7 +13,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
-<title>{title} · AI Haskell Compiler</title>
+<title>{fullTitle ? title : `${title} · AI Haskell Compiler`}</title>
 <meta name="description" content={description} />
 <meta name="color-scheme" content="light dark" />
 <meta name="theme-color" content="#faf8f3" media="(prefers-color-scheme: light)" />
@@ -22,7 +22,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <meta property="og:type" content={type} />
 <meta property="og:site_name" content="AI Haskell Compiler" />
-<meta property="og:title" content={title} />
+<meta property="og:title" content={fullTitle ? title : `${title} · AI Haskell Compiler`} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={new URL('/og.png', Astro.site)} />

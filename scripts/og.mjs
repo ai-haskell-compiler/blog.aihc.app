@@ -36,7 +36,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" v
   <text x="400" y="262" font-family="Newsreader Variable, Newsreader, serif" font-size="88" fill="#1d1a17" letter-spacing="-1.5">AI Haskell Compiler</text>
   <text x="400" y="336" font-family="Inter Variable, Inter, sans-serif" font-size="32" fill="#6b655d">Weekly AI-written summaries of progress</text>
   <text x="400" y="382" font-family="Inter Variable, Inter, sans-serif" font-size="32" fill="#6b655d">on a Haskell compiler built with AI.</text>
-  <text x="400" y="470" font-family="Inter Variable, Inter, sans-serif" font-size="26" fill="#5e5086">blog.aihc.app</text>
+  <text x="400" y="470" font-family="Inter Variable, Inter, sans-serif" font-size="28" fill="#5e5086">Read the journal at blog.aihc.app</text>
 </svg>`;
 
 const png = new Resvg(svg, { font: { fontFiles, loadSystemFonts: false, defaultFontFamily: 'Inter Variable' } }).render().asPng();

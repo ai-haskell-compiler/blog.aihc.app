@@ -1,12 +1,29 @@
 ---
-import { render, type CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import { publishedPosts, displayDate } from '../../lib/posts';
-export async function getStaticPaths() { return (await publishedPosts()).map(post => ({ params: { id: post.id }, props: { post } })); }
-interface Props { post: CollectionEntry<'posts'>; }
-const { post } = Astro.props;
+import { publishedPosts, postUrl, displayDate, readingTime, type Post } from '../../lib/posts';
+export async function getStaticPaths() {
+  const posts = await publishedPosts();
+  return posts.map((post, i) => ({ params: { id: post.id }, props: { post, newer: posts[i - 1], older: posts[i + 1] } }));
+}
+interface Props { post: Post; newer?: Post; older?: Post; }
+const { post, newer, older } = Astro.props;
 const { Content } = await render(post);
 ---
-<Layout title={post.data.title} description={post.data.description}>
-<article><a class="back" href="/">← All writing</a><div class="article-heading"><time datetime={post.data.date.toISOString()}>{displayDate(post.data.date)}</time><h1>{post.data.title}</h1><p>{post.data.description}</p></div><div class="prose"><Content /></div></article>
+<Layout title={post.data.title} description={post.data.description} type="article">
+<article>
+  <a class="back" href="/"><span aria-hidden="true">← </span>All writing</a>
+  <header class="article-heading">
+    <p class="meta"><time datetime={post.data.date.toISOString()}>{displayDate(post.data.date)}</time><span aria-hidden="true">·</span><span>{readingTime(post.body)}</span></p>
+    <h1>{post.data.title}</h1>
+    <p class="lede">{post.data.description}</p>
+  </header>
+  <div class="prose"><Content /></div>
+  {(newer || older) && (
+    <nav class="post-nav" aria-label="More posts">
+      {older ? <a href={postUrl(older.id)}><span>← Older</span><strong>{older.data.title}</strong></a> : <span />}
+      {newer ? <a class="next" href={postUrl(newer.id)}><span>Newer →</span><strong>{newer.data.title}</strong></a> : <span />}
+    </nav>
+  )}
+</article>
 </Layout>

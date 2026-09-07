@@ -66,10 +66,9 @@ p { margin: 0 0 1.4em; }
   display: grid; place-items: center;
   width: 34px; height: 34px; border-radius: 9px;
   background: var(--accent); color: #fff;
-  font-family: var(--serif); font-size: 22px; line-height: 1;
-  padding-bottom: 2px;
   transition: transform 0.2s ease;
 }
+.mark svg { width: 26px; height: 26px; display: block; }
 .brand:hover .mark { transform: rotate(-8deg); }
 .site-header nav { display: flex; gap: 6px; font-size: 14px; font-weight: 500; }
 .site-header nav a { color: var(--muted); padding: 6px 10px; border-radius: 6px; }

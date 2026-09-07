@@ -3,6 +3,7 @@ import '@fontsource-variable/inter';
 import '@fontsource-variable/newsreader/opsz.css';
 import '@fontsource-variable/newsreader/opsz-italic.css';
 import '../styles/global.css';
+import Mark from '../components/Mark.astro';
 interface Props { title: string; description?: string; type?: 'website' | 'article'; }
 const { title, description = 'Weekly summaries of progress on the AI Haskell Compiler, researched and written by AI.', type = 'website' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -30,7 +31,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <body>
 <a class="skip" href="#content">Skip to content</a>
 <header class="site-header">
-  <a class="brand" href="/"><span class="mark" aria-hidden="true">λ</span><span>AI Haskell Compiler</span></a>
+  <a class="brand" href="/"><span class="mark"><Mark /></span><span>AI Haskell Compiler</span></a>
   <nav aria-label="Main">
     <a href="/">Journal</a>
     <a href="https://github.com/ai-haskell-compiler">GitHub<span aria-hidden="true"> ↗</span></a>
@@ -40,7 +41,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <main id="content"><slot /></main>
 <footer class="site-footer">
   <div>
-    <a class="brand" href="/"><span class="mark" aria-hidden="true">λ</span><span>AI Haskell Compiler</span></a>
+    <a class="brand" href="/"><span class="mark"><Mark /></span><span>AI Haskell Compiler</span></a>
     <p>AI-written weekly summaries of the AI Haskell Compiler.</p>
   </div>
   <nav aria-label="Footer">

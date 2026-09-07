@@ -29,6 +29,12 @@ build after its date; publication is not scheduled automatically.
 
 The included first post is a draft, so the initial site has no published posts.
 
+## Social preview image
+
+`public/og.png` is generated from the ∀i mark and the site fonts by `npm run og`.
+Re-run it and commit the result after changing the mark, colors, or wording in
+`scripts/og.mjs`.
+
 ## Automatic deployment with GitHub Actions
 
 Every push to `main` checks and builds the site, then deploys it to Cloudflare.

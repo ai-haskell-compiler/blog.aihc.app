@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+      <title>aihc-cpp versus cpphs: Stackage sweep throughput</title>
+      <desc>Input throughput including reads: aihc-cpp 82.8 MiB/s, cpphs 17.6 MiB/s. Recorded medians of three passes on an M-series Mac with GHC 9.12.4.</desc>
+      <rect width="1600" height="900" fill="#faf8f3"/>
+      <rect y="890" width="1600" height="10" fill="#5e5086"/>
+      <g transform="translate(80 62)"><rect width="78" height="78" rx="18" fill="#5e5086"/><g transform="translate(9 9) scale(.6)"><defs><clipPath id="mark-inner"><polygon points="18,18 62,18 40,88"/></clipPath></defs>
+    <g fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M24 54 Q40 36 56 54" clip-path="url(#mark-inner)" stroke-linecap="butt"/>
+      <path d="M18 18 L40 88 L62 18"/><path d="M64 88 L79.1 40"/>
+      <circle cx="86" cy="18" r="6" fill="#fff" stroke="none"/>
+    </g></g></g>
+      <g font-family="Inter Variable, Inter, sans-serif" fill="#1d1a17">
+        <text x="180" y="94" font-size="28" font-weight="600">AI Haskell Compiler</text>
+        <text x="180" y="129" font-size="22" fill="#6b655d">PERFORMANCE NOTES / 01</text>
+        <text x="1520" y="106" font-size="25" text-anchor="end" fill="#5e5086">aihc.app</text>
+        <text x="80" y="231" font-family="Newsreader Variable, Newsreader, serif" font-size="76" letter-spacing="-1">Small stage. Serious speed.</text>
+        <text x="82" y="282" font-size="28" fill="#6b655d">Haskell preprocessing · Stackage LTS 24.58 · 5,802 modules</text>
+        <rect x="1220" y="179" width="300" height="112" rx="18" fill="#eee9f7"/>
+        <text x="1370" y="234" text-anchor="middle" font-size="43" font-weight="600" fill="#5e5086">4.7×</text>
+        <text x="1370" y="268" text-anchor="middle" font-size="21" fill="#5e5086">full-sweep throughput</text>
+        <text x="340" y="360" font-size="23" fill="#6b655d">Input throughput (MiB/s) · higher is better</text>
+        <line x1="340" x2="340" y1="390" y2="613" stroke="#e6e0d6" stroke-width="2"/>
+          <text x="340" y="653" text-anchor="middle" font-size="22" fill="#6b655d">0</text><line x1="540" x2="540" y1="390" y2="613" stroke="#e6e0d6" stroke-width="2"/>
+          <text x="540" y="653" text-anchor="middle" font-size="22" fill="#6b655d">20</text><line x1="740" x2="740" y1="390" y2="613" stroke="#e6e0d6" stroke-width="2"/>
+          <text x="740" y="653" text-anchor="middle" font-size="22" fill="#6b655d">40</text><line x1="940" x2="940" y1="390" y2="613" stroke="#e6e0d6" stroke-width="2"/>
+          <text x="940" y="653" text-anchor="middle" font-size="22" fill="#6b655d">60</text><line x1="1140" x2="1140" y1="390" y2="613" stroke="#e6e0d6" stroke-width="2"/>
+          <text x="1140" y="653" text-anchor="middle" font-size="22" fill="#6b655d">80</text><line x1="1340" x2="1340" y1="390" y2="613" stroke="#e6e0d6" stroke-width="2"/>
+          <text x="1340" y="653" text-anchor="middle" font-size="22" fill="#6b655d">100</text>
+        <text x="304" y="446" text-anchor="end" font-size="34" font-weight="600" fill="#5e5086">aihc-cpp</text>
+          <rect x="340" y="400" width="828" height="72" rx="8" fill="#5e5086"/>
+          <text x="1190" y="448" font-size="40" font-weight="600">82.8</text><text x="304" y="572" text-anchor="end" font-size="34" font-weight="600" fill="#6b655d">cpphs</text>
+          <rect x="340" y="526" width="176.00000000000003" height="72" rx="8" fill="#b0a69b"/>
+          <text x="538" y="574" font-size="40" font-weight="600">17.6</text>
+        <line x1="80" x2="1520" y1="727" y2="727" stroke="#e6e0d6" stroke-width="2"/>
+        <text x="80" y="763" font-size="24" fill="#6b655d">M-series Mac · GHC 9.12.4 · medians of 3 passes · includes reads + input conversion</text>
+        <text x="80" y="800" font-size="22" fill="#6b655d">Source: aihc-cpp / bench/RESULTS.md · recorded results · tools differ in error handling</text>
+        <text x="1520" y="865" font-size="22" text-anchor="end" fill="#5e5086">Every stage counts.</text>
+      </g>
+    </svg>

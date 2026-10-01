@@ -10,7 +10,7 @@ interface Props { post: Post; newer?: Post; older?: Post; }
 const { post, newer, older } = Astro.props;
 const { Content } = await render(post);
 ---
-<Layout title={post.data.title} description={post.data.description} type="article">
+<Layout title={post.data.title} description={post.data.description} type="article" image={post.data.image} imageAlt={post.data.imageAlt} imageWidth={post.data.imageWidth} imageHeight={post.data.imageHeight}>
 <article>
   <a class="back" href="/"><span aria-hidden="true">← </span>All writing</a>
   <header class="article-heading">

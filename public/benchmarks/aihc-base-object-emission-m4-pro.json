@@ -1,0 +1,200 @@
+{
+  "measured_at_utc": "2026-10-02T15:41:22.441450+00:00",
+  "hardware": "Apple M4 Pro",
+  "os": "macOS-26.6.2-arm64-arm-64bit",
+  "target": "arm64-apple-macos",
+  "emitter_source_commit": "c24d8798f04b8a62ad9ae84bca729922f87d9455",
+  "corpus_manifest": "/benchmarks/aihc-base-object-corpus.json",
+  "corpus_archive_sha256": "780c82adf866f6ae44f00d22775a90fb43a832b885277b5d25523de22e8e54d8",
+  "modules": 270,
+  "empty_modules": 94,
+  "functions": 38857,
+  "lir_bytes": 84488840,
+  "ghc": "9.12.4",
+  "clang": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin",
+  "printer_adjustments": "32-bit FMOV uses W registers. Constant loads use the encoder shortest MOVZ/MOVN/MOVK/ORR sequence instead of LDR literal pools. Read-only relocatable data uses __DATA,__const. Darwin temporary labels use L instead of .L.",
+  "method": "Complete aihc-base 4.21.2.0, compiled for apple-arm64 at -O0. All 270 module outputs included. Empty modules write zero bytes in both modes, without an assembler invocation. Nine alternating-order pairs after one warmup per mode. Fresh process per pass. One module stream at a time, fully forced before its timer. Sum of per-module elapsed object-output time. GHC -O2 backend and harness, single capability, -A16m. Includes output writes to warm filesystem cache, without fsync. Text path includes printing and one Clang integrated assembler invocation per nonempty module. Excludes front-end work, LIR parsing, instruction selection, preflight GC, harness startup, linking and validation.",
+  "samples": [
+    {
+      "mode": "direct",
+      "pair": 0,
+      "emit_ms": 496.721,
+      "assembler_ms": 0.015,
+      "total_ms": 496.736,
+      "object_bytes": 19604320
+    },
+    {
+      "mode": "asm",
+      "pair": 0,
+      "emit_ms": 1536.418,
+      "assembler_ms": 23710.981,
+      "total_ms": 25247.399,
+      "object_bytes": 24275936
+    },
+    {
+      "mode": "asm",
+      "pair": 1,
+      "emit_ms": 1502.345,
+      "assembler_ms": 23471.228,
+      "total_ms": 24973.573,
+      "object_bytes": 24275936
+    },
+    {
+      "mode": "direct",
+      "pair": 1,
+      "emit_ms": 478.248,
+      "assembler_ms": 0.009,
+      "total_ms": 478.257,
+      "object_bytes": 19604320
+    },
+    {
+      "mode": "direct",
+      "pair": 2,
+      "emit_ms": 478.432,
+      "assembler_ms": 0.008,
+      "total_ms": 478.44,
+      "object_bytes": 19604320
+    },
+    {
+      "mode": "asm",
+      "pair": 2,
+      "emit_ms": 1353.228,
+      "assembler_ms": 22968.049,
+      "total_ms": 24321.277,
+      "object_bytes": 24275936
+    },
+    {
+      "mode": "asm",
+      "pair": 3,
+      "emit_ms": 1532.183,
+      "assembler_ms": 23227.049,
+      "total_ms": 24759.232,
+      "object_bytes": 24275936
+    },
+    {
+      "mode": "direct",
+      "pair": 3,
+      "emit_ms": 511.482,
+      "assembler_ms": 0.008,
+      "total_ms": 511.49,
+      "object_bytes": 19604320
+    },
+    {
+      "mode": "direct",
+      "pair": 4,
+      "emit_ms": 514.284,
+      "assembler_ms": 0.003,
+      "total_ms": 514.287,
+      "object_bytes": 19604320
+    },
+    {
+      "mode": "asm",
+      "pair": 4,
+      "emit_ms": 1477.76,
+      "assembler_ms": 23803.662,
+      "total_ms": 25281.422,
+      "object_bytes": 24275936
+    },
+    {
+      "mode": "asm",
+      "pair": 5,
+      "emit_ms": 1669.871,
+      "assembler_ms": 24739.476,
+      "total_ms": 26409.346999999998,
+      "object_bytes": 24275936
+    },
+    {
+      "mode": "direct",
+      "pair": 5,
+      "emit_ms": 520.911,
+      "assembler_ms": 0.017,
+      "total_ms": 520.928,
+      "object_bytes": 19604320
+    },
+    {
+      "mode": "direct",
+      "pair": 6,
+      "emit_ms": 527.659,
+      "assembler_ms": 0.007,
+      "total_ms": 527.6659999999999,
+      "object_bytes": 19604320
+    },
+    {
+      "mode": "asm",
+      "pair": 6,
+      "emit_ms": 1352.645,
+      "assembler_ms": 22843.428,
+      "total_ms": 24196.073,
+      "object_bytes": 24275936
+    },
+    {
+      "mode": "asm",
+      "pair": 7,
+      "emit_ms": 1352.317,
+      "assembler_ms": 23116.969,
+      "total_ms": 24469.286,
+      "object_bytes": 24275936
+    },
+    {
+      "mode": "direct",
+      "pair": 7,
+      "emit_ms": 711.681,
+      "assembler_ms": 0.008,
+      "total_ms": 711.6890000000001,
+      "object_bytes": 19604320
+    },
+    {
+      "mode": "direct",
+      "pair": 8,
+      "emit_ms": 518.155,
+      "assembler_ms": 0.011,
+      "total_ms": 518.1659999999999,
+      "object_bytes": 19604320
+    },
+    {
+      "mode": "asm",
+      "pair": 8,
+      "emit_ms": 1424.54,
+      "assembler_ms": 23588.701,
+      "total_ms": 25013.241,
+      "object_bytes": 24275936
+    }
+  ],
+  "summary": {
+    "direct": {
+      "emit_ms": 514.284,
+      "assembler_ms": 0.008,
+      "total_ms": 514.287,
+      "range_ms": [
+        478.257,
+        711.6890000000001
+      ]
+    },
+    "asm": {
+      "emit_ms": 1477.76,
+      "assembler_ms": 23471.228,
+      "total_ms": 24973.573,
+      "range_ms": [
+        24196.073,
+        26409.346999999998
+      ]
+    },
+    "speedup": 48.55960387876808
+  },
+  "validation": {
+    "modules_checked": 270,
+    "nonempty_macho_objects_checked": 176,
+    "empty_outputs_equal": true,
+    "canonical_instruction_bytes_equal": true,
+    "external_symbols_equal": true,
+    "branch_normalization": "Resolve same-object ARM64_BRANCH26 relocations before comparing code bytes. Clang can resolve these during assembly.",
+    "capi_wrappers_excluded_from_timing": 6,
+    "linked_and_executed_both_complete_archives": true,
+    "smoke_source": "scripts/object-emission/BaseSmoke.hs",
+    "smoke_expected_output": "338350\n[1,2,3,5,8]\n1267650600228229401496703205376\n3.75\n\"AIHC BASE\"\n",
+    "smoke_outputs": {
+      "direct": "338350\n[1,2,3,5,8]\n1267650600228229401496703205376\n3.75\n\"AIHC BASE\"\n",
+      "asm": "338350\n[1,2,3,5,8]\n1267650600228229401496703205376\n3.75\n\"AIHC BASE\"\n"
+    }
+  }
+}

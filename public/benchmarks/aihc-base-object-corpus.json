@@ -1,0 +1,1635 @@
+{
+  "base_version": "4.21.2.0",
+  "base_source_commit": "c24d8798f04b8a62ad9ae84bca729922f87d9455",
+  "corpus_compiler_tree": "aa3e8e8597be0239407f0952748f2d94b0926077",
+  "corpus_compiler_binary_sha256": "81b199733c6d48569e2ad3c0c81e4d4ddc547105e98d332ebbd2532b8cef2777",
+  "target": "apple-arm64",
+  "optimization": "-O0",
+  "modules": [
+    {
+      "path": "Control/Applicative/Control.Applicative.o.lir",
+      "bytes": 871104,
+      "sha256": "ac2cbc72047fb09b078b9e9f4e724174bc20418d4192a8f04d9fc366f623172e",
+      "functions": 412
+    },
+    {
+      "path": "Control/Arrow/Control.Arrow.o.lir",
+      "bytes": 864616,
+      "sha256": "0463639349a535878bd7a19136e320f1d364cf4f1f370ca119b817189ad25c4a",
+      "functions": 413
+    },
+    {
+      "path": "Control/Category/Control.Category.o.lir",
+      "bytes": 24905,
+      "sha256": "cdf76550f7f0c7bff86508a4ba5a2048bdf306ee770bcfca6ee911c7bf534521",
+      "functions": 14
+    },
+    {
+      "path": "Control/Concurrent/Chan/Control.Concurrent.Chan.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Control/Concurrent/Control.Concurrent.o.lir",
+      "bytes": 40320,
+      "sha256": "b200bbc7ee2ec0b535ff21f67819c5139fd397ae98fabec51e7a220950a04ab5",
+      "functions": 18
+    },
+    {
+      "path": "Control/Concurrent/MVar/Control.Concurrent.MVar.o.lir",
+      "bytes": 335275,
+      "sha256": "f9192a54bfa4bf4223b713775d9ad95b9485cc177d13a658455c0e1b273db387",
+      "functions": 153
+    },
+    {
+      "path": "Control/Concurrent/QSem/Control.Concurrent.QSem.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Control/Concurrent/QSemN/Control.Concurrent.QSemN.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Control/Exception/Annotation/Control.Exception.Annotation.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Control/Exception/Backtrace/Control.Exception.Backtrace.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Control/Exception/Base/Control.Exception.Base.o.lir",
+      "bytes": 101899,
+      "sha256": "0aa0dbeb41bc82de8a8f197535d444ad60b3261234a2c83e3f0974408655b558",
+      "functions": 47
+    },
+    {
+      "path": "Control/Exception/Context/Control.Exception.Context.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Control/Exception/Control.Exception.o.lir",
+      "bytes": 27035,
+      "sha256": "979d7eeb677506848009f0379990b55ab5a84bb2d133ada5b9e6020cff50d5fc",
+      "functions": 14
+    },
+    {
+      "path": "Control/Monad/Control.Monad.o.lir",
+      "bytes": 554060,
+      "sha256": "01b6ad0b6da9c2677abe4c3568fbfb632776bdb825c9e619d5e447090ca9283c",
+      "functions": 233
+    },
+    {
+      "path": "Control/Monad/Fail/Control.Monad.Fail.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Control/Monad/Fix/Control.Monad.Fix.o.lir",
+      "bytes": 75660,
+      "sha256": "eb7a187ecf6de0b3b0d8ecc5afad5b29bd38c3cf9bad38e34346b3587563013d",
+      "functions": 36
+    },
+    {
+      "path": "Control/Monad/IO/Class/Control.Monad.IO.Class.o.lir",
+      "bytes": 5740,
+      "sha256": "dcc04c19ee933d3cfe3db0078fe7d685e30edd45ce767688f91d010d714e3aad",
+      "functions": 3
+    },
+    {
+      "path": "Control/Monad/Instances/Control.Monad.Instances.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Control/Monad/ST/Control.Monad.ST.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Control/Monad/ST/Lazy/Control.Monad.ST.Lazy.o.lir",
+      "bytes": 47341,
+      "sha256": "f951429020533c537143ef127a100ad31d680f2c48b07dd5bd8470af5be3ab82",
+      "functions": 26
+    },
+    {
+      "path": "Control/Monad/ST/Lazy/Safe/Control.Monad.ST.Lazy.Safe.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Control/Monad/ST/Lazy/Unsafe/Control.Monad.ST.Lazy.Unsafe.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Control/Monad/ST/Safe/Control.Monad.ST.Safe.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Control/Monad/ST/Strict/Control.Monad.ST.Strict.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Control/Monad/ST/Unsafe/Control.Monad.ST.Unsafe.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Control/Monad/Zip/Control.Monad.Zip.o.lir",
+      "bytes": 98544,
+      "sha256": "d01d67d8981915619bb8f40781a7c3c7f7433c9dbf9d387912b41a80e10894bc",
+      "functions": 48
+    },
+    {
+      "path": "Data/Array/Byte/Data.Array.Byte.o.lir",
+      "bytes": 443117,
+      "sha256": "04629255ffedf525ddadfbbbfa5c1cccd1832ff80a3a1f6867500a23b3a4b2fe",
+      "functions": 244
+    },
+    {
+      "path": "Data/Bifoldable/Data.Bifoldable.o.lir",
+      "bytes": 746006,
+      "sha256": "a353e016a6eecc961ddf20980c920fcc5c0ce5ad6595a57b5ee9003fe4e7d4a9",
+      "functions": 357
+    },
+    {
+      "path": "Data/Bifoldable1/Data.Bifoldable1.o.lir",
+      "bytes": 207639,
+      "sha256": "14acab394e1f1b4371b9c77e03e341c464f4482854fcb4ce25a6799d391caf73",
+      "functions": 93
+    },
+    {
+      "path": "Data/Bifunctor/Data.Bifunctor.o.lir",
+      "bytes": 129732,
+      "sha256": "7d8eaaf154426939e78276efd57d5610afb11a1befb260c21841060b211a2751",
+      "functions": 62
+    },
+    {
+      "path": "Data/Bitraversable/Data.Bitraversable.o.lir",
+      "bytes": 341581,
+      "sha256": "e0cbdf9f92fcaf2720e9209ab258bf5c4fd7f0053df0b7756c67b14c7944a6f8",
+      "functions": 146
+    },
+    {
+      "path": "Data/Bits/Data.Bits.o.lir",
+      "bytes": 419198,
+      "sha256": "df4858da1cda169c21ce8e01987d6556c53075ce8b413f8e5e05d3f5a1fc45b4",
+      "functions": 234
+    },
+    {
+      "path": "Data/Bool/Data.Bool.o.lir",
+      "bytes": 4800,
+      "sha256": "272014e6361f3dfb09b875577f4fda90bd42004950c5b8a99a793ac54671dae1",
+      "functions": 2
+    },
+    {
+      "path": "Data/Bounded/Data.Bounded.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Data/Char/Data.Char.o.lir",
+      "bytes": 146975,
+      "sha256": "87c5c56a5e9f9cc81a37f8477f706ce9d4f001b443b42f184c3edcd81a908876",
+      "functions": 66
+    },
+    {
+      "path": "Data/Coerce/Data.Coerce.o.lir",
+      "bytes": 1233,
+      "sha256": "4b5ff9fc9d02fe338e1890d4d3d2ca78ab1086f6f07d59fe7b11b0e53281a514",
+      "functions": 1
+    },
+    {
+      "path": "Data/Complex/Data.Complex.o.lir",
+      "bytes": 2481842,
+      "sha256": "ea99bdb31a90f9032044ba45fae567ad0f5559e233b010552e480fb13a185a20",
+      "functions": 1024
+    },
+    {
+      "path": "Data/Data/Data.Data.o.lir",
+      "bytes": 2649017,
+      "sha256": "7ca3c766168b5555d5f27cb5dedef2af8291502892a8582dd13bd78e77d4900c",
+      "functions": 1195
+    },
+    {
+      "path": "Data/Dynamic/Data.Dynamic.o.lir",
+      "bytes": 294510,
+      "sha256": "08f8e5d5d08ce2019d38fa8c8cae1a4202dc50c6a557c04eb29f88f55ad569ee",
+      "functions": 140
+    },
+    {
+      "path": "Data/Either/Data.Either.o.lir",
+      "bytes": 60040,
+      "sha256": "e77f39c93cd844befebed826874a64943113be959556d125db862059e835a439",
+      "functions": 23
+    },
+    {
+      "path": "Data/Enum/Data.Enum.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Data/Eq/Data.Eq.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Data/Fixed/Data.Fixed.o.lir",
+      "bytes": 803963,
+      "sha256": "28013a8431d59dafca03846cde0cdcc7ea3f191f4d36877f39c2194422a49cd7",
+      "functions": 360
+    },
+    {
+      "path": "Data/Foldable/Data.Foldable.o.lir",
+      "bytes": 154190,
+      "sha256": "9312606ea2345bbc5c6d5727ceea4fe6d1e1ed28c0e97d2dfc04267ac0b58059",
+      "functions": 71
+    },
+    {
+      "path": "Data/Foldable1/Data.Foldable1.o.lir",
+      "bytes": 1062994,
+      "sha256": "22207677474ec6278d5d81172b498dddc8d808b37c05084db309fc022fde521a",
+      "functions": 492
+    },
+    {
+      "path": "Data/Function/Data.Function.o.lir",
+      "bytes": 30631,
+      "sha256": "ad01ed2e580d38e33c50ba426dcdb4e8ac366231d14e5aad9f80a39080cce4b5",
+      "functions": 16
+    },
+    {
+      "path": "Data/Functor/Classes/Data.Functor.Classes.o.lir",
+      "bytes": 2112877,
+      "sha256": "a9adc699d1df79494c00365b5ee73ef2bdf58af2b4b3e532234e4e9e0d7cd571",
+      "functions": 963
+    },
+    {
+      "path": "Data/Functor/Compose/Data.Functor.Compose.o.lir",
+      "bytes": 551650,
+      "sha256": "e0ce4cf2c673f981b1e8fcfe23df1459d8fe452a529211c80346e41301e899f5",
+      "functions": 234
+    },
+    {
+      "path": "Data/Functor/Const/Data.Functor.Const.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Data/Functor/Contravariant/Data.Functor.Contravariant.o.lir",
+      "bytes": 402744,
+      "sha256": "7e34bf7b9db59180f7653e59c4a2ebb7693c6b866d4582cdb53e7f59023fa06d",
+      "functions": 195
+    },
+    {
+      "path": "Data/Functor/Data.Functor.o.lir",
+      "bytes": 41446,
+      "sha256": "6324a90b84f8f6edc44fd011810abc09a94363a5557f2241bf2e50ef9656d803",
+      "functions": 21
+    },
+    {
+      "path": "Data/Functor/Identity/Data.Functor.Identity.o.lir",
+      "bytes": 314012,
+      "sha256": "55ef49f12d61b72f08a0432c9e671f7d38101768b524a65000a56207bf71e110",
+      "functions": 152
+    },
+    {
+      "path": "Data/Functor/Product/Data.Functor.Product.o.lir",
+      "bytes": 817534,
+      "sha256": "c70bb515c7625e1e4d51024b1c518a19f58b0bf02d5482583a4fee734be97934",
+      "functions": 335
+    },
+    {
+      "path": "Data/Functor/Sum/Data.Functor.Sum.o.lir",
+      "bytes": 618302,
+      "sha256": "eece6b825ba8ca7a1e0d5b906677e7fba0a6caa4eb25d60570679c90be247909",
+      "functions": 248
+    },
+    {
+      "path": "Data/IORef/Data.IORef.o.lir",
+      "bytes": 73581,
+      "sha256": "54e112e11903150dc4b6696dab118a02e70fa943d1daacf9c1f5ad5cd9453bcc",
+      "functions": 37
+    },
+    {
+      "path": "Data/Int/Data.Int.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Data/Ix/Data.Ix.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Data/Kind/Data.Kind.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Data/List/Data.List.o.lir",
+      "bytes": 715036,
+      "sha256": "597803a1a47980876bd385effb552c80e8fdc4d1360e1bf725c9ccb634217443",
+      "functions": 288
+    },
+    {
+      "path": "Data/List/NonEmpty/Data.List.NonEmpty.o.lir",
+      "bytes": 1261737,
+      "sha256": "706f5b7da54c22bf9dadf419b218d19bdcb6f1794c547e11c82cde4514131a36",
+      "functions": 521
+    },
+    {
+      "path": "Data/Maybe/Data.Maybe.o.lir",
+      "bytes": 60584,
+      "sha256": "18c6455e79b02d4e732952edfd4c657021aea2bace88ad4dfada65fcedb8511d",
+      "functions": 25
+    },
+    {
+      "path": "Data/Monoid/Data.Monoid.o.lir",
+      "bytes": 607209,
+      "sha256": "3b7b4684dfcb658bf3e4031d70b1371b7c184e523f201340fb1614a6cb0d81c2",
+      "functions": 301
+    },
+    {
+      "path": "Data/Ord/Data.Ord.o.lir",
+      "bytes": 278433,
+      "sha256": "a5372fe4c827d449fc5b73d12aaac9c942a7c213e2729b1f91ae3bd9416451b3",
+      "functions": 144
+    },
+    {
+      "path": "Data/Proxy/Data.Proxy.o.lir",
+      "bytes": 17864,
+      "sha256": "3e647e173dad3b49389959de7bb395a2c917232d914ad15ba644fc8539bedcab",
+      "functions": 12
+    },
+    {
+      "path": "Data/Ratio/Data.Ratio.o.lir",
+      "bytes": 244870,
+      "sha256": "88a8cb62d2635c22851381b0afb44409cc6da031deb252aae8e5ae833b2e4973",
+      "functions": 112
+    },
+    {
+      "path": "Data/STRef/Data.STRef.o.lir",
+      "bytes": 44294,
+      "sha256": "fe52e7f2cbf787898bfb3e7d30853d6621077c9fcec1c103031e9a9bb7674585",
+      "functions": 23
+    },
+    {
+      "path": "Data/STRef/Lazy/Data.STRef.Lazy.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Data/STRef/Strict/Data.STRef.Strict.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Data/Semigroup/Data.Semigroup.o.lir",
+      "bytes": 989247,
+      "sha256": "1cb084627401b3d0b518e5272313d7202a280cf8cfe20ca57e032159f0ef50a6",
+      "functions": 512
+    },
+    {
+      "path": "Data/Semigroup/Internal/Data.Semigroup.Internal.o.lir",
+      "bytes": 683364,
+      "sha256": "adf9030fee6f35b3c6d1540b758117d2addbbd216f64c984fa8e88d6ff3c4df4",
+      "functions": 321
+    },
+    {
+      "path": "Data/String/Data.String.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Data/Traversable/Data.Traversable.o.lir",
+      "bytes": 205920,
+      "sha256": "584929cf3dee789af150d862af57b786e05eb7a7e0759dcf2de2c9cfbdb7d1a4",
+      "functions": 101
+    },
+    {
+      "path": "Data/Tuple/Data.Tuple.o.lir",
+      "bytes": 5039,
+      "sha256": "2944de2024b7f29555821ac39c0920e80b4fa9cef1d9bd23584b52bce486845b",
+      "functions": 2
+    },
+    {
+      "path": "Data/Type/Bool/Data.Type.Bool.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Data/Type/Coercion/Data.Type.Coercion.o.lir",
+      "bytes": 30432,
+      "sha256": "38ea18bb450a6aa57500cf8ff44fb9164c5f342e606176db396bdf3fd4587dd9",
+      "functions": 13
+    },
+    {
+      "path": "Data/Type/Equality/Data.Type.Equality.o.lir",
+      "bytes": 23297,
+      "sha256": "19ed945485725a7eb5054f462c8b757f96e9ca6884c9c19695ebde7e3f06dbe3",
+      "functions": 10
+    },
+    {
+      "path": "Data/Type/Ord/Data.Type.Ord.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Data/Typeable/Data.Typeable.o.lir",
+      "bytes": 140939,
+      "sha256": "8536ccd27a4a160fd14e43a957a32c2d8ebda9e6866a47127355ec6b38e215e5",
+      "functions": 75
+    },
+    {
+      "path": "Data/Unique/Data.Unique.o.lir",
+      "bytes": 67247,
+      "sha256": "73c13482b5f999b59b838b11645909adb7836916325e2f209a090fb85c3b1719",
+      "functions": 36
+    },
+    {
+      "path": "Data/Version/Data.Version.o.lir",
+      "bytes": 556525,
+      "sha256": "ee6d5698b3bc8666da985a590cc4b0f941e0c783fd6e8e2ab4065ccd1745c58d",
+      "functions": 237
+    },
+    {
+      "path": "Data/Void/Data.Void.o.lir",
+      "bytes": 32291,
+      "sha256": "2149d21095c3c812eccd457111b4d776c7b7d879237a390870d205b4b3613eda",
+      "functions": 21
+    },
+    {
+      "path": "Data/Word/Data.Word.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Debug/Trace/Debug.Trace.o.lir",
+      "bytes": 63447,
+      "sha256": "956bdb74575cd141ba98e021a0835bfd3e4da722b20021d667f5ec818c9c4bc7",
+      "functions": 35
+    },
+    {
+      "path": "Foreign/C/ConstPtr/Foreign.C.ConstPtr.o.lir",
+      "bytes": 78342,
+      "sha256": "8897c0f58a84bb76ec8ba8ae8f0aa050dc0d03a488c669a816c22e1f281d10a4",
+      "functions": 40
+    },
+    {
+      "path": "Foreign/C/Error/Foreign.C.Error.o.lir",
+      "bytes": 1408899,
+      "sha256": "97d77f9513635c9218838ff5605e9edb380824ba06acefdf7e821145a3764c15",
+      "functions": 632
+    },
+    {
+      "path": "Foreign/C/Error/Repr/Foreign.C.Error.Repr.o.lir",
+      "bytes": 474718,
+      "sha256": "6815ab8f8175b3cd15c8760dfce0d807ddac50960e589ecd8489dc3644f12602",
+      "functions": 214
+    },
+    {
+      "path": "Foreign/C/Foreign.C.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Foreign/C/String/Foreign.C.String.o.lir",
+      "bytes": 345273,
+      "sha256": "ce2f81463c3a9e606a96689abf8c6fa7a26eae8d83942713f5fa9ebb7bec54d8",
+      "functions": 164
+    },
+    {
+      "path": "Foreign/C/Types/Foreign.C.Types.o.lir",
+      "bytes": 4208931,
+      "sha256": "727d7acf6b8b1733db026a9f08bf12ade5cd3f4b5f6262294e4fac9de5b9fbe4",
+      "functions": 2318
+    },
+    {
+      "path": "Foreign/C/Types/Repr/Foreign.C.Types.Repr.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Foreign/Concurrent/Foreign.Concurrent.o.lir",
+      "bytes": 1976,
+      "sha256": "00c82d0547182c1897483010fe27797af79306931d6e656bab6db553c3f3c1bc",
+      "functions": 2
+    },
+    {
+      "path": "Foreign/Foreign.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Foreign/ForeignPtr/Foreign.ForeignPtr.o.lir",
+      "bytes": 80637,
+      "sha256": "bb10675b1b92d8ed1305f578889f1e0c64f8ec55ff59b572b5e1e5aafeb7310b",
+      "functions": 39
+    },
+    {
+      "path": "Foreign/ForeignPtr/Safe/Foreign.ForeignPtr.Safe.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Foreign/ForeignPtr/Unsafe/Foreign.ForeignPtr.Unsafe.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Foreign/Marshal/Alloc/Foreign.Marshal.Alloc.o.lir",
+      "bytes": 314811,
+      "sha256": "99cff99380ba45957ec3896f4f778fed53178e3deb706210ed5e82fae5caef95",
+      "functions": 167
+    },
+    {
+      "path": "Foreign/Marshal/Array/Foreign.Marshal.Array.o.lir",
+      "bytes": 537638,
+      "sha256": "040a0d8a7cc52195b60a320a31f3ecb36f21bba14d8da14fd28f6005d0fafcf7",
+      "functions": 237
+    },
+    {
+      "path": "Foreign/Marshal/Error/Foreign.Marshal.Error.o.lir",
+      "bytes": 70072,
+      "sha256": "3e6cc6211d0e32ae18ac6b67de588037df6a70049e2b759e32ea5985ff1adaac",
+      "functions": 30
+    },
+    {
+      "path": "Foreign/Marshal/Foreign.Marshal.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Foreign/Marshal/Pool/Foreign.Marshal.Pool.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Foreign/Marshal/Safe/Foreign.Marshal.Safe.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Foreign/Marshal/Unsafe/Foreign.Marshal.Unsafe.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Foreign/Marshal/Utils/Foreign.Marshal.Utils.o.lir",
+      "bytes": 157845,
+      "sha256": "e0c89daeef0ee8f34a304e5345dccc75144bfe4e48fd8b92dda996b88b527b93",
+      "functions": 71
+    },
+    {
+      "path": "Foreign/Ptr/Foreign.Ptr.o.lir",
+      "bytes": 136413,
+      "sha256": "3f0f9043107bb4a343dcc98d77658231959c63a33ada02057d0207d0ffc0b99b",
+      "functions": 78
+    },
+    {
+      "path": "Foreign/Safe/Foreign.Safe.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Foreign/StablePtr/Foreign.StablePtr.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Foreign/Storable/Foreign.Storable.o.lir",
+      "bytes": 979920,
+      "sha256": "b2a02c6101b0379a514922233bacb783fe7ef06a6cdb6d19b20b84c9fd877f00",
+      "functions": 449
+    },
+    {
+      "path": "GHC/Arr/GHC.Arr.o.lir",
+      "bytes": 1218493,
+      "sha256": "a73390714cad492a851ea97420aeab5c105264eb42d0c1af911477aa027a4b61",
+      "functions": 496
+    },
+    {
+      "path": "GHC/ArrayArray/GHC.ArrayArray.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Base/GHC.Base.o.lir",
+      "bytes": 163125,
+      "sha256": "96ac1187a1eb20a374759e0eac4f4073a857b4ec920ccd79bc098c48389f6f67",
+      "functions": 95
+    },
+    {
+      "path": "GHC/Bits/GHC.Bits.o.lir",
+      "bytes": 2067653,
+      "sha256": "74eeb446ccc3f79d53a73672815751a50e84f8788afa8eb045e5e4f618a5e73f",
+      "functions": 1072
+    },
+    {
+      "path": "GHC/ByteOrder/GHC.ByteOrder.o.lir",
+      "bytes": 108823,
+      "sha256": "a044f4e14c2dfef1a932fd656b8a1fad1dc3c1a2ba1d7373b84bccacd4c2cac8",
+      "functions": 49
+    },
+    {
+      "path": "GHC/Char/GHC.Char.o.lir",
+      "bytes": 25287,
+      "sha256": "bb8083585fdd7124ffaf2fb2d4992cec1764f762ae40ecc303e5da2546ff8885",
+      "functions": 14
+    },
+    {
+      "path": "GHC/Clock/GHC.Clock.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Conc/GHC.Conc.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Conc/IO/GHC.Conc.IO.o.lir",
+      "bytes": 58618,
+      "sha256": "a728aab58dabb645e92cf9655b4c4900cc5249112077981778a136cea3457a53",
+      "functions": 26
+    },
+    {
+      "path": "GHC/Conc/Signal/GHC.Conc.Signal.o.lir",
+      "bytes": 131783,
+      "sha256": "dc7e0d5502a2ce5037cd738f6f0d5e6b94a940cf1ba26283dcf23d5a28dbce4b",
+      "functions": 60
+    },
+    {
+      "path": "GHC/Conc/Sync/GHC.Conc.Sync.o.lir",
+      "bytes": 451210,
+      "sha256": "46e8e87530e35137809d85831d89cf1139ec8a4ec41001bc1c3c297b64d9687e",
+      "functions": 224
+    },
+    {
+      "path": "GHC/ConsoleHandler/GHC.ConsoleHandler.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Constants/GHC.Constants.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Desugar/GHC.Desugar.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Encoding/UTF8/GHC.Encoding.UTF8.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Enum/GHC.Enum.o.lir",
+      "bytes": 1554243,
+      "sha256": "038f6b3a7e35adaa84c4587937fdb0ba489a70df12165de7cba9507eee8b9c1e",
+      "functions": 691
+    },
+    {
+      "path": "GHC/Environment/GHC.Environment.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Err/GHC.Err.o.lir",
+      "bytes": 24493,
+      "sha256": "0425b5f71b9a328f6c145cdf7996d6a80393a880186ea9c672afe7559ab95ef6",
+      "functions": 13
+    },
+    {
+      "path": "GHC/Event/GHC.Event.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Event/TimeOut/GHC.Event.TimeOut.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Exception/GHC.Exception.o.lir",
+      "bytes": 85056,
+      "sha256": "5cd9f180404ec8853734ff7e2d7587527bf3fe96582cb50c5815dbba35cfd30b",
+      "functions": 40
+    },
+    {
+      "path": "GHC/Exception/Type/GHC.Exception.Type.o.lir",
+      "bytes": 167208,
+      "sha256": "4be6dc385c9a3b7dac32a2fc52a1f249a451c91ddfb4a32571f250040d8ac4b8",
+      "functions": 73
+    },
+    {
+      "path": "GHC/ExecutionStack/GHC.ExecutionStack.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/ExecutionStack/Internal/GHC.ExecutionStack.Internal.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Exts/GHC.Exts.o.lir",
+      "bytes": 17659,
+      "sha256": "2a19af9f9018ce50a7dd41302e6419b0ca4533832b4926f724a0e2402b0a0ecf",
+      "functions": 11
+    },
+    {
+      "path": "GHC/Fingerprint/GHC.Fingerprint.o.lir",
+      "bytes": 428081,
+      "sha256": "f5cc5fef358d7131c88799ac0b2accd7454a994f4ceddafea0186ad0a4482674",
+      "functions": 186
+    },
+    {
+      "path": "GHC/Fingerprint/Type/GHC.Fingerprint.Type.o.lir",
+      "bytes": 389902,
+      "sha256": "ae782e08f916a2c4830bb0d3aa373af21a7df0e1193d64bb830ce3372b5a6816",
+      "functions": 194
+    },
+    {
+      "path": "GHC/Float/ConversionUtils/GHC.Float.ConversionUtils.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Float/GHC.Float.o.lir",
+      "bytes": 3516390,
+      "sha256": "748de5834b74906a9fe28b51d6ed59fec3e18b64d6ef6798d32f3eb39ba39a9f",
+      "functions": 1517
+    },
+    {
+      "path": "GHC/Float/RealFracMethods/GHC.Float.RealFracMethods.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Foreign/GHC.Foreign.o.lir",
+      "bytes": 91856,
+      "sha256": "fee920742c0e68673b77f12cad1ac97ed795a1678fb27a306108f247ee031fe4",
+      "functions": 46
+    },
+    {
+      "path": "GHC/ForeignPtr/GHC.ForeignPtr.o.lir",
+      "bytes": 366543,
+      "sha256": "45d0a2107bce06c87bc9c2a3a9faa6168bfcc1df7ef090313482ad09b2f48ad9",
+      "functions": 177
+    },
+    {
+      "path": "GHC/GHCi/GHC.GHCi.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/GHCi/Helpers/GHC.GHCi.Helpers.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Generics/GHC.Generics.o.lir",
+      "bytes": 2750485,
+      "sha256": "71f15812664c3bac39f23b669774efa5c6af8690a273e437825b9983210637b1",
+      "functions": 1245
+    },
+    {
+      "path": "GHC/IO/Buffer/GHC.IO.Buffer.o.lir",
+      "bytes": 632874,
+      "sha256": "538a65c2abb827ecd5383bd2ea22ac46d6b4527edbdaca1bffac70ef6f11779d",
+      "functions": 260
+    },
+    {
+      "path": "GHC/IO/BufferedIO/GHC.IO.BufferedIO.o.lir",
+      "bytes": 337653,
+      "sha256": "5cecb74731e450db0e98b84ff7fdfd1125db64e8f105c2050e189891689e5d75",
+      "functions": 130
+    },
+    {
+      "path": "GHC/IO/Console/GHC.IO.Console.o.lir",
+      "bytes": 109822,
+      "sha256": "3b8fd6808e36d95a38b706bf86dfde85d7cce9249df55841967d9853e92e2033",
+      "functions": 64
+    },
+    {
+      "path": "GHC/IO/Device/GHC.IO.Device.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/IO/Encoding/CodePage/GHC.IO.Encoding.CodePage.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/IO/Encoding/Failure/GHC.IO.Encoding.Failure.o.lir",
+      "bytes": 542092,
+      "sha256": "7f9f63b3b55068484bbe7926f7c806b1a6e3ed27ffe8938e921ed7c4b6d25f0f",
+      "functions": 199
+    },
+    {
+      "path": "GHC/IO/Encoding/GHC.IO.Encoding.o.lir",
+      "bytes": 37169,
+      "sha256": "b8cb99208711a0ada202036fafb792895a30f8b7049eddd94b34725d04890194",
+      "functions": 22
+    },
+    {
+      "path": "GHC/IO/Encoding/Iconv/GHC.IO.Encoding.Iconv.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/IO/Encoding/Latin1/GHC.IO.Encoding.Latin1.o.lir",
+      "bytes": 51531,
+      "sha256": "c88f3778c1d0dbba48e376d7ecccf6d53497bddcb04227c5ee90541124b62135",
+      "functions": 26
+    },
+    {
+      "path": "GHC/IO/Encoding/Types/GHC.IO.Encoding.Types.o.lir",
+      "bytes": 77311,
+      "sha256": "e47d03cab2e1fcb5b6868ac30b651d1f8df581319284b043457c4890e4a716ee",
+      "functions": 37
+    },
+    {
+      "path": "GHC/IO/Encoding/UTF16/GHC.IO.Encoding.UTF16.o.lir",
+      "bytes": 51211,
+      "sha256": "2b60c9235f37b8aac5b947e56fd530f03c8a8ca2ab86ebf51e343badfc0ba093",
+      "functions": 26
+    },
+    {
+      "path": "GHC/IO/Encoding/UTF32/GHC.IO.Encoding.UTF32.o.lir",
+      "bytes": 51211,
+      "sha256": "c5e6496e074f4d085387e8b6ee45c5893e7e17d481a330a0341921990ecd6f83",
+      "functions": 26
+    },
+    {
+      "path": "GHC/IO/Encoding/UTF8/GHC.IO.Encoding.UTF8.o.lir",
+      "bytes": 35580,
+      "sha256": "cb2d4deff8f36ab5be185545d5cbc25cdb74974cd89087f53ff963788a71636c",
+      "functions": 18
+    },
+    {
+      "path": "GHC/IO/Exception/GHC.IO.Exception.o.lir",
+      "bytes": 727499,
+      "sha256": "24a9cf2aec0bf2dd8218e10455f1b6ad344172a3fd37cccde5f28612e76395c8",
+      "functions": 344
+    },
+    {
+      "path": "GHC/IO/FD/GHC.IO.FD.o.lir",
+      "bytes": 721986,
+      "sha256": "62dbb9c8ca7ebf38e5fd1d424a5a317f0deb59b0102eab6eb09ebc6410c4cd8b",
+      "functions": 315
+    },
+    {
+      "path": "GHC/IO/GHC.IO.o.lir",
+      "bytes": 145375,
+      "sha256": "f7026d7c7f3173ba70f36e824ddc077ae79ae0f08829b4b563d59ad1973ff0d9",
+      "functions": 78
+    },
+    {
+      "path": "GHC/IO/Handle/FD/GHC.IO.Handle.FD.o.lir",
+      "bytes": 121488,
+      "sha256": "ea023dc0d19e2d8ba969f96622805fbfddd08d4e76864d889fb69208adf42d8f",
+      "functions": 53
+    },
+    {
+      "path": "GHC/IO/Handle/GHC.IO.Handle.o.lir",
+      "bytes": 1167780,
+      "sha256": "39274c008ab0bf993967d94fad29ead0ac6f1455ebd36e35c9216310ebddb516",
+      "functions": 503
+    },
+    {
+      "path": "GHC/IO/Handle/Internals/GHC.IO.Handle.Internals.o.lir",
+      "bytes": 1550204,
+      "sha256": "85e7e06e2d02093d9c715ebf1197639c02a1cb337054c778b15331271a4fb910",
+      "functions": 610
+    },
+    {
+      "path": "GHC/IO/Handle/Lock/GHC.IO.Handle.Lock.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/IO/Handle/Text/GHC.IO.Handle.Text.o.lir",
+      "bytes": 1916059,
+      "sha256": "3492022ecba668e7990c1c7ab80cce01f8c30b47d0a4ebdab8dccabb5e1952ea",
+      "functions": 767
+    },
+    {
+      "path": "GHC/IO/Handle/Types/GHC.IO.Handle.Types.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/IO/IOMode/GHC.IO.IOMode.o.lir",
+      "bytes": 154111,
+      "sha256": "70e29f5bf6db2f593ebe615963a523a44a3cc8dfc3ef7a931fd029fe2a69b259",
+      "functions": 69
+    },
+    {
+      "path": "GHC/IO/Runtime/GHC.IO.Runtime.o.lir",
+      "bytes": 127084,
+      "sha256": "41b4f005bf8fa1bdd94baadfe52a7e9282849e5691b04759bbce9ac5ce3b56a3",
+      "functions": 58
+    },
+    {
+      "path": "GHC/IO/Runtime/Open/GHC.IO.Runtime.Open.o.lir",
+      "bytes": 612305,
+      "sha256": "1cb9d7d12bfc30345ca7d5bc0fd2fb8a1d0f3b68c74d4cbd314b9b8940aae0d3",
+      "functions": 251
+    },
+    {
+      "path": "GHC/IO/StdHandles/GHC.IO.StdHandles.o.lir",
+      "bytes": 293654,
+      "sha256": "0cfc2519e6a430f514f1c348950b664622eca334747875a60c86818890e7f45b",
+      "functions": 133
+    },
+    {
+      "path": "GHC/IO/SubSystem/GHC.IO.SubSystem.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/IO/Unsafe/GHC.IO.Unsafe.o.lir",
+      "bytes": 7404,
+      "sha256": "7c3cd2236ccff88917302993e8b59e59ddb215cb5ed1d7abff1b347361de8d71",
+      "functions": 4
+    },
+    {
+      "path": "GHC/IOArray/GHC.IOArray.o.lir",
+      "bytes": 40281,
+      "sha256": "b111beabdd2d09c1839f88d2c9778239858575063944b599c4d28cabc86dfe11",
+      "functions": 19
+    },
+    {
+      "path": "GHC/IOPort/GHC.IOPort.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/IORef/GHC.IORef.o.lir",
+      "bytes": 119126,
+      "sha256": "241f021bf4e0b5e151e3fe24fd3e3ba21f568ea40bd677ddcba9d9df2f7d34b7",
+      "functions": 61
+    },
+    {
+      "path": "GHC/InfoProv/GHC.InfoProv.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Int/GHC.Int.o.lir",
+      "bytes": 201409,
+      "sha256": "21e2e573c2bcd5d4ef0a3e3656cf0e3f62471598681cd5df70a5187c23dce35a",
+      "functions": 106
+    },
+    {
+      "path": "GHC/Integer/GHC.Integer.o.lir",
+      "bytes": 33487,
+      "sha256": "e12a4d80b959029237dd4ad1fafa122f38b69264db5a144f151a0df386b95c2b",
+      "functions": 19
+    },
+    {
+      "path": "GHC/Integer/Logarithms/GHC.Integer.Logarithms.o.lir",
+      "bytes": 20721,
+      "sha256": "682c2f357fe350e4c654390b0b154496b9a1315b51b38f92b64f0d8c66e46212",
+      "functions": 16
+    },
+    {
+      "path": "GHC/Internal/Char/GHC.Internal.Char.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Internal/Classes/GHC.Internal.Classes.o.lir",
+      "bytes": 1499826,
+      "sha256": "fcd7a26c234aaaf076b8ed602f56e03c822352f0a7f99c6737605e099fe91c19",
+      "functions": 691
+    },
+    {
+      "path": "GHC/Internal/Data/NonEmpty/GHC.Internal.Data.NonEmpty.o.lir",
+      "bytes": 704,
+      "sha256": "e974a57214a5f459d2cf68537a7e3c3b2386d2df0c59f075d20ee0b03086c6d0",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Internal/Environment/GHC.Internal.Environment.o.lir",
+      "bytes": 404608,
+      "sha256": "332a731ec8f20eea4444be18b8fe1cb7b2a0c06a4052895af1d7f5a318343b5e",
+      "functions": 175
+    },
+    {
+      "path": "GHC/Internal/Exception/Context/GHC.Internal.Exception.Context.o.lir",
+      "bytes": 94382,
+      "sha256": "869b37cac07835a1c83629380bc4fb78807f069dce3e5da987c48a211d41ed63",
+      "functions": 40
+    },
+    {
+      "path": "GHC/Internal/Exception/Type/GHC.Internal.Exception.Type.o.lir",
+      "bytes": 206787,
+      "sha256": "d977ee880b3382e27131bb0576c1bfd9f8638b64233f07d73ab11597616c53a6",
+      "functions": 95
+    },
+    {
+      "path": "GHC/Internal/Foldable/GHC.Internal.Foldable.o.lir",
+      "bytes": 699571,
+      "sha256": "6218852a64979863e66f99e23a765ff75002d730e7d9118a952a5a84318d6d13",
+      "functions": 341
+    },
+    {
+      "path": "GHC/Internal/IO/Encoding/Codec/GHC.Internal.IO.Encoding.Codec.o.lir",
+      "bytes": 30616,
+      "sha256": "8282185a774e8195dd6ab89527697c6db553b2e29836566a8b5135edb2cc1db9",
+      "functions": 15
+    },
+    {
+      "path": "GHC/Internal/IO/Handle/Read/GHC.Internal.IO.Handle.Read.o.lir",
+      "bytes": 471424,
+      "sha256": "b9dbef457aa0b6229538c1915ede3aa2da8a5d294e944a20f7c75c60159dde79",
+      "functions": 181
+    },
+    {
+      "path": "GHC/Internal/IO/Types/GHC.Internal.IO.Types.o.lir",
+      "bytes": 1328317,
+      "sha256": "d7b3e70a557204a6fe7f0c332cfc420941bbb09f7889ec3c2b0d87c0c8ec961f",
+      "functions": 574
+    },
+    {
+      "path": "GHC/Internal/Integer/GHC.Internal.Integer.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Internal/Read/GHC.Internal.Read.o.lir",
+      "bytes": 1558836,
+      "sha256": "a29a0d1951219af179abe0fef245d10fbaa45058d6ff5f3b85572570112dca27",
+      "functions": 635
+    },
+    {
+      "path": "GHC/Internal/Stack/GHC.Internal.Stack.o.lir",
+      "bytes": 85918,
+      "sha256": "18cf1426adef7d3195d1cb66a6b71168b9b8b75c6c6d73e37331c4dace3a66ec",
+      "functions": 43
+    },
+    {
+      "path": "GHC/Internal/Traversable/GHC.Internal.Traversable.o.lir",
+      "bytes": 58571,
+      "sha256": "6dfe9d7d497a1cc12838cd92813e0129d08ee6b6897d9bcecdcdc1e88ffaf8aa",
+      "functions": 28
+    },
+    {
+      "path": "GHC/Internal/Utf8/GHC.Internal.Utf8.o.lir",
+      "bytes": 686284,
+      "sha256": "1cee32ef3e28d8c6034c744a82cdd8df7fb5429f8e3a16ff087206650bf02c19",
+      "functions": 283
+    },
+    {
+      "path": "GHC/IsList/GHC.IsList.o.lir",
+      "bytes": 15419,
+      "sha256": "e4add31d0085ba93b424dcf2e2dceeb40b81c40382442ea1bf57dbb719664d44",
+      "functions": 10
+    },
+    {
+      "path": "GHC/Ix/GHC.Ix.o.lir",
+      "bytes": 288306,
+      "sha256": "51300f95cc9fb4dc8519c9a18ddd569060fbeff94fc714f4c1caec609b4683a1",
+      "functions": 132
+    },
+    {
+      "path": "GHC/List/GHC.List.o.lir",
+      "bytes": 139201,
+      "sha256": "a2b6046c04a9ce3574b39f0f56069d4a21772442e80ad2a64296eb63103cc694",
+      "functions": 68
+    },
+    {
+      "path": "GHC/MVar/GHC.MVar.o.lir",
+      "bytes": 115492,
+      "sha256": "a3a201cceb175528eceb409a4c96c3b0ac35bf13aa1dfc4da1aa845e57291f76",
+      "functions": 57
+    },
+    {
+      "path": "GHC/Maybe/GHC.Maybe.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Natural/GHC.Natural.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Num/BigNat/GHC.Num.BigNat.o.lir",
+      "bytes": 730689,
+      "sha256": "68a36b9416e7a6383d7b57b4c8fa1992621bfffeabfd3e167220bfe7a5ec8082",
+      "functions": 492
+    },
+    {
+      "path": "GHC/Num/GHC.Num.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Num/Integer/GHC.Num.Integer.o.lir",
+      "bytes": 589139,
+      "sha256": "f0f7e16baab104c855d41ccb0d90fe33ae2effb54cd5562c0fdf513656cd739d",
+      "functions": 278
+    },
+    {
+      "path": "GHC/Num/Natural/GHC.Num.Natural.o.lir",
+      "bytes": 508523,
+      "sha256": "cec545bd4a7144f3f63033e669d62d29fbcbe65c46f4a7b3487fbc900c4f334e",
+      "functions": 228
+    },
+    {
+      "path": "GHC/Num/Primitives/GHC.Num.Primitives.o.lir",
+      "bytes": 24325,
+      "sha256": "8a79e364750a1b358407a9e8f1236246b0163abade164426701f9caf4b2aec8b",
+      "functions": 20
+    },
+    {
+      "path": "GHC/OldList/GHC.OldList.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/OverloadedLabels/GHC.OverloadedLabels.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Profiling/GHC.Profiling.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Ptr/GHC.Ptr.o.lir",
+      "bytes": 165831,
+      "sha256": "edad61143d8591043f42a551f254a6a699c6d90c4efce6b55709ee6d9d044510",
+      "functions": 85
+    },
+    {
+      "path": "GHC/RTS/Flags/GHC.RTS.Flags.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Read/GHC.Read.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Read/Lex/GHC.Read.Lex.o.lir",
+      "bytes": 64188,
+      "sha256": "21080ff301b0dc5cd51413d207d7286547e0234716fde2be451e497c6c9ca5b5",
+      "functions": 26
+    },
+    {
+      "path": "GHC/Real/GHC.Real.o.lir",
+      "bytes": 1913060,
+      "sha256": "e71697a2620b58851fa1f20033e99c09e37e7df1a9849df1a6421f8989237b61",
+      "functions": 869
+    },
+    {
+      "path": "GHC/Records/GHC.Records.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/ResponseFile/GHC.ResponseFile.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/ST/GHC.ST.o.lir",
+      "bytes": 117631,
+      "sha256": "4f078467fa872d83f31e6f35be362e730e91bcaa69a3cfdb09670a0181074964",
+      "functions": 67
+    },
+    {
+      "path": "GHC/STRef/GHC.STRef.o.lir",
+      "bytes": 40399,
+      "sha256": "1d9b56f7e1513a505688174171ef03b238b0a9fcffb18b797a90d5d6808d5a00",
+      "functions": 18
+    },
+    {
+      "path": "GHC/Show/GHC.Show.o.lir",
+      "bytes": 515191,
+      "sha256": "9535aa2f1f23646c5dec4248422d414a7274b0c888b54af2ca4b33736b61a6cf",
+      "functions": 252
+    },
+    {
+      "path": "GHC/Stable/GHC.Stable.o.lir",
+      "bytes": 424349,
+      "sha256": "8227f426bde05b44e3271cc66768c9f446de3c5af8b00f92bd95a3e56aa24834",
+      "functions": 180
+    },
+    {
+      "path": "GHC/StableName/GHC.StableName.o.lir",
+      "bytes": 33881,
+      "sha256": "e0b6aa251fc26b372fc912a2b2c0d5063e4ff810c4e0de35fdd3c82ba28c6816",
+      "functions": 14
+    },
+    {
+      "path": "GHC/Stack/CCS/GHC.Stack.CCS.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Stack/CloneStack/GHC.Stack.CloneStack.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Stack/GHC.Stack.o.lir",
+      "bytes": 42503,
+      "sha256": "3a76be47f260554153fe53e169273ec5cccd93f5cd790298ec47b8a7c0b8fb18",
+      "functions": 21
+    },
+    {
+      "path": "GHC/Stack/Types/GHC.Stack.Types.o.lir",
+      "bytes": 58578,
+      "sha256": "8680acde0e4641363b21db5e1c6fdb9f667f479b4402d3d5021112b27ffef445",
+      "functions": 25
+    },
+    {
+      "path": "GHC/StaticPtr/GHC.StaticPtr.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Stats/GHC.Stats.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Storable/GHC.Storable.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/TopHandler/GHC.TopHandler.o.lir",
+      "bytes": 142439,
+      "sha256": "9e9eed88ca5f157dc127902e5e21d445f70b7b398118bafb98da2d78b28ca64c",
+      "functions": 70
+    },
+    {
+      "path": "GHC/TypeError/GHC.TypeError.o.lir",
+      "bytes": 7045,
+      "sha256": "552b3dcef7ffe5dec306e481a7f224fb67427c543b05e2f0746e61d8b10cb410",
+      "functions": 3
+    },
+    {
+      "path": "GHC/TypeLits/GHC.TypeLits.o.lir",
+      "bytes": 38460,
+      "sha256": "80850f48371ea98c6cc1f1292816ad56311503ff0ef9553bfa094d32bbd22bd7",
+      "functions": 24
+    },
+    {
+      "path": "GHC/TypeLits/Internal/GHC.TypeLits.Internal.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/TypeNats/GHC.TypeNats.o.lir",
+      "bytes": 7782,
+      "sha256": "b5d0f64d28af777dff13f53cf314db3c4689b8bb0f5ece10f115018ef61f0c21",
+      "functions": 6
+    },
+    {
+      "path": "GHC/TypeNats/Internal/GHC.TypeNats.Internal.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Unicode/GHC.Unicode.o.lir",
+      "bytes": 993088,
+      "sha256": "86608165d959dd65e7a220b956c7fc44664ea61937e17bef0d334edeb4dfb5a0",
+      "functions": 374
+    },
+    {
+      "path": "GHC/Weak/Finalize/GHC.Weak.Finalize.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "GHC/Weak/GHC.Weak.o.lir",
+      "bytes": 68206,
+      "sha256": "dd48b82aa8c121c97b7dea5e4e6ca35f2e87f4cc24efde9b8e5716333e08fb8e",
+      "functions": 34
+    },
+    {
+      "path": "GHC/Word/GHC.Word.o.lir",
+      "bytes": 556098,
+      "sha256": "62e58d219d9279ecc1b9f5a51587524161d960e93c3d7b1d5daebde27166eb69",
+      "functions": 313
+    },
+    {
+      "path": "Numeric/Natural/Numeric.Natural.o.lir",
+      "bytes": 20014,
+      "sha256": "1bc525baab0722b8f33d8b728a66e4b1f19086387c4dcb45b02a3505ac18cbb6",
+      "functions": 9
+    },
+    {
+      "path": "Numeric/Numeric.o.lir",
+      "bytes": 364986,
+      "sha256": "3c73c86c5904a3cfb3ad75a507cf6293577b229144f9c4f0c530cffd5a620d40",
+      "functions": 156
+    },
+    {
+      "path": "Prelude/Prelude.o.lir",
+      "bytes": 3711922,
+      "sha256": "6ccd07915fbe7b9d60746a9d831702f6e71fc968c18bd1c4e3f2a860f77a8460",
+      "functions": 1602
+    },
+    {
+      "path": "System/CPUTime/Clock/System.CPUTime.Clock.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "System/CPUTime/System.CPUTime.o.lir",
+      "bytes": 76167,
+      "sha256": "465eb2bb637bbf7891cda657468505b62d611aeda03ba5e33523a4d1b126c754",
+      "functions": 35
+    },
+    {
+      "path": "System/Console/GetOpt/System.Console.GetOpt.o.lir",
+      "bytes": 702708,
+      "sha256": "669fe9458f6e6cc31a7f76c9c4a9180615f015704956886e0d5bbbc03aeb5d44",
+      "functions": 280
+    },
+    {
+      "path": "System/Environment/Blank/System.Environment.Blank.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "System/Environment/ExecutablePath/System.Environment.ExecutablePath.o.lir",
+      "bytes": 212817,
+      "sha256": "59308cf334f7583ce551cbe5a068508d2655a7004a12418d99b03bba944d16fb",
+      "functions": 91
+    },
+    {
+      "path": "System/Environment/System.Environment.o.lir",
+      "bytes": 361445,
+      "sha256": "f7a955b1bbb9fe95b7801f8df20b5d9bf54189992e1d72759d6e59c9fbd5694a",
+      "functions": 155
+    },
+    {
+      "path": "System/Exit/System.Exit.o.lir",
+      "bytes": 59629,
+      "sha256": "6ca24824199bfdc5375a52fa7b0d84c3ad3de67476a52d7439a4c363a6f6ec51",
+      "functions": 26
+    },
+    {
+      "path": "System/IO/Error/System.IO.Error.o.lir",
+      "bytes": 157910,
+      "sha256": "f8eb7be1a3208f4ae8b418c79462c6f8249aa83701415620fc9934f650f1f3cd",
+      "functions": 77
+    },
+    {
+      "path": "System/IO/System.IO.o.lir",
+      "bytes": 362059,
+      "sha256": "07d5860fba9cee3ae6d107c7eb6dcb2f05292497f2d50de7f69468fb711d1fac",
+      "functions": 153
+    },
+    {
+      "path": "System/IO/Unsafe/System.IO.Unsafe.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "System/Info/System.Info.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "System/Mem/StableName/System.Mem.StableName.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "System/Mem/System.Mem.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "System/Mem/Weak/System.Mem.Weak.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "System/Posix/Internals/Repr/System.Posix.Internals.Repr.o.lir",
+      "bytes": 8474,
+      "sha256": "6ddf0b892842c39e178e3e64d58809e8a5a0f98c08194af4478068af8e2e8ebc",
+      "functions": 4
+    },
+    {
+      "path": "System/Posix/Internals/Syscalls/System.Posix.Internals.Syscalls.o.lir",
+      "bytes": 1144,
+      "sha256": "1738fb88d5a7885023edb5ed980ea946049c27220aa1e8766ce1bb75d74707a1",
+      "functions": 1
+    },
+    {
+      "path": "System/Posix/Internals/System.Posix.Internals.o.lir",
+      "bytes": 164438,
+      "sha256": "ddd95c0471914d9dbde20dbf7fb26f6de4ea37c4fcb3a819780a49a195f67535",
+      "functions": 69
+    },
+    {
+      "path": "System/Posix/Internals/Types/System.Posix.Internals.Types.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "System/Posix/Types/Repr/System.Posix.Types.Repr.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "System/Posix/Types/System.Posix.Types.o.lir",
+      "bytes": 3629316,
+      "sha256": "af22760d58b5298de1900690e7e365fc6f3ea608318d85829bec4a8ea4cd029a",
+      "functions": 2001
+    },
+    {
+      "path": "System/Timeout/System.Timeout.o.lir",
+      "bytes": 87347,
+      "sha256": "beb6fdbd017f58e15344bbbcae88702a7117cc5ad5040d6021fc5a620800df03",
+      "functions": 39
+    },
+    {
+      "path": "Text/ParserCombinators/ReadP/Text.ParserCombinators.ReadP.o.lir",
+      "bytes": 557982,
+      "sha256": "83dfea873309907e5507fb416f8368e678b032a22748da258e42a7800359bcf2",
+      "functions": 238
+    },
+    {
+      "path": "Text/ParserCombinators/ReadPrec/Text.ParserCombinators.ReadPrec.o.lir",
+      "bytes": 32246,
+      "sha256": "37c44ac71e5060a44f7fc4bfea529c6c10bbda84b428709a45858ba86a9b11c4",
+      "functions": 16
+    },
+    {
+      "path": "Text/Printf/Text.Printf.o.lir",
+      "bytes": 960497,
+      "sha256": "563a8d7f0155e52d24e54fd4ce0e817cdb6e1d4c8eb8ba2c62fec38d5cff6d7a",
+      "functions": 409
+    },
+    {
+      "path": "Text/Read/Lex/Text.Read.Lex.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Text/Read/Text.Read.o.lir",
+      "bytes": 70997,
+      "sha256": "c0d65f478668a748bd7fcf3919d8c7d95fea42fa1e8cd2d084ebcbaec437cc56",
+      "functions": 31
+    },
+    {
+      "path": "Text/Show/Functions/Text.Show.Functions.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Text/Show/Text.Show.o.lir",
+      "bytes": 973,
+      "sha256": "ac1b313c77f7cd1c225fb19dc4948067400553bde99d4a5cb51d1246200a1ef3",
+      "functions": 1
+    },
+    {
+      "path": "Type/Reflection/Internal/Type.Reflection.Internal.o.lir",
+      "bytes": 1834809,
+      "sha256": "773f507f68c1e237bb0d4ac12b1163255434c152b49775fc63b07897215dc37c",
+      "functions": 849
+    },
+    {
+      "path": "Type/Reflection/Type.Reflection.o.lir",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": 0
+    },
+    {
+      "path": "Type/Reflection/Unsafe/Type.Reflection.Unsafe.o.lir",
+      "bytes": 101572,
+      "sha256": "875f106f5a9330569b1c634ca45ed4e6ed00f57a59df6ae8e913297444550942",
+      "functions": 46
+    },
+    {
+      "path": "Unsafe/Coerce/Unsafe.Coerce.o.lir",
+      "bytes": 1023,
+      "sha256": "2476404405e8e08b8705ddeabdb4fe1e4ce98bff7a7e4c7ab2149158687633cd",
+      "functions": 1
+    }
+  ],
+  "total_lir_bytes": 84488840,
+  "total_functions": 38857,
+  "empty_modules": 94,
+  "archive_sha256": "780c82adf866f6ae44f00d22775a90fb43a832b885277b5d25523de22e8e54d8",
+  "archive_bytes": 10211415
+}

@@ -1,0 +1,129 @@
+{
+  "measured_on": "2026-10-02",
+  "hardware": {
+    "machine": "MacBook",
+    "processor": "Apple M4 Pro",
+    "memory_bytes": 51539607552
+  },
+  "operating_system": "macOS 26.6.2",
+  "compiler": "ghc-9.12.4",
+  "parser_commit": "af5afc8d852e242f826f4302d98cbf52fc7eebe8",
+  "corpus_generator_commit": "8a63d987e4a21f72faa4476d7476f1bd99954c4c",
+  "package_versions": {
+    "aihc-parser": "3.0.1.1",
+    "ghc-lib-parser": "9.14.1.20251220",
+    "aihc-cpp": "1.0.0.2",
+    "megaparsec": "9.8.3"
+  },
+  "snapshot": "lts-24.36",
+  "corpus_sha256": "0bbf9653a89fce99590e825ab3c34fe304d3cd104eac44e49b85e65b2ce7c5c2",
+  "total_files": 55698,
+  "preprocessed_input_bytes": 410943413,
+  "mb_definition": "1 MB = 1,000,000 bytes",
+  "aggregation": "Median of three timed samples per parser, each in a fresh process with one warmup. Run order alternates between pairs.",
+  "command_template": "aihc-parser-bench bench stackage-lts-24.36.tar.gz --parser PARSER --preprocess-once --warmup 1 --iterations 1 --output json +RTS -N1 -RTS",
+  "build_command": "cabal build exe:aihc-parser-bench --disable-tests -j4",
+  "build_optimization": "Cabal default -O1",
+  "corpus_command": "aihc-parser-bench generate --snapshot lts-24.36 --output stackage-lts-24.36.tar.gz --verbose",
+  "measurement_scope": "Parsing preprocessed in-memory source, including parser rejection paths. File reads and CPP are outside the timed region. The benchmark forces ParseResult values using its existing implementation.",
+  "machine_activity": "MacBook in normal use, with concurrent compiler workloads.",
+  "summary": {
+    "aihc": {
+      "throughput_mb_per_sec": 12.816395325032989,
+      "median_wall_time_ms": 32063.884,
+      "sample_count": 3
+    },
+    "ghc": {
+      "throughput_mb_per_sec": 7.245303625402119,
+      "median_wall_time_ms": 56718.591,
+      "sample_count": 3
+    },
+    "speedup": 1.7689245320373541
+  },
+  "samples": [
+    {
+      "bytes_per_sec": 6044535.5485797,
+      "files_per_sec": 819.2576650079853,
+      "lexer_only": false,
+      "parse_failed": 4867,
+      "parse_success": 50831,
+      "parser": "ghc",
+      "success_rate": 91.26180473266544,
+      "total_bytes": 410943413,
+      "total_files": 55698,
+      "wall_time_ms": 67985.937,
+      "sample_id": "1-ghc",
+      "run_log": "Loading tarball: stackage-lts-24.36.tar.gz\nLoaded 55698 Haskell files\nLoading files into memory... done\nPreprocessing files once... done\nRunning 1 warmup iteration(s)...\n  Warmup: 55698 files, 69583ms\nRunning 1 benchmark iteration(s)...\n  Iteration: 55698 files, 67985ms\n"
+    },
+    {
+      "bytes_per_sec": 11616125.079532653,
+      "files_per_sec": 1574.4136886306771,
+      "lexer_only": false,
+      "parse_failed": 1791,
+      "parse_success": 53907,
+      "parser": "aihc",
+      "success_rate": 96.78444468383066,
+      "total_bytes": 410943413,
+      "total_files": 55698,
+      "wall_time_ms": 35376.979,
+      "sample_id": "1-aihc",
+      "run_log": "Loading tarball: stackage-lts-24.36.tar.gz\nLoaded 55698 Haskell files\nLoading files into memory... done\nPreprocessing files once... done\nRunning 1 warmup iteration(s)...\n  Warmup: 55698 files, 31646ms\nRunning 1 benchmark iteration(s)...\n  Iteration: 55698 files, 35376ms\n"
+    },
+    {
+      "bytes_per_sec": 12816395.325032989,
+      "files_per_sec": 1737.0946077524484,
+      "lexer_only": false,
+      "parse_failed": 1791,
+      "parse_success": 53907,
+      "parser": "aihc",
+      "success_rate": 96.78444468383066,
+      "total_bytes": 410943413,
+      "total_files": 55698,
+      "wall_time_ms": 32063.884,
+      "sample_id": "2-aihc",
+      "run_log": "Loading tarball: stackage-lts-24.36.tar.gz\nLoaded 55698 Haskell files\nLoading files into memory... done\nPreprocessing files once... done\nRunning 1 warmup iteration(s)...\n  Warmup: 55698 files, 33657ms\nRunning 1 benchmark iteration(s)...\n  Iteration: 55698 files, 32063ms\n"
+    },
+    {
+      "bytes_per_sec": 7245303.625402119,
+      "files_per_sec": 982.0060586483892,
+      "lexer_only": false,
+      "parse_failed": 4867,
+      "parse_success": 50831,
+      "parser": "ghc",
+      "success_rate": 91.26180473266544,
+      "total_bytes": 410943413,
+      "total_files": 55698,
+      "wall_time_ms": 56718.591,
+      "sample_id": "2-ghc",
+      "run_log": "Loading tarball: stackage-lts-24.36.tar.gz\nLoaded 55698 Haskell files\nLoading files into memory... done\nPreprocessing files once... done\nRunning 1 warmup iteration(s)...\n  Warmup: 55698 files, 60613ms\nRunning 1 benchmark iteration(s)...\n  Iteration: 55698 files, 56718ms\n"
+    },
+    {
+      "bytes_per_sec": 7309215.748153844,
+      "files_per_sec": 990.668510218152,
+      "lexer_only": false,
+      "parse_failed": 4867,
+      "parse_success": 50831,
+      "parser": "ghc",
+      "success_rate": 91.26180473266544,
+      "total_bytes": 410943413,
+      "total_files": 55698,
+      "wall_time_ms": 56222.641,
+      "sample_id": "3-ghc",
+      "run_log": "Loading tarball: stackage-lts-24.36.tar.gz\nLoaded 55698 Haskell files\nLoading files into memory... done\nPreprocessing files once... done\nRunning 1 warmup iteration(s)...\n  Warmup: 55698 files, 60053ms\nRunning 1 benchmark iteration(s)...\n  Iteration: 55698 files, 56222ms\n"
+    },
+    {
+      "bytes_per_sec": 13923260.311644796,
+      "files_per_sec": 1887.115666793744,
+      "lexer_only": false,
+      "parse_failed": 1791,
+      "parse_success": 53907,
+      "parser": "aihc",
+      "success_rate": 96.78444468383066,
+      "total_bytes": 410943413,
+      "total_files": 55698,
+      "wall_time_ms": 29514.884,
+      "sample_id": "3-aihc",
+      "run_log": "Loading tarball: stackage-lts-24.36.tar.gz\nLoaded 55698 Haskell files\nLoading files into memory... done\nPreprocessing files once... done\nRunning 1 warmup iteration(s)...\n  Warmup: 55698 files, 29665ms\nRunning 1 benchmark iteration(s)...\n  Iteration: 55698 files, 29514ms\n"
+    }
+  ]
+}

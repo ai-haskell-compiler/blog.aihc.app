@@ -10,11 +10,9 @@ imageWidth: 1200
 imageHeight: 600
 ---
 
-`aihc-parser` is nearly **2× as fast as GHC's parser** on our recorded Stackage benchmark. The parser is sprinting. The type-checker still has most of the track to itself.
+`aihc-parser` is nearly **2× as fast as GHC's parser** on our [Stackage benchmark](https://github.com/ai-haskell-compiler/aihc-parser/blob/d9bef4c93df67b253008dda878e2cefecc4dc569/BENCHMARKS.md). The parser is sprinting. The type-checker still has most of the track to itself.
 
-![Stackage parsing throughput relative to GHC: aihc-parser 1.89× versus GHC (ghc-lib-parser) 1.00×; higher is better. Derived from recorded relative parsing times, with both parsers at -O1 and CPP before measurement.](/images/aihc-parser-throughput.png)
-
-The [recorded benchmark](https://github.com/ai-haskell-compiler/aihc-parser/blob/d9bef4c93df67b253008dda878e2cefecc4dc569/BENCHMARKS.md) covers **55,698 Haskell files** across 3,412 packages in Stackage LTS 24.36. `aihc-parser` delivers **1.89× GHC's throughput**, with GHC measured through `ghc-lib-parser`. Both are built at Cabal's default `-O1`; `aihc-cpp` runs before measurement. The chart takes the reciprocal of the recorded relative parsing time, 0.53. These are parser measurements, not end-to-end compilation results.
+![Stackage parsing throughput relative to GHC: aihc-parser 1.89× versus GHC (ghc-lib-parser) 1.00×; higher is better.](/images/aihc-parser-throughput.png)
 
 We spend far more time type-checking than parsing, so Amdahl's law remains unimpressed. If parsing were 10% of a build, this speedup would shave off 4.7% overall. A nice saving. No coffee break cancelled. That 10% is an illustration, not a measured breakdown of AIHC.
 

@@ -35,7 +35,7 @@ try {
     const rows = [{ name: 'aihc-parser', value: 1 / 0.53, color: '#5e5086' }, { name: 'GHC', value: 1.00, color: '#b0a69b' }];
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="${height}" viewBox="0 0 1600 ${height}">
       <title>aihc-parser versus GHC: Stackage parsing throughput</title>
-      <desc>Relative parsing throughput: aihc-parser 1.89x, GHC (ghc-lib-parser) 1.00x. Both built at -O1; CPP before measurement.</desc>
+      <desc>Relative parsing throughput: aihc-parser 1.89x, GHC (ghc-lib-parser) 1.00x.</desc>
       <rect width="1600" height="${height}" fill="#faf8f3"/>
       <rect y="${height - 10}" width="1600" height="10" fill="#5e5086"/>
       <g transform="translate(80 62)"><rect width="78" height="78" rx="18" fill="#5e5086"/><g transform="translate(9 9) scale(.6)">${mark}</g></g>
@@ -55,8 +55,8 @@ try {
           <rect x="${x0}" y="${chartY + 10 + i * 126}" width="${row.value / max * plotWidth}" height="72" rx="8" fill="${row.color}"/>
           <text x="${x0 + row.value / max * plotWidth + 22}" y="${chartY + 58 + i * 126}" font-size="40" font-weight="600">${row.value.toFixed(2)}×</text>`).join('')}
         <line x1="80" x2="1520" y1="${footerY - 27}" y2="${footerY - 27}" stroke="#e6e0d6" stroke-width="2"/>
-        <text x="80" y="${footerY + 9}" font-size="24" fill="#6b655d">GHC baseline: ghc-lib-parser · both at -O1 · CPP before measurement</text>
-        <text x="80" y="${footerY + 46}" font-size="22" fill="#6b655d">Source: aihc-parser / BENCHMARKS.md · throughput = 1 / relative time</text>
+        <text x="80" y="${footerY + 9}" font-size="24" fill="#6b655d">Nearly twice the throughput. Still only one stage.</text>
+        <text x="80" y="${footerY + 46}" font-size="22" fill="#6b655d">Source: aihc-parser / BENCHMARKS.md</text>
         <text x="1520" y="${height - 35}" font-size="22" text-anchor="end" fill="#5e5086">Fast compilation needs fast type-checking, too.</text>
       </g>
     </svg>`;

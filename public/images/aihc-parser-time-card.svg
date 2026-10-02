@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800">
+      <title>aihc-parser versus GHC: Stackage parsing time</title>
+      <desc>Relative parsing time: aihc-parser 0.53, GHC (ghc-lib-parser) 1.00. Both built at -O1; CPP before measurement.</desc>
+      <rect width="1600" height="800" fill="#faf8f3"/>
+      <rect y="790" width="1600" height="10" fill="#5e5086"/>
+      <g transform="translate(80 62)"><rect width="78" height="78" rx="18" fill="#5e5086"/><g transform="translate(9 9) scale(.6)"><defs><clipPath id="mark-inner"><polygon points="18,18 62,18 40,88"/></clipPath></defs>
+    <g fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M24 54 Q40 36 56 54" clip-path="url(#mark-inner)" stroke-linecap="butt"/>
+      <path d="M18 18 L40 88 L62 18"/><path d="M64 88 L79.1 40"/>
+      <circle cx="86" cy="18" r="6" fill="#fff" stroke="none"/>
+    </g></g></g>
+      <g font-family="Inter Variable, Inter, sans-serif" fill="#1d1a17">
+        <text x="180" y="94" font-size="28" font-weight="600">AI Haskell Compiler</text>
+        <text x="180" y="129" font-size="22" fill="#6b655d">PERFORMANCE NOTES / 02</text>
+        <text x="1520" y="106" font-size="25" text-anchor="end" fill="#5e5086">aihc.app</text>
+        <text x="80" y="231" font-family="Newsreader Variable, Newsreader, serif" font-size="76" letter-spacing="-1">Parsing is only the start.</text>
+        <text x="82" y="282" font-size="28" fill="#6b655d">Haskell parsing · Stackage LTS 24.36 · 55,698 files</text>
+        <rect x="1220" y="179" width="300" height="112" rx="18" fill="#eee9f7"/>
+        <text x="1370" y="234" text-anchor="middle" font-size="43" font-weight="600" fill="#5e5086">1.9×</text>
+        <text x="1370" y="268" text-anchor="middle" font-size="21" fill="#5e5086">as fast at parsing</text>
+        <text x="340" y="310" font-size="23" fill="#6b655d">Parsing time relative to GHC · lower is better</text>
+        <line x1="340" x2="340" y1="340" y2="563" stroke="#e6e0d6" stroke-width="2"/>
+          <text x="340" y="603" text-anchor="middle" font-size="22" fill="#6b655d">0.0</text><line x1="520" x2="520" y1="340" y2="563" stroke="#e6e0d6" stroke-width="2"/>
+          <text x="520" y="603" text-anchor="middle" font-size="22" fill="#6b655d">0.2</text><line x1="700" x2="700" y1="340" y2="563" stroke="#e6e0d6" stroke-width="2"/>
+          <text x="700" y="603" text-anchor="middle" font-size="22" fill="#6b655d">0.4</text><line x1="880" x2="880" y1="340" y2="563" stroke="#e6e0d6" stroke-width="2"/>
+          <text x="880" y="603" text-anchor="middle" font-size="22" fill="#6b655d">0.6</text><line x1="1060" x2="1060" y1="340" y2="563" stroke="#e6e0d6" stroke-width="2"/>
+          <text x="1060" y="603" text-anchor="middle" font-size="22" fill="#6b655d">0.8</text><line x1="1240" x2="1240" y1="340" y2="563" stroke="#e6e0d6" stroke-width="2"/>
+          <text x="1240" y="603" text-anchor="middle" font-size="22" fill="#6b655d">1.0</text>
+        <text x="304" y="396" text-anchor="end" font-size="34" font-weight="600" fill="#5e5086">aihc-parser</text>
+          <rect x="340" y="350" width="477" height="72" rx="8" fill="#5e5086"/>
+          <text x="839" y="398" font-size="40" font-weight="600">0.53</text><text x="304" y="522" text-anchor="end" font-size="34" font-weight="600" fill="#6b655d">GHC</text>
+          <rect x="340" y="476" width="900" height="72" rx="8" fill="#b0a69b"/>
+          <text x="1262" y="524" font-size="40" font-weight="600">1.00</text>
+        <line x1="80" x2="1520" y1="654" y2="654" stroke="#e6e0d6" stroke-width="2"/>
+        <text x="80" y="690" font-size="24" fill="#6b655d">GHC baseline: ghc-lib-parser · both at -O1 · CPP before measurement</text>
+        <text x="80" y="727" font-size="22" fill="#6b655d">Source: aihc-parser / BENCHMARKS.md · recorded parser results</text>
+        <text x="1520" y="765" font-size="22" text-anchor="end" fill="#5e5086">Fast compilation needs fast type-checking, too.</text>
+      </g>
+    </svg>

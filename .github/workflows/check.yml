@@ -3,6 +3,9 @@ on:
   push:
     branches: [main]
   pull_request:
+  schedule:
+    # Rebuild future-dated posts at midnight and noon UTC.
+    - cron: '0 0,12 * * *'
 permissions:
   contents: read
 jobs:
@@ -20,7 +23,7 @@ jobs:
       - run: npx wrangler deploy --dry-run
   deploy:
     needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     concurrency:
       group: production-deployment

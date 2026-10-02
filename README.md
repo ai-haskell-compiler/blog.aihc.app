@@ -24,8 +24,10 @@ draft: false
 
 Write the article below the frontmatter. Put images in `public/images/` and
 reference them as `/images/example.png`. Drafts and future-dated posts are
-excluded from pages, RSS, and the sitemap. A future-dated post requires a new
-build after its date; publication is not scheduled automatically.
+excluded from pages, RSS, and the sitemap. To schedule a post, set `draft: false`
+and a future `date`, then merge it into `main`. The site rebuilds and deploys
+automatically at midnight (00:00) and noon (12:00) UTC each day, publishing posts
+whose dates have arrived. Date-only values become eligible at midnight UTC.
 
 The included first post is a draft, so the initial site has no published posts.
 
@@ -38,6 +40,8 @@ Re-run it and commit the result after changing the mark, colors, or wording in
 ## Automatic deployment with GitHub Actions
 
 Every push to `main` checks and builds the site, then deploys it to Cloudflare.
+The same workflow also runs daily at 00:00 and 12:00 UTC to publish scheduled posts.
+GitHub Actions may delay scheduled runs, so publication occurs when deployment completes.
 Pull requests run checks and a deployment dry run without production credentials.
 
 Configure these repository Actions secrets (Settings → Secrets and variables → Actions):

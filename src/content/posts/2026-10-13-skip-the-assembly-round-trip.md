@@ -25,7 +25,7 @@ One route prints assembly text, writes a `.s` file, and invokes an assembler to 
 </div>
 </details>
 
-*The clocks use the Intel measurements. Module progress is illustrated, rather than a per-module trace. Reduced-motion settings show a still image. [Download the portrait MP4 for X](/images/object-pipelines-phone.mp4).*
+*The clocks use the Intel measurements. Module progress is illustrated, rather than a per-module trace. Reduced-motion settings show a still image.*
 
 We measured **`aihc-base` 4.21.2.0**, rather than a generated example. We compiled the library at `-O0` for macOS ARM64 and captured all **270 module outputs**. We then lowered this same frozen LIR corpus through the ARM64 and AMD64 backends on two machines. The 176 nonempty modules go through object generation; both routes write zero-byte files for the other 94, without invoking an assembler.
 

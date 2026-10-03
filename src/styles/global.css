@@ -169,3 +169,14 @@ article { max-width: var(--measure); margin: 40px auto 0; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+
+/* Portrait animation with an accessible still for reduced motion. */
+.prose .pipeline-media { max-width: 540px; margin: 20px auto; }
+.prose .pipeline-media video, .prose .pipeline-media img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.prose .pipeline-media .pipeline-still { display: none; }
+.prose .pipeline-toggle { margin-top: 10px; padding: 8px 14px; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); color: var(--ink); font: 500 0.85rem var(--sans); cursor: pointer; }
+@media (prefers-reduced-motion: reduce) {
+  .prose .pipeline-toggle { display: none; }
+  .prose .pipeline-media video { display: none; }
+  .prose .pipeline-media .pipeline-still { display: block; }
+}

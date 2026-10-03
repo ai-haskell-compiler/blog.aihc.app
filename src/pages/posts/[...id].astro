@@ -27,3 +27,25 @@ const { Content } = await render(post);
   )}
 </article>
 </Layout>
+<script>
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  for (const video of document.querySelectorAll<HTMLVideoElement>('video[data-looping-animation]')) {
+    const details = video.closest('details');
+    const toggle = video.closest('.pipeline-media')?.querySelector<HTMLButtonElement>('.pipeline-toggle');
+    const syncLabel = () => { if (toggle) toggle.textContent = video.paused ? 'Play animation' : 'Pause animation'; };
+    video.addEventListener('play', syncLabel);
+    video.addEventListener('pause', syncLabel);
+    toggle?.addEventListener('click', () => {
+      if (video.paused) void video.play().catch(() => { video.controls = true; });
+      else video.pause();
+    });
+    video.muted = true;
+    const update = () => {
+      if (reducedMotion.matches || (details && !details.open)) video.pause();
+      else void video.play().catch(() => { video.controls = true; });
+    };
+    reducedMotion.addEventListener('change', update);
+    details?.addEventListener('toggle', update);
+    update();
+  }
+</script>

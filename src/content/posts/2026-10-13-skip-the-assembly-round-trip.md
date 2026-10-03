@@ -17,7 +17,7 @@ One route prints assembly text, writes a `.s` file, and invokes an assembler to 
 <details open>
 <summary>Pipeline animation — collapse to hide motion</summary>
 <div class="pipeline-media">
-<video data-looping-animation loop muted playsinline preload="metadata" poster="/images/object-pipelines-phone-poster.png" width="1080" height="1350" aria-label="aihc-base object output on Intel Linux. 176 objects and 94 empty outputs: direct ELF output finishes in 1.48 seconds, while ASM plus 176 Clang invocations takes 10.58 seconds.">
+<video data-looping-animation loop muted playsinline preload="metadata" poster="/images/object-pipelines-phone-poster.png" width="1080" height="1350" aria-label="aihc-base object output on Intel Linux. 176 module outputs: direct ELF output finishes in 1.48 seconds, while ASM plus 176 Clang invocations takes 10.58 seconds.">
 <source src="/images/object-pipelines-phone.mp4" type="video/mp4" />
 </video>
 <img class="pipeline-still" src="/images/object-pipelines-phone-poster.png" alt="aihc-base: direct ELF object output takes 1.48 seconds, compared with 10.58 seconds through ASM and Clang. 7.1 times faster for object output." width="1080" height="1350" loading="lazy" />

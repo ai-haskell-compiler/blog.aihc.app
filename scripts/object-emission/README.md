@@ -62,8 +62,7 @@ instruction, relocation, debugging feature, or object-format requirement.
 The phone animation is a 1080×1350, 14-second MP4 loop. Its object-output
 clocks use the measured Intel totals: 1.48 seconds direct and 10.58 seconds
 through ASM and Clang. Counts and module motion illustrate the corpus rather
-than reproduce a per-module timing trace. The loop shows 176 nonempty object
-outputs and notes the 94 equally handled empty outputs. The page shows a still
+than reproduce a per-module timing trace. The loop shows 176 module outputs. The page shows a still
 for reduced motion and pauses playback when its details element is closed.
 
 The portrait poster matches the video. A separate 1200×630 landscape PNG is

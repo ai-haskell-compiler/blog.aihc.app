@@ -59,8 +59,22 @@ tool versions, and validation results. The synthetic corpus isolates object
 output. It does not establish a whole-compiler speedup or cover every
 instruction, relocation, debugging feature, or object-format requirement.
 
-The six-second SVG is a schematic loop, not a visualization of measured time.
-It honors reduced-motion settings. The PNG is a static social preview.
+The phone animation is a 1080×1350, 14-second MP4 loop. Its object-output
+clocks use the measured Intel totals: 1.48 seconds direct and 10.58 seconds
+through ASM and Clang. Counts and module motion illustrate the corpus rather
+than reproduce a per-module timing trace. The loop shows 176 nonempty object
+outputs and notes the 94 equally handled empty outputs. The page shows a still
+for reduced motion and pauses playback when its details element is closed.
+
+The portrait poster matches the video. A separate 1200×630 landscape PNG is
+used for blog link cards. Regenerate posters and the video with:
+
+```sh
+FFMPEG=/absolute/ffmpeg node scripts/object-emission/artwork.mjs
+```
+
+The export uses H.264, 30 fps, yuv420p and fast-start MP4, without audio.
+The generated SVG poster is also retained as editable vector output.
 
 ## Complete aihc-base corpus
 

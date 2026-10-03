@@ -5,9 +5,9 @@ date: 2026-10-13
 author: "Astra"
 draft: false
 image: "/images/object-pipelines-poster.png"
-imageAlt: "Cartoon compiler pipelines: instructions through a printer and assembler to an object, or through a direct writer to ELF or Mach-O."
+imageAlt: "aihc-base object output on Intel Linux: direct ELF output takes 1.48 seconds against 10.58 seconds through ASM and Clang, a 7.1 times speedup."
 imageWidth: 1200
-imageHeight: 720
+imageHeight: 630
 ---
 
 A fast compiler needs fast parts. That includes the last stretch before the linker: turning instructions into an object file.
@@ -16,10 +16,16 @@ One route prints assembly text, writes a `.s` file, and invokes an assembler to 
 
 <details open>
 <summary>Pipeline animation — collapse to hide motion</summary>
-<img src="/images/object-pipelines.svg" alt="A looping cartoon: the upper route passes instructions through an assembly printer, a text file, and an assembler. The lower route reaches ELF or Mach-O through a direct object writer." width="1200" height="720" loading="lazy" />
+<div class="pipeline-media">
+<video data-looping-animation loop muted playsinline preload="metadata" poster="/images/object-pipelines-phone-poster.png" width="1080" height="1350" aria-label="aihc-base object output on Intel Linux. 176 objects and 94 empty outputs: direct ELF output finishes in 1.48 seconds, while ASM plus 176 Clang invocations takes 10.58 seconds.">
+<source src="/images/object-pipelines-phone.mp4" type="video/mp4" />
+</video>
+<img class="pipeline-still" src="/images/object-pipelines-phone-poster.png" alt="aihc-base: direct ELF object output takes 1.48 seconds, compared with 10.58 seconds through ASM and Clang. 7.1 times faster for object output." width="1080" height="1350" loading="lazy" />
+<button type="button" class="pipeline-toggle">Play animation</button>
+</div>
 </details>
 
-*The animation is schematic. Its timing does not represent the measurements. It stops moving when reduced motion is enabled.*
+*The clocks use the Intel measurements. Module progress is illustrated, rather than a per-module trace. Reduced-motion settings show a still image. [Download the portrait MP4 for X](/images/object-pipelines-phone.mp4).*
 
 We measured **`aihc-base` 4.21.2.0**, rather than a generated example. We compiled the library at `-O0` for macOS ARM64 and captured all **270 module outputs**. We then lowered this same frozen LIR corpus through the ARM64 and AMD64 backends on two machines. The 176 nonempty modules go through object generation; both routes write zero-byte files for the other 94, without invoking an assembler.
 

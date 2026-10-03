@@ -9,6 +9,9 @@ mkdir -p "$output_dir"
 python3 "$script_dir/patch-printer.py" \
   "$aihc_dir/bin/aihc/compiler/arm64/src/Aihc/Arm64/Text.hs" \
   "$output_dir/printer/Aihc/Arm64/Text.hs"
+python3 "$script_dir/patch-amd64-printer.py" \
+  "$aihc_dir/bin/aihc/compiler/amd64/src/Aihc/Amd64/Text.hs" \
+  "$output_dir/printer/Aihc/Amd64/Text.hs"
 cd "$aihc_dir"
 # Compile the required compiler modules from source, without the CLI or front end.
 cabal exec -- ghc -O2 -XGHC2021 -XOverloadedStrings -rtsopts \

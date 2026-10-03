@@ -97,7 +97,7 @@ node scripts/object-emission/chart.mjs
 Each pass produces one object per module. It loads, selects, and forces one
 module's instructions before that module's timer. It then adds all module
 output times. It does not retain the whole package's instruction streams.
-The text path invokes Clang once per module. These are sequential output
+The text path invokes Clang once per nonempty module. These are sequential output
 stage times, not an end-to-end package build or a parallel build measurement.
 
 The fixture printer needed target-specific corrections for this corpus. `patch-printer.py`
@@ -138,3 +138,44 @@ python3 scripts/object-emission/base-validate.py /tmp/base-output /tmp/base-smok
 The original generated-function experiment remains in
 `object-emission-m4-pro.json`. Its reproduction runner is `run.py`. Its results
 are historical, rather than the primary figures in the scheduled article.
+
+## Intel Linux worker
+
+The Intel run uses `ssh worker-nuc`. Its CPU is an Intel Core i7-8705G.
+It lowers the same frozen LIR corpus through the AMD64 backend and writes ELF
+objects. The corpus still comes from the macOS ARM64 compilation described
+above. This comparison changes the output backend, rather than the captured
+front-end inputs. Both direct and text routes use the same AMD64 statements.
+
+`patch-amd64-printer.py` copies the fixture printer and adds explicit operand
+widths. Clang needs byte and word source widths for extension instructions,
+double-word register names for `movd`, and widths for memory operands that
+have no register to supply them. The direct encoder already specifies these
+widths. Clang can use shorter branch encodings and multi-byte alignment NOPs.
+The direct ELF writer also puts functions in separate sections. Object sizes
+and byte positions therefore differ.
+
+After a harness build with GHC 9.12.4 and `-O2`, run:
+
+```sh
+python3 scripts/object-emission/base-run.py /tmp/object-bench/bench /tmp/base-corpus public/benchmarks/aihc-base-object-emission-intel-nuc.json /tmp/base-output x86_64-unknown-linux-gnu
+```
+
+The worker's continuous benchmark service is frozen for all warmups and timed
+passes. It is thawed after the run, including on failure. The output-stage
+method, empty-module treatment and alternating order match the Mac experiment.
+Each machine uses its local Clang. The host, architecture, object format and
+Clang version differ, so the ratios do not isolate the effect of the CPU.
+
+`base-elf-validate.py` compares decoded instructions and external symbols for
+all 176 nonempty modules. It normalizes implicit one-bit shifts and excludes
+alignment NOPs, branch addresses, RIP-relative displacements and symbol
+annotations. This check does not independently verify every relocation or
+branch target. The execution check rebuilds both complete base archives,
+retains the six C API wrappers and runs the same independently specified
+`BaseSmoke.hs` program. The other 94 output files must be empty in both modes.
+Prepare the smoke bundle with `--target linux-amd64`, then run:
+
+```sh
+python3 scripts/object-emission/base-elf-validate.py /tmp/base-output /tmp/base-smoke-bundle /absolute/aihc-binary public/benchmarks/aihc-base-object-emission-intel-nuc.json
+```

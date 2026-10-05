@@ -177,7 +177,7 @@ ${text(40, 204, s.caption, 34, muted, 500)}
 ${ghcBand(s)}
 ${aihcBand(s)}
 ${axis(s.axisMax, 962)}
-${text(40, 1050, `Apple M4 Pro, ${result.host.cores} cores · GHC: cabal default build (package -O2, no -j) · AIHC: default -O0 · real traces, medians of ${result.ghc.runs.length} runs`, 28, muted, 500)}
+${text(40, 1050, `Apple M4 Pro, ${result.host.cores} cores · GHC: cabal build, -O0, no -j · AIHC: default, -O0 · real traces, medians of ${result.ghc.runs.length} runs`, 28, muted, 500)}
 </g></svg>`;
 }
 
@@ -195,7 +195,7 @@ ${text(60, 275, `${speedup.toFixed(1)}× less wall-clock`, 92, purple, 750)}
 ${text(60, 335, `${moduleCount} modules · ${workers} workers against 1`, 40, ink, 650)}
 ${text(60, 415, `GHC 9.12.4: ${ghcTotal.toFixed(1)} s`, 40, gold, 650)}
 ${text(60, 470, `AIHC: ${aihcTotal.toFixed(1)} s`, 40, purple, 650)}
-${text(60, 574, 'Apple M4 Pro · default settings · measured traces', 30, muted, 500)}
+${text(60, 574, 'Apple M4 Pro · both at -O0 · measured traces', 30, muted, 500)}
 ${(() => {
   // Miniature Gantt: one GHC row and the AIHC rows, to the same scale.
   const gx0 = 700, gx1 = 1140, scale = (gx1 - gx0) / fullMax;

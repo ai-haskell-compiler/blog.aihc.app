@@ -15,1403 +15,7 @@
  "ghc": {
   "version": "9.12.4",
   "cabal_version": "3.14.2.0",
-  "command": "cabal build lib:text (package ghc-options -O2, no -j; cabal passes --make -O -dynamic-too)",
-  "median_run": 3,
-  "runs": [
-   {
-    "ghc_start_s": 0.0,
-    "first_module_s": 1.2619,
-    "link_s": 38.3545,
-    "total_s": 38.3545,
-    "modules": [
-     {
-      "name": "Data.Text.Array",
-      "start_s": 1.2619,
-      "end_s": 1.434
-     },
-     {
-      "name": "Data.Text.Encoding.Error",
-      "start_s": 1.434,
-      "end_s": 1.5711
-     },
-     {
-      "name": "Data.Text.Internal.ArrayUtils",
-      "start_s": 1.5711,
-      "end_s": 1.6435
-     },
-     {
-      "name": "Data.Text.Internal.Builder.Int.Digits",
-      "start_s": 1.6435,
-      "end_s": 1.707
-     },
-     {
-      "name": "Data.Text.Internal.Builder.RealFloat.Functions",
-      "start_s": 1.707,
-      "end_s": 1.8411
-     },
-     {
-      "name": "Data.Text.Internal.ByteStringCompat",
-      "start_s": 1.8411,
-      "end_s": 1.9083
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Utf16",
-      "start_s": 1.9083,
-      "end_s": 1.9827
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Utf32",
-      "start_s": 1.9827,
-      "end_s": 2.0472
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Utf8",
-      "start_s": 2.0472,
-      "end_s": 2.2452
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.CaseMapping",
-      "start_s": 2.2452,
-      "end_s": 3.4554
-     },
-     {
-      "name": "Data.Text.Internal.Measure",
-      "start_s": 3.4554,
-      "end_s": 3.5392
-     },
-     {
-      "name": "Data.Text.Internal.PrimCompat",
-      "start_s": 3.5392,
-      "end_s": 3.5976
-     },
-     {
-      "name": "Data.Text.Internal.Read",
-      "start_s": 3.5976,
-      "end_s": 3.7165
-     },
-     {
-      "name": "Data.Text.Internal.Unsafe",
-      "start_s": 3.7165,
-      "end_s": 3.7772
-     },
-     {
-      "name": "Data.Text.Internal.Unsafe.Char",
-      "start_s": 3.7772,
-      "end_s": 3.8657
-     },
-     {
-      "name": "Data.Text.Internal",
-      "start_s": 3.8657,
-      "end_s": 4.1115
-     },
-     {
-      "name": "Data.Text.Internal.StrictBuilder",
-      "start_s": 4.1115,
-      "end_s": 4.3251
-     },
-     {
-      "name": "Data.Text.Internal.Search",
-      "start_s": 4.3251,
-      "end_s": 4.4415
-     },
-     {
-      "name": "Data.Text.Internal.Reverse",
-      "start_s": 4.4415,
-      "end_s": 4.5125
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.Size",
-      "start_s": 4.5125,
-      "end_s": 4.7768
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.Types",
-      "start_s": 4.7768,
-      "end_s": 4.9896
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.Common",
-      "start_s": 4.9896,
-      "end_s": 6.2919
-     },
-     {
-      "name": "Data.Text.Internal.Encoding",
-      "start_s": 6.2919,
-      "end_s": 9.1772
-     },
-     {
-      "name": "Data.Text.Internal.Validate.Native",
-      "start_s": 9.1772,
-      "end_s": 9.2629
-     },
-     {
-      "name": "Data.Text.Internal.Validate",
-      "start_s": 9.2629,
-      "end_s": 9.3268
-     },
-     {
-      "name": "Data.Text.Unsafe",
-      "start_s": 9.3268,
-      "end_s": 9.4863
-     },
-     {
-      "name": "Data.Text.Show",
-      "start_s": 9.4863,
-      "end_s": 9.6265
-     },
-     {
-      "name": "Data.Text.Internal.Transformation",
-      "start_s": 9.6265,
-      "end_s": 9.9818
-     },
-     {
-      "name": "Data.Text.Internal.Private",
-      "start_s": 9.9818,
-      "end_s": 10.0776
-     },
-     {
-      "name": "Data.Text.Internal.Fusion",
-      "start_s": 10.0776,
-      "end_s": 10.6014
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Fusion.Common",
-      "start_s": 10.6014,
-      "end_s": 10.9104
-     },
-     {
-      "name": "Data.Text.Internal.Lazy.Encoding.Fusion",
-      "start_s": 10.9104,
-      "end_s": 11.8039
-     },
-     {
-      "name": "Data.Text.Internal.IsAscii",
-      "start_s": 11.8039,
-      "end_s": 11.8961
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Fusion",
-      "start_s": 11.8961,
-      "end_s": 12.1945
-     },
-     {
-      "name": "Data.Text.Encoding",
-      "start_s": 12.1945,
-      "end_s": 13.0339
-     },
-     {
-      "name": "Data.Text.Foreign",
-      "start_s": 13.0339,
-      "end_s": 13.2226
-     },
-     {
-      "name": "Data.Text",
-      "start_s": 13.2226,
-      "end_s": 17.5552
-     },
-     {
-      "name": "Data.Text.Read",
-      "start_s": 17.5552,
-      "end_s": 18.9311
-     },
-     {
-      "name": "Data.Text.Internal.Lazy",
-      "start_s": 18.9311,
-      "end_s": 19.0728
-     },
-     {
-      "name": "Data.Text.Lazy.Internal",
-      "start_s": 19.0728,
-      "end_s": 19.1321
-     },
-     {
-      "name": "Data.Text.Internal.Lazy.Search",
-      "start_s": 19.1321,
-      "end_s": 19.3772
-     },
-     {
-      "name": "Data.Text.Internal.Lazy.Fusion",
-      "start_s": 19.3772,
-      "end_s": 19.5774
-     },
-     {
-      "name": "Data.Text.Lazy.Encoding",
-      "start_s": 19.5774,
-      "end_s": 21.2921
-     },
-     {
-      "name": "Data.Text.Lazy",
-      "start_s": 21.2921,
-      "end_s": 27.3647
-     },
-     {
-      "name": "Data.Text.Lazy.Read",
-      "start_s": 27.3647,
-      "end_s": 28.5708
-     },
-     {
-      "name": "Data.Text.Internal.IO",
-      "start_s": 28.5708,
-      "end_s": 29.1484
-     },
-     {
-      "name": "Data.Text.Lazy.IO",
-      "start_s": 29.1484,
-      "end_s": 29.3108
-     },
-     {
-      "name": "Data.Text.Internal.Builder",
-      "start_s": 29.3108,
-      "end_s": 29.6414
-     },
-     {
-      "name": "Data.Text.Lazy.Builder",
-      "start_s": 29.6414,
-      "end_s": 29.6951
-     },
-     {
-      "name": "Data.Text.Internal.Builder.Functions",
-      "start_s": 29.6951,
-      "end_s": 29.7471
-     },
-     {
-      "name": "Data.Text.Lazy.Builder.Int",
-      "start_s": 29.7471,
-      "end_s": 34.1201
-     },
-     {
-      "name": "Data.Text.Lazy.Builder.RealFloat",
-      "start_s": 34.1201,
-      "end_s": 38.0549
-     },
-     {
-      "name": "Data.Text.IO.Utf8",
-      "start_s": 38.0549,
-      "end_s": 38.1813
-     },
-     {
-      "name": "Data.Text.IO",
-      "start_s": 38.1813,
-      "end_s": 38.3545
-     }
-    ]
-   },
-   {
-    "ghc_start_s": 0.0,
-    "first_module_s": 1.1644,
-    "link_s": 37.6942,
-    "total_s": 37.6942,
-    "modules": [
-     {
-      "name": "Data.Text.Array",
-      "start_s": 1.1644,
-      "end_s": 1.3396
-     },
-     {
-      "name": "Data.Text.Encoding.Error",
-      "start_s": 1.3396,
-      "end_s": 1.4739
-     },
-     {
-      "name": "Data.Text.Internal.ArrayUtils",
-      "start_s": 1.4739,
-      "end_s": 1.5424
-     },
-     {
-      "name": "Data.Text.Internal.Builder.Int.Digits",
-      "start_s": 1.5424,
-      "end_s": 1.599
-     },
-     {
-      "name": "Data.Text.Internal.Builder.RealFloat.Functions",
-      "start_s": 1.599,
-      "end_s": 1.7244
-     },
-     {
-      "name": "Data.Text.Internal.ByteStringCompat",
-      "start_s": 1.7244,
-      "end_s": 1.7852
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Utf16",
-      "start_s": 1.7852,
-      "end_s": 1.8531
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Utf32",
-      "start_s": 1.8531,
-      "end_s": 1.9058
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Utf8",
-      "start_s": 1.9058,
-      "end_s": 2.0954
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.CaseMapping",
-      "start_s": 2.0954,
-      "end_s": 3.3109
-     },
-     {
-      "name": "Data.Text.Internal.Measure",
-      "start_s": 3.3109,
-      "end_s": 3.3937
-     },
-     {
-      "name": "Data.Text.Internal.PrimCompat",
-      "start_s": 3.3937,
-      "end_s": 3.4498
-     },
-     {
-      "name": "Data.Text.Internal.Read",
-      "start_s": 3.4498,
-      "end_s": 3.5628
-     },
-     {
-      "name": "Data.Text.Internal.Unsafe",
-      "start_s": 3.5628,
-      "end_s": 3.6239
-     },
-     {
-      "name": "Data.Text.Internal.Unsafe.Char",
-      "start_s": 3.6239,
-      "end_s": 3.704
-     },
-     {
-      "name": "Data.Text.Internal",
-      "start_s": 3.704,
-      "end_s": 3.9358
-     },
-     {
-      "name": "Data.Text.Internal.StrictBuilder",
-      "start_s": 3.9358,
-      "end_s": 4.1504
-     },
-     {
-      "name": "Data.Text.Internal.Search",
-      "start_s": 4.1504,
-      "end_s": 4.256
-     },
-     {
-      "name": "Data.Text.Internal.Reverse",
-      "start_s": 4.256,
-      "end_s": 4.333
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.Size",
-      "start_s": 4.333,
-      "end_s": 4.5811
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.Types",
-      "start_s": 4.5811,
-      "end_s": 4.8049
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.Common",
-      "start_s": 4.8049,
-      "end_s": 6.0095
-     },
-     {
-      "name": "Data.Text.Internal.Encoding",
-      "start_s": 6.0095,
-      "end_s": 8.8585
-     },
-     {
-      "name": "Data.Text.Internal.Validate.Native",
-      "start_s": 8.8585,
-      "end_s": 8.9344
-     },
-     {
-      "name": "Data.Text.Internal.Validate",
-      "start_s": 8.9344,
-      "end_s": 8.9966
-     },
-     {
-      "name": "Data.Text.Unsafe",
-      "start_s": 8.9966,
-      "end_s": 9.1596
-     },
-     {
-      "name": "Data.Text.Show",
-      "start_s": 9.1596,
-      "end_s": 9.2955
-     },
-     {
-      "name": "Data.Text.Internal.Transformation",
-      "start_s": 9.2955,
-      "end_s": 9.6426
-     },
-     {
-      "name": "Data.Text.Internal.Private",
-      "start_s": 9.6426,
-      "end_s": 9.7345
-     },
-     {
-      "name": "Data.Text.Internal.Fusion",
-      "start_s": 9.7345,
-      "end_s": 10.2309
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Fusion.Common",
-      "start_s": 10.2309,
-      "end_s": 10.5104
-     },
-     {
-      "name": "Data.Text.Internal.Lazy.Encoding.Fusion",
-      "start_s": 10.5104,
-      "end_s": 11.3869
-     },
-     {
-      "name": "Data.Text.Internal.IsAscii",
-      "start_s": 11.3869,
-      "end_s": 11.4723
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Fusion",
-      "start_s": 11.4723,
-      "end_s": 11.782
-     },
-     {
-      "name": "Data.Text.Encoding",
-      "start_s": 11.782,
-      "end_s": 12.6096
-     },
-     {
-      "name": "Data.Text.Foreign",
-      "start_s": 12.6096,
-      "end_s": 12.8082
-     },
-     {
-      "name": "Data.Text",
-      "start_s": 12.8082,
-      "end_s": 17.1423
-     },
-     {
-      "name": "Data.Text.Read",
-      "start_s": 17.1423,
-      "end_s": 18.4844
-     },
-     {
-      "name": "Data.Text.Internal.Lazy",
-      "start_s": 18.4844,
-      "end_s": 18.6248
-     },
-     {
-      "name": "Data.Text.Lazy.Internal",
-      "start_s": 18.6248,
-      "end_s": 18.6776
-     },
-     {
-      "name": "Data.Text.Internal.Lazy.Search",
-      "start_s": 18.6776,
-      "end_s": 18.9435
-     },
-     {
-      "name": "Data.Text.Internal.Lazy.Fusion",
-      "start_s": 18.9435,
-      "end_s": 19.1351
-     },
-     {
-      "name": "Data.Text.Lazy.Encoding",
-      "start_s": 19.1351,
-      "end_s": 20.868
-     },
-     {
-      "name": "Data.Text.Lazy",
-      "start_s": 20.868,
-      "end_s": 26.9028
-     },
-     {
-      "name": "Data.Text.Lazy.Read",
-      "start_s": 26.9028,
-      "end_s": 28.2451
-     },
-     {
-      "name": "Data.Text.Internal.IO",
-      "start_s": 28.2451,
-      "end_s": 28.8367
-     },
-     {
-      "name": "Data.Text.Lazy.IO",
-      "start_s": 28.8367,
-      "end_s": 28.9976
-     },
-     {
-      "name": "Data.Text.Internal.Builder",
-      "start_s": 28.9976,
-      "end_s": 29.325
-     },
-     {
-      "name": "Data.Text.Lazy.Builder",
-      "start_s": 29.325,
-      "end_s": 29.3778
-     },
-     {
-      "name": "Data.Text.Internal.Builder.Functions",
-      "start_s": 29.3778,
-      "end_s": 29.4318
-     },
-     {
-      "name": "Data.Text.Lazy.Builder.Int",
-      "start_s": 29.4318,
-      "end_s": 33.7449
-     },
-     {
-      "name": "Data.Text.Lazy.Builder.RealFloat",
-      "start_s": 33.7449,
-      "end_s": 37.365
-     },
-     {
-      "name": "Data.Text.IO.Utf8",
-      "start_s": 37.365,
-      "end_s": 37.4979
-     },
-     {
-      "name": "Data.Text.IO",
-      "start_s": 37.4979,
-      "end_s": 37.6942
-     }
-    ]
-   },
-   {
-    "ghc_start_s": 0.0,
-    "first_module_s": 2.1628,
-    "link_s": 45.6123,
-    "total_s": 45.6123,
-    "modules": [
-     {
-      "name": "Data.Text.Array",
-      "start_s": 2.1628,
-      "end_s": 2.3836
-     },
-     {
-      "name": "Data.Text.Encoding.Error",
-      "start_s": 2.3836,
-      "end_s": 2.6099
-     },
-     {
-      "name": "Data.Text.Internal.ArrayUtils",
-      "start_s": 2.6099,
-      "end_s": 2.7358
-     },
-     {
-      "name": "Data.Text.Internal.Builder.Int.Digits",
-      "start_s": 2.7358,
-      "end_s": 2.8316
-     },
-     {
-      "name": "Data.Text.Internal.Builder.RealFloat.Functions",
-      "start_s": 2.8316,
-      "end_s": 3.0132
-     },
-     {
-      "name": "Data.Text.Internal.ByteStringCompat",
-      "start_s": 3.0132,
-      "end_s": 3.1194
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Utf16",
-      "start_s": 3.1194,
-      "end_s": 3.2498
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Utf32",
-      "start_s": 3.2498,
-      "end_s": 3.3968
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Utf8",
-      "start_s": 3.3968,
-      "end_s": 3.6705
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.CaseMapping",
-      "start_s": 3.6705,
-      "end_s": 5.2294
-     },
-     {
-      "name": "Data.Text.Internal.Measure",
-      "start_s": 5.2294,
-      "end_s": 5.3425
-     },
-     {
-      "name": "Data.Text.Internal.PrimCompat",
-      "start_s": 5.3425,
-      "end_s": 5.4456
-     },
-     {
-      "name": "Data.Text.Internal.Read",
-      "start_s": 5.4456,
-      "end_s": 5.5961
-     },
-     {
-      "name": "Data.Text.Internal.Unsafe",
-      "start_s": 5.5961,
-      "end_s": 5.6968
-     },
-     {
-      "name": "Data.Text.Internal.Unsafe.Char",
-      "start_s": 5.6968,
-      "end_s": 5.8228
-     },
-     {
-      "name": "Data.Text.Internal",
-      "start_s": 5.8228,
-      "end_s": 6.1453
-     },
-     {
-      "name": "Data.Text.Internal.StrictBuilder",
-      "start_s": 6.1453,
-      "end_s": 6.4422
-     },
-     {
-      "name": "Data.Text.Internal.Search",
-      "start_s": 6.4422,
-      "end_s": 6.6357
-     },
-     {
-      "name": "Data.Text.Internal.Reverse",
-      "start_s": 6.6357,
-      "end_s": 6.7844
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.Size",
-      "start_s": 6.7844,
-      "end_s": 7.1082
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.Types",
-      "start_s": 7.1082,
-      "end_s": 7.3931
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.Common",
-      "start_s": 7.3931,
-      "end_s": 8.7253
-     },
-     {
-      "name": "Data.Text.Internal.Encoding",
-      "start_s": 8.7253,
-      "end_s": 11.7394
-     },
-     {
-      "name": "Data.Text.Internal.Validate.Native",
-      "start_s": 11.7394,
-      "end_s": 11.8161
-     },
-     {
-      "name": "Data.Text.Internal.Validate",
-      "start_s": 11.8161,
-      "end_s": 11.8783
-     },
-     {
-      "name": "Data.Text.Unsafe",
-      "start_s": 11.8783,
-      "end_s": 12.0426
-     },
-     {
-      "name": "Data.Text.Show",
-      "start_s": 12.0426,
-      "end_s": 12.1856
-     },
-     {
-      "name": "Data.Text.Internal.Transformation",
-      "start_s": 12.1856,
-      "end_s": 12.5496
-     },
-     {
-      "name": "Data.Text.Internal.Private",
-      "start_s": 12.5496,
-      "end_s": 12.6509
-     },
-     {
-      "name": "Data.Text.Internal.Fusion",
-      "start_s": 12.6509,
-      "end_s": 13.2173
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Fusion.Common",
-      "start_s": 13.2173,
-      "end_s": 13.5183
-     },
-     {
-      "name": "Data.Text.Internal.Lazy.Encoding.Fusion",
-      "start_s": 13.5183,
-      "end_s": 14.5309
-     },
-     {
-      "name": "Data.Text.Internal.IsAscii",
-      "start_s": 14.5309,
-      "end_s": 14.6173
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Fusion",
-      "start_s": 14.6173,
-      "end_s": 14.9258
-     },
-     {
-      "name": "Data.Text.Encoding",
-      "start_s": 14.9258,
-      "end_s": 15.8303
-     },
-     {
-      "name": "Data.Text.Foreign",
-      "start_s": 15.8303,
-      "end_s": 16.0558
-     },
-     {
-      "name": "Data.Text",
-      "start_s": 16.0558,
-      "end_s": 20.811
-     },
-     {
-      "name": "Data.Text.Read",
-      "start_s": 20.811,
-      "end_s": 22.2122
-     },
-     {
-      "name": "Data.Text.Internal.Lazy",
-      "start_s": 22.2122,
-      "end_s": 22.4338
-     },
-     {
-      "name": "Data.Text.Lazy.Internal",
-      "start_s": 22.4338,
-      "end_s": 22.5118
-     },
-     {
-      "name": "Data.Text.Internal.Lazy.Search",
-      "start_s": 22.5118,
-      "end_s": 22.8467
-     },
-     {
-      "name": "Data.Text.Internal.Lazy.Fusion",
-      "start_s": 22.8467,
-      "end_s": 23.1109
-     },
-     {
-      "name": "Data.Text.Lazy.Encoding",
-      "start_s": 23.1109,
-      "end_s": 25.2001
-     },
-     {
-      "name": "Data.Text.Lazy",
-      "start_s": 25.2001,
-      "end_s": 32.6667
-     },
-     {
-      "name": "Data.Text.Lazy.Read",
-      "start_s": 32.6667,
-      "end_s": 34.1696
-     },
-     {
-      "name": "Data.Text.Internal.IO",
-      "start_s": 34.1696,
-      "end_s": 35.0366
-     },
-     {
-      "name": "Data.Text.Lazy.IO",
-      "start_s": 35.0366,
-      "end_s": 35.2936
-     },
-     {
-      "name": "Data.Text.Internal.Builder",
-      "start_s": 35.2936,
-      "end_s": 35.7044
-     },
-     {
-      "name": "Data.Text.Lazy.Builder",
-      "start_s": 35.7044,
-      "end_s": 35.8358
-     },
-     {
-      "name": "Data.Text.Internal.Builder.Functions",
-      "start_s": 35.8358,
-      "end_s": 35.9848
-     },
-     {
-      "name": "Data.Text.Lazy.Builder.Int",
-      "start_s": 35.9848,
-      "end_s": 41.2518
-     },
-     {
-      "name": "Data.Text.Lazy.Builder.RealFloat",
-      "start_s": 41.2518,
-      "end_s": 45.269
-     },
-     {
-      "name": "Data.Text.IO.Utf8",
-      "start_s": 45.269,
-      "end_s": 45.3975
-     },
-     {
-      "name": "Data.Text.IO",
-      "start_s": 45.3975,
-      "end_s": 45.6123
-     }
-    ]
-   },
-   {
-    "ghc_start_s": 0.0,
-    "first_module_s": 1.5009,
-    "link_s": 38.1837,
-    "total_s": 38.1837,
-    "modules": [
-     {
-      "name": "Data.Text.Array",
-      "start_s": 1.5009,
-      "end_s": 1.7084
-     },
-     {
-      "name": "Data.Text.Encoding.Error",
-      "start_s": 1.7084,
-      "end_s": 1.8604
-     },
-     {
-      "name": "Data.Text.Internal.ArrayUtils",
-      "start_s": 1.8604,
-      "end_s": 1.9452
-     },
-     {
-      "name": "Data.Text.Internal.Builder.Int.Digits",
-      "start_s": 1.9452,
-      "end_s": 2.015
-     },
-     {
-      "name": "Data.Text.Internal.Builder.RealFloat.Functions",
-      "start_s": 2.015,
-      "end_s": 2.1654
-     },
-     {
-      "name": "Data.Text.Internal.ByteStringCompat",
-      "start_s": 2.1654,
-      "end_s": 2.2556
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Utf16",
-      "start_s": 2.2556,
-      "end_s": 2.3421
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Utf32",
-      "start_s": 2.3421,
-      "end_s": 2.4115
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Utf8",
-      "start_s": 2.4115,
-      "end_s": 2.6229
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.CaseMapping",
-      "start_s": 2.6229,
-      "end_s": 3.8863
-     },
-     {
-      "name": "Data.Text.Internal.Measure",
-      "start_s": 3.8863,
-      "end_s": 3.9563
-     },
-     {
-      "name": "Data.Text.Internal.PrimCompat",
-      "start_s": 3.9563,
-      "end_s": 4.0076
-     },
-     {
-      "name": "Data.Text.Internal.Read",
-      "start_s": 4.0076,
-      "end_s": 4.1136
-     },
-     {
-      "name": "Data.Text.Internal.Unsafe",
-      "start_s": 4.1136,
-      "end_s": 4.1692
-     },
-     {
-      "name": "Data.Text.Internal.Unsafe.Char",
-      "start_s": 4.1692,
-      "end_s": 4.2455
-     },
-     {
-      "name": "Data.Text.Internal",
-      "start_s": 4.2455,
-      "end_s": 4.4716
-     },
-     {
-      "name": "Data.Text.Internal.StrictBuilder",
-      "start_s": 4.4716,
-      "end_s": 4.68
-     },
-     {
-      "name": "Data.Text.Internal.Search",
-      "start_s": 4.68,
-      "end_s": 4.7804
-     },
-     {
-      "name": "Data.Text.Internal.Reverse",
-      "start_s": 4.7804,
-      "end_s": 4.8524
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.Size",
-      "start_s": 4.8524,
-      "end_s": 5.0962
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.Types",
-      "start_s": 5.0962,
-      "end_s": 5.3024
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.Common",
-      "start_s": 5.3024,
-      "end_s": 6.4914
-     },
-     {
-      "name": "Data.Text.Internal.Encoding",
-      "start_s": 6.4914,
-      "end_s": 9.3132
-     },
-     {
-      "name": "Data.Text.Internal.Validate.Native",
-      "start_s": 9.3132,
-      "end_s": 9.4025
-     },
-     {
-      "name": "Data.Text.Internal.Validate",
-      "start_s": 9.4025,
-      "end_s": 9.4842
-     },
-     {
-      "name": "Data.Text.Unsafe",
-      "start_s": 9.4842,
-      "end_s": 9.7071
-     },
-     {
-      "name": "Data.Text.Show",
-      "start_s": 9.7071,
-      "end_s": 9.8596
-     },
-     {
-      "name": "Data.Text.Internal.Transformation",
-      "start_s": 9.8596,
-      "end_s": 10.2696
-     },
-     {
-      "name": "Data.Text.Internal.Private",
-      "start_s": 10.2696,
-      "end_s": 10.3833
-     },
-     {
-      "name": "Data.Text.Internal.Fusion",
-      "start_s": 10.3833,
-      "end_s": 11.0113
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Fusion.Common",
-      "start_s": 11.0113,
-      "end_s": 11.3831
-     },
-     {
-      "name": "Data.Text.Internal.Lazy.Encoding.Fusion",
-      "start_s": 11.3831,
-      "end_s": 12.3701
-     },
-     {
-      "name": "Data.Text.Internal.IsAscii",
-      "start_s": 12.3701,
-      "end_s": 12.4545
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Fusion",
-      "start_s": 12.4545,
-      "end_s": 12.7758
-     },
-     {
-      "name": "Data.Text.Encoding",
-      "start_s": 12.7758,
-      "end_s": 13.6026
-     },
-     {
-      "name": "Data.Text.Foreign",
-      "start_s": 13.6026,
-      "end_s": 13.783
-     },
-     {
-      "name": "Data.Text",
-      "start_s": 13.783,
-      "end_s": 18.0146
-     },
-     {
-      "name": "Data.Text.Read",
-      "start_s": 18.0146,
-      "end_s": 19.2588
-     },
-     {
-      "name": "Data.Text.Internal.Lazy",
-      "start_s": 19.2588,
-      "end_s": 19.3976
-     },
-     {
-      "name": "Data.Text.Lazy.Internal",
-      "start_s": 19.3976,
-      "end_s": 19.447
-     },
-     {
-      "name": "Data.Text.Internal.Lazy.Search",
-      "start_s": 19.447,
-      "end_s": 19.6936
-     },
-     {
-      "name": "Data.Text.Internal.Lazy.Fusion",
-      "start_s": 19.6936,
-      "end_s": 19.8692
-     },
-     {
-      "name": "Data.Text.Lazy.Encoding",
-      "start_s": 19.8692,
-      "end_s": 21.4418
-     },
-     {
-      "name": "Data.Text.Lazy",
-      "start_s": 21.4418,
-      "end_s": 27.4607
-     },
-     {
-      "name": "Data.Text.Lazy.Read",
-      "start_s": 27.4607,
-      "end_s": 28.7486
-     },
-     {
-      "name": "Data.Text.Internal.IO",
-      "start_s": 28.7486,
-      "end_s": 29.329
-     },
-     {
-      "name": "Data.Text.Lazy.IO",
-      "start_s": 29.329,
-      "end_s": 29.4847
-     },
-     {
-      "name": "Data.Text.Internal.Builder",
-      "start_s": 29.4847,
-      "end_s": 29.8103
-     },
-     {
-      "name": "Data.Text.Lazy.Builder",
-      "start_s": 29.8103,
-      "end_s": 29.8585
-     },
-     {
-      "name": "Data.Text.Internal.Builder.Functions",
-      "start_s": 29.8585,
-      "end_s": 29.91
-     },
-     {
-      "name": "Data.Text.Lazy.Builder.Int",
-      "start_s": 29.91,
-      "end_s": 34.398
-     },
-     {
-      "name": "Data.Text.Lazy.Builder.RealFloat",
-      "start_s": 34.398,
-      "end_s": 37.8909
-     },
-     {
-      "name": "Data.Text.IO.Utf8",
-      "start_s": 37.8909,
-      "end_s": 38.0082
-     },
-     {
-      "name": "Data.Text.IO",
-      "start_s": 38.0082,
-      "end_s": 38.1837
-     }
-    ]
-   },
-   {
-    "ghc_start_s": 0.0,
-    "first_module_s": 1.0931,
-    "link_s": 36.7587,
-    "total_s": 36.7587,
-    "modules": [
-     {
-      "name": "Data.Text.Array",
-      "start_s": 1.0931,
-      "end_s": 1.2411
-     },
-     {
-      "name": "Data.Text.Encoding.Error",
-      "start_s": 1.2411,
-      "end_s": 1.3611
-     },
-     {
-      "name": "Data.Text.Internal.ArrayUtils",
-      "start_s": 1.3611,
-      "end_s": 1.4205
-     },
-     {
-      "name": "Data.Text.Internal.Builder.Int.Digits",
-      "start_s": 1.4205,
-      "end_s": 1.4702
-     },
-     {
-      "name": "Data.Text.Internal.Builder.RealFloat.Functions",
-      "start_s": 1.4702,
-      "end_s": 1.585
-     },
-     {
-      "name": "Data.Text.Internal.ByteStringCompat",
-      "start_s": 1.585,
-      "end_s": 1.6361
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Utf16",
-      "start_s": 1.6361,
-      "end_s": 1.6927
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Utf32",
-      "start_s": 1.6927,
-      "end_s": 1.7511
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Utf8",
-      "start_s": 1.7511,
-      "end_s": 1.9218
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.CaseMapping",
-      "start_s": 1.9218,
-      "end_s": 3.0292
-     },
-     {
-      "name": "Data.Text.Internal.Measure",
-      "start_s": 3.0292,
-      "end_s": 3.0966
-     },
-     {
-      "name": "Data.Text.Internal.PrimCompat",
-      "start_s": 3.0966,
-      "end_s": 3.1427
-     },
-     {
-      "name": "Data.Text.Internal.Read",
-      "start_s": 3.1427,
-      "end_s": 3.2407
-     },
-     {
-      "name": "Data.Text.Internal.Unsafe",
-      "start_s": 3.2407,
-      "end_s": 3.3015
-     },
-     {
-      "name": "Data.Text.Internal.Unsafe.Char",
-      "start_s": 3.3015,
-      "end_s": 3.3751
-     },
-     {
-      "name": "Data.Text.Internal",
-      "start_s": 3.3751,
-      "end_s": 3.5965
-     },
-     {
-      "name": "Data.Text.Internal.StrictBuilder",
-      "start_s": 3.5965,
-      "end_s": 3.7979
-     },
-     {
-      "name": "Data.Text.Internal.Search",
-      "start_s": 3.7979,
-      "end_s": 3.9013
-     },
-     {
-      "name": "Data.Text.Internal.Reverse",
-      "start_s": 3.9013,
-      "end_s": 3.9719
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.Size",
-      "start_s": 3.9719,
-      "end_s": 4.1917
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.Types",
-      "start_s": 4.1917,
-      "end_s": 4.4128
-     },
-     {
-      "name": "Data.Text.Internal.Fusion.Common",
-      "start_s": 4.4128,
-      "end_s": 5.5979
-     },
-     {
-      "name": "Data.Text.Internal.Encoding",
-      "start_s": 5.5979,
-      "end_s": 8.4042
-     },
-     {
-      "name": "Data.Text.Internal.Validate.Native",
-      "start_s": 8.4042,
-      "end_s": 8.4746
-     },
-     {
-      "name": "Data.Text.Internal.Validate",
-      "start_s": 8.4746,
-      "end_s": 8.5413
-     },
-     {
-      "name": "Data.Text.Unsafe",
-      "start_s": 8.5413,
-      "end_s": 8.6956
-     },
-     {
-      "name": "Data.Text.Show",
-      "start_s": 8.6956,
-      "end_s": 8.8224
-     },
-     {
-      "name": "Data.Text.Internal.Transformation",
-      "start_s": 8.8224,
-      "end_s": 9.148
-     },
-     {
-      "name": "Data.Text.Internal.Private",
-      "start_s": 9.148,
-      "end_s": 9.2402
-     },
-     {
-      "name": "Data.Text.Internal.Fusion",
-      "start_s": 9.2402,
-      "end_s": 9.7119
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Fusion.Common",
-      "start_s": 9.7119,
-      "end_s": 9.9793
-     },
-     {
-      "name": "Data.Text.Internal.Lazy.Encoding.Fusion",
-      "start_s": 9.9793,
-      "end_s": 10.8357
-     },
-     {
-      "name": "Data.Text.Internal.IsAscii",
-      "start_s": 10.8357,
-      "end_s": 10.9134
-     },
-     {
-      "name": "Data.Text.Internal.Encoding.Fusion",
-      "start_s": 10.9134,
-      "end_s": 11.2124
-     },
-     {
-      "name": "Data.Text.Encoding",
-      "start_s": 11.2124,
-      "end_s": 12.0046
-     },
-     {
-      "name": "Data.Text.Foreign",
-      "start_s": 12.0046,
-      "end_s": 12.171
-     },
-     {
-      "name": "Data.Text",
-      "start_s": 12.171,
-      "end_s": 16.2807
-     },
-     {
-      "name": "Data.Text.Read",
-      "start_s": 16.2807,
-      "end_s": 17.6017
-     },
-     {
-      "name": "Data.Text.Internal.Lazy",
-      "start_s": 17.6017,
-      "end_s": 17.7317
-     },
-     {
-      "name": "Data.Text.Lazy.Internal",
-      "start_s": 17.7317,
-      "end_s": 17.7796
-     },
-     {
-      "name": "Data.Text.Internal.Lazy.Search",
-      "start_s": 17.7796,
-      "end_s": 18.0178
-     },
-     {
-      "name": "Data.Text.Internal.Lazy.Fusion",
-      "start_s": 18.0178,
-      "end_s": 18.1917
-     },
-     {
-      "name": "Data.Text.Lazy.Encoding",
-      "start_s": 18.1917,
-      "end_s": 19.9607
-     },
-     {
-      "name": "Data.Text.Lazy",
-      "start_s": 19.9607,
-      "end_s": 26.1412
-     },
-     {
-      "name": "Data.Text.Lazy.Read",
-      "start_s": 26.1412,
-      "end_s": 27.4225
-     },
-     {
-      "name": "Data.Text.Internal.IO",
-      "start_s": 27.4225,
-      "end_s": 28.0059
-     },
-     {
-      "name": "Data.Text.Lazy.IO",
-      "start_s": 28.0059,
-      "end_s": 28.1597
-     },
-     {
-      "name": "Data.Text.Internal.Builder",
-      "start_s": 28.1597,
-      "end_s": 28.4951
-     },
-     {
-      "name": "Data.Text.Lazy.Builder",
-      "start_s": 28.4951,
-      "end_s": 28.5451
-     },
-     {
-      "name": "Data.Text.Internal.Builder.Functions",
-      "start_s": 28.5451,
-      "end_s": 28.5983
-     },
-     {
-      "name": "Data.Text.Lazy.Builder.Int",
-      "start_s": 28.5983,
-      "end_s": 33.1105
-     },
-     {
-      "name": "Data.Text.Lazy.Builder.RealFloat",
-      "start_s": 33.1105,
-      "end_s": 36.4893
-     },
-     {
-      "name": "Data.Text.IO.Utf8",
-      "start_s": 36.4893,
-      "end_s": 36.5923
-     },
-     {
-      "name": "Data.Text.IO",
-      "start_s": 36.5923,
-      "end_s": 36.7587
-     }
-    ]
-   }
-  ]
- },
- "ghc_O0": {
-  "command": "cabal build lib:text --ghc-options=-O0",
+  "command": "cabal build lib:text --ghc-options=-O0 (no -j; cabal passes --make -dynamic-too)",
   "median_run": 0,
   "runs": [
    {
@@ -2806,8 +1410,1404 @@
    }
   ]
  },
+ "ghc_O2": {
+  "command": "cabal build lib:text (package ghc-options -O2)",
+  "median_run": 3,
+  "runs": [
+   {
+    "ghc_start_s": 0.0,
+    "first_module_s": 1.2619,
+    "link_s": 38.3545,
+    "total_s": 38.3545,
+    "modules": [
+     {
+      "name": "Data.Text.Array",
+      "start_s": 1.2619,
+      "end_s": 1.434
+     },
+     {
+      "name": "Data.Text.Encoding.Error",
+      "start_s": 1.434,
+      "end_s": 1.5711
+     },
+     {
+      "name": "Data.Text.Internal.ArrayUtils",
+      "start_s": 1.5711,
+      "end_s": 1.6435
+     },
+     {
+      "name": "Data.Text.Internal.Builder.Int.Digits",
+      "start_s": 1.6435,
+      "end_s": 1.707
+     },
+     {
+      "name": "Data.Text.Internal.Builder.RealFloat.Functions",
+      "start_s": 1.707,
+      "end_s": 1.8411
+     },
+     {
+      "name": "Data.Text.Internal.ByteStringCompat",
+      "start_s": 1.8411,
+      "end_s": 1.9083
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Utf16",
+      "start_s": 1.9083,
+      "end_s": 1.9827
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Utf32",
+      "start_s": 1.9827,
+      "end_s": 2.0472
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Utf8",
+      "start_s": 2.0472,
+      "end_s": 2.2452
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.CaseMapping",
+      "start_s": 2.2452,
+      "end_s": 3.4554
+     },
+     {
+      "name": "Data.Text.Internal.Measure",
+      "start_s": 3.4554,
+      "end_s": 3.5392
+     },
+     {
+      "name": "Data.Text.Internal.PrimCompat",
+      "start_s": 3.5392,
+      "end_s": 3.5976
+     },
+     {
+      "name": "Data.Text.Internal.Read",
+      "start_s": 3.5976,
+      "end_s": 3.7165
+     },
+     {
+      "name": "Data.Text.Internal.Unsafe",
+      "start_s": 3.7165,
+      "end_s": 3.7772
+     },
+     {
+      "name": "Data.Text.Internal.Unsafe.Char",
+      "start_s": 3.7772,
+      "end_s": 3.8657
+     },
+     {
+      "name": "Data.Text.Internal",
+      "start_s": 3.8657,
+      "end_s": 4.1115
+     },
+     {
+      "name": "Data.Text.Internal.StrictBuilder",
+      "start_s": 4.1115,
+      "end_s": 4.3251
+     },
+     {
+      "name": "Data.Text.Internal.Search",
+      "start_s": 4.3251,
+      "end_s": 4.4415
+     },
+     {
+      "name": "Data.Text.Internal.Reverse",
+      "start_s": 4.4415,
+      "end_s": 4.5125
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.Size",
+      "start_s": 4.5125,
+      "end_s": 4.7768
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.Types",
+      "start_s": 4.7768,
+      "end_s": 4.9896
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.Common",
+      "start_s": 4.9896,
+      "end_s": 6.2919
+     },
+     {
+      "name": "Data.Text.Internal.Encoding",
+      "start_s": 6.2919,
+      "end_s": 9.1772
+     },
+     {
+      "name": "Data.Text.Internal.Validate.Native",
+      "start_s": 9.1772,
+      "end_s": 9.2629
+     },
+     {
+      "name": "Data.Text.Internal.Validate",
+      "start_s": 9.2629,
+      "end_s": 9.3268
+     },
+     {
+      "name": "Data.Text.Unsafe",
+      "start_s": 9.3268,
+      "end_s": 9.4863
+     },
+     {
+      "name": "Data.Text.Show",
+      "start_s": 9.4863,
+      "end_s": 9.6265
+     },
+     {
+      "name": "Data.Text.Internal.Transformation",
+      "start_s": 9.6265,
+      "end_s": 9.9818
+     },
+     {
+      "name": "Data.Text.Internal.Private",
+      "start_s": 9.9818,
+      "end_s": 10.0776
+     },
+     {
+      "name": "Data.Text.Internal.Fusion",
+      "start_s": 10.0776,
+      "end_s": 10.6014
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Fusion.Common",
+      "start_s": 10.6014,
+      "end_s": 10.9104
+     },
+     {
+      "name": "Data.Text.Internal.Lazy.Encoding.Fusion",
+      "start_s": 10.9104,
+      "end_s": 11.8039
+     },
+     {
+      "name": "Data.Text.Internal.IsAscii",
+      "start_s": 11.8039,
+      "end_s": 11.8961
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Fusion",
+      "start_s": 11.8961,
+      "end_s": 12.1945
+     },
+     {
+      "name": "Data.Text.Encoding",
+      "start_s": 12.1945,
+      "end_s": 13.0339
+     },
+     {
+      "name": "Data.Text.Foreign",
+      "start_s": 13.0339,
+      "end_s": 13.2226
+     },
+     {
+      "name": "Data.Text",
+      "start_s": 13.2226,
+      "end_s": 17.5552
+     },
+     {
+      "name": "Data.Text.Read",
+      "start_s": 17.5552,
+      "end_s": 18.9311
+     },
+     {
+      "name": "Data.Text.Internal.Lazy",
+      "start_s": 18.9311,
+      "end_s": 19.0728
+     },
+     {
+      "name": "Data.Text.Lazy.Internal",
+      "start_s": 19.0728,
+      "end_s": 19.1321
+     },
+     {
+      "name": "Data.Text.Internal.Lazy.Search",
+      "start_s": 19.1321,
+      "end_s": 19.3772
+     },
+     {
+      "name": "Data.Text.Internal.Lazy.Fusion",
+      "start_s": 19.3772,
+      "end_s": 19.5774
+     },
+     {
+      "name": "Data.Text.Lazy.Encoding",
+      "start_s": 19.5774,
+      "end_s": 21.2921
+     },
+     {
+      "name": "Data.Text.Lazy",
+      "start_s": 21.2921,
+      "end_s": 27.3647
+     },
+     {
+      "name": "Data.Text.Lazy.Read",
+      "start_s": 27.3647,
+      "end_s": 28.5708
+     },
+     {
+      "name": "Data.Text.Internal.IO",
+      "start_s": 28.5708,
+      "end_s": 29.1484
+     },
+     {
+      "name": "Data.Text.Lazy.IO",
+      "start_s": 29.1484,
+      "end_s": 29.3108
+     },
+     {
+      "name": "Data.Text.Internal.Builder",
+      "start_s": 29.3108,
+      "end_s": 29.6414
+     },
+     {
+      "name": "Data.Text.Lazy.Builder",
+      "start_s": 29.6414,
+      "end_s": 29.6951
+     },
+     {
+      "name": "Data.Text.Internal.Builder.Functions",
+      "start_s": 29.6951,
+      "end_s": 29.7471
+     },
+     {
+      "name": "Data.Text.Lazy.Builder.Int",
+      "start_s": 29.7471,
+      "end_s": 34.1201
+     },
+     {
+      "name": "Data.Text.Lazy.Builder.RealFloat",
+      "start_s": 34.1201,
+      "end_s": 38.0549
+     },
+     {
+      "name": "Data.Text.IO.Utf8",
+      "start_s": 38.0549,
+      "end_s": 38.1813
+     },
+     {
+      "name": "Data.Text.IO",
+      "start_s": 38.1813,
+      "end_s": 38.3545
+     }
+    ]
+   },
+   {
+    "ghc_start_s": 0.0,
+    "first_module_s": 1.1644,
+    "link_s": 37.6942,
+    "total_s": 37.6942,
+    "modules": [
+     {
+      "name": "Data.Text.Array",
+      "start_s": 1.1644,
+      "end_s": 1.3396
+     },
+     {
+      "name": "Data.Text.Encoding.Error",
+      "start_s": 1.3396,
+      "end_s": 1.4739
+     },
+     {
+      "name": "Data.Text.Internal.ArrayUtils",
+      "start_s": 1.4739,
+      "end_s": 1.5424
+     },
+     {
+      "name": "Data.Text.Internal.Builder.Int.Digits",
+      "start_s": 1.5424,
+      "end_s": 1.599
+     },
+     {
+      "name": "Data.Text.Internal.Builder.RealFloat.Functions",
+      "start_s": 1.599,
+      "end_s": 1.7244
+     },
+     {
+      "name": "Data.Text.Internal.ByteStringCompat",
+      "start_s": 1.7244,
+      "end_s": 1.7852
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Utf16",
+      "start_s": 1.7852,
+      "end_s": 1.8531
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Utf32",
+      "start_s": 1.8531,
+      "end_s": 1.9058
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Utf8",
+      "start_s": 1.9058,
+      "end_s": 2.0954
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.CaseMapping",
+      "start_s": 2.0954,
+      "end_s": 3.3109
+     },
+     {
+      "name": "Data.Text.Internal.Measure",
+      "start_s": 3.3109,
+      "end_s": 3.3937
+     },
+     {
+      "name": "Data.Text.Internal.PrimCompat",
+      "start_s": 3.3937,
+      "end_s": 3.4498
+     },
+     {
+      "name": "Data.Text.Internal.Read",
+      "start_s": 3.4498,
+      "end_s": 3.5628
+     },
+     {
+      "name": "Data.Text.Internal.Unsafe",
+      "start_s": 3.5628,
+      "end_s": 3.6239
+     },
+     {
+      "name": "Data.Text.Internal.Unsafe.Char",
+      "start_s": 3.6239,
+      "end_s": 3.704
+     },
+     {
+      "name": "Data.Text.Internal",
+      "start_s": 3.704,
+      "end_s": 3.9358
+     },
+     {
+      "name": "Data.Text.Internal.StrictBuilder",
+      "start_s": 3.9358,
+      "end_s": 4.1504
+     },
+     {
+      "name": "Data.Text.Internal.Search",
+      "start_s": 4.1504,
+      "end_s": 4.256
+     },
+     {
+      "name": "Data.Text.Internal.Reverse",
+      "start_s": 4.256,
+      "end_s": 4.333
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.Size",
+      "start_s": 4.333,
+      "end_s": 4.5811
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.Types",
+      "start_s": 4.5811,
+      "end_s": 4.8049
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.Common",
+      "start_s": 4.8049,
+      "end_s": 6.0095
+     },
+     {
+      "name": "Data.Text.Internal.Encoding",
+      "start_s": 6.0095,
+      "end_s": 8.8585
+     },
+     {
+      "name": "Data.Text.Internal.Validate.Native",
+      "start_s": 8.8585,
+      "end_s": 8.9344
+     },
+     {
+      "name": "Data.Text.Internal.Validate",
+      "start_s": 8.9344,
+      "end_s": 8.9966
+     },
+     {
+      "name": "Data.Text.Unsafe",
+      "start_s": 8.9966,
+      "end_s": 9.1596
+     },
+     {
+      "name": "Data.Text.Show",
+      "start_s": 9.1596,
+      "end_s": 9.2955
+     },
+     {
+      "name": "Data.Text.Internal.Transformation",
+      "start_s": 9.2955,
+      "end_s": 9.6426
+     },
+     {
+      "name": "Data.Text.Internal.Private",
+      "start_s": 9.6426,
+      "end_s": 9.7345
+     },
+     {
+      "name": "Data.Text.Internal.Fusion",
+      "start_s": 9.7345,
+      "end_s": 10.2309
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Fusion.Common",
+      "start_s": 10.2309,
+      "end_s": 10.5104
+     },
+     {
+      "name": "Data.Text.Internal.Lazy.Encoding.Fusion",
+      "start_s": 10.5104,
+      "end_s": 11.3869
+     },
+     {
+      "name": "Data.Text.Internal.IsAscii",
+      "start_s": 11.3869,
+      "end_s": 11.4723
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Fusion",
+      "start_s": 11.4723,
+      "end_s": 11.782
+     },
+     {
+      "name": "Data.Text.Encoding",
+      "start_s": 11.782,
+      "end_s": 12.6096
+     },
+     {
+      "name": "Data.Text.Foreign",
+      "start_s": 12.6096,
+      "end_s": 12.8082
+     },
+     {
+      "name": "Data.Text",
+      "start_s": 12.8082,
+      "end_s": 17.1423
+     },
+     {
+      "name": "Data.Text.Read",
+      "start_s": 17.1423,
+      "end_s": 18.4844
+     },
+     {
+      "name": "Data.Text.Internal.Lazy",
+      "start_s": 18.4844,
+      "end_s": 18.6248
+     },
+     {
+      "name": "Data.Text.Lazy.Internal",
+      "start_s": 18.6248,
+      "end_s": 18.6776
+     },
+     {
+      "name": "Data.Text.Internal.Lazy.Search",
+      "start_s": 18.6776,
+      "end_s": 18.9435
+     },
+     {
+      "name": "Data.Text.Internal.Lazy.Fusion",
+      "start_s": 18.9435,
+      "end_s": 19.1351
+     },
+     {
+      "name": "Data.Text.Lazy.Encoding",
+      "start_s": 19.1351,
+      "end_s": 20.868
+     },
+     {
+      "name": "Data.Text.Lazy",
+      "start_s": 20.868,
+      "end_s": 26.9028
+     },
+     {
+      "name": "Data.Text.Lazy.Read",
+      "start_s": 26.9028,
+      "end_s": 28.2451
+     },
+     {
+      "name": "Data.Text.Internal.IO",
+      "start_s": 28.2451,
+      "end_s": 28.8367
+     },
+     {
+      "name": "Data.Text.Lazy.IO",
+      "start_s": 28.8367,
+      "end_s": 28.9976
+     },
+     {
+      "name": "Data.Text.Internal.Builder",
+      "start_s": 28.9976,
+      "end_s": 29.325
+     },
+     {
+      "name": "Data.Text.Lazy.Builder",
+      "start_s": 29.325,
+      "end_s": 29.3778
+     },
+     {
+      "name": "Data.Text.Internal.Builder.Functions",
+      "start_s": 29.3778,
+      "end_s": 29.4318
+     },
+     {
+      "name": "Data.Text.Lazy.Builder.Int",
+      "start_s": 29.4318,
+      "end_s": 33.7449
+     },
+     {
+      "name": "Data.Text.Lazy.Builder.RealFloat",
+      "start_s": 33.7449,
+      "end_s": 37.365
+     },
+     {
+      "name": "Data.Text.IO.Utf8",
+      "start_s": 37.365,
+      "end_s": 37.4979
+     },
+     {
+      "name": "Data.Text.IO",
+      "start_s": 37.4979,
+      "end_s": 37.6942
+     }
+    ]
+   },
+   {
+    "ghc_start_s": 0.0,
+    "first_module_s": 2.1628,
+    "link_s": 45.6123,
+    "total_s": 45.6123,
+    "modules": [
+     {
+      "name": "Data.Text.Array",
+      "start_s": 2.1628,
+      "end_s": 2.3836
+     },
+     {
+      "name": "Data.Text.Encoding.Error",
+      "start_s": 2.3836,
+      "end_s": 2.6099
+     },
+     {
+      "name": "Data.Text.Internal.ArrayUtils",
+      "start_s": 2.6099,
+      "end_s": 2.7358
+     },
+     {
+      "name": "Data.Text.Internal.Builder.Int.Digits",
+      "start_s": 2.7358,
+      "end_s": 2.8316
+     },
+     {
+      "name": "Data.Text.Internal.Builder.RealFloat.Functions",
+      "start_s": 2.8316,
+      "end_s": 3.0132
+     },
+     {
+      "name": "Data.Text.Internal.ByteStringCompat",
+      "start_s": 3.0132,
+      "end_s": 3.1194
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Utf16",
+      "start_s": 3.1194,
+      "end_s": 3.2498
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Utf32",
+      "start_s": 3.2498,
+      "end_s": 3.3968
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Utf8",
+      "start_s": 3.3968,
+      "end_s": 3.6705
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.CaseMapping",
+      "start_s": 3.6705,
+      "end_s": 5.2294
+     },
+     {
+      "name": "Data.Text.Internal.Measure",
+      "start_s": 5.2294,
+      "end_s": 5.3425
+     },
+     {
+      "name": "Data.Text.Internal.PrimCompat",
+      "start_s": 5.3425,
+      "end_s": 5.4456
+     },
+     {
+      "name": "Data.Text.Internal.Read",
+      "start_s": 5.4456,
+      "end_s": 5.5961
+     },
+     {
+      "name": "Data.Text.Internal.Unsafe",
+      "start_s": 5.5961,
+      "end_s": 5.6968
+     },
+     {
+      "name": "Data.Text.Internal.Unsafe.Char",
+      "start_s": 5.6968,
+      "end_s": 5.8228
+     },
+     {
+      "name": "Data.Text.Internal",
+      "start_s": 5.8228,
+      "end_s": 6.1453
+     },
+     {
+      "name": "Data.Text.Internal.StrictBuilder",
+      "start_s": 6.1453,
+      "end_s": 6.4422
+     },
+     {
+      "name": "Data.Text.Internal.Search",
+      "start_s": 6.4422,
+      "end_s": 6.6357
+     },
+     {
+      "name": "Data.Text.Internal.Reverse",
+      "start_s": 6.6357,
+      "end_s": 6.7844
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.Size",
+      "start_s": 6.7844,
+      "end_s": 7.1082
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.Types",
+      "start_s": 7.1082,
+      "end_s": 7.3931
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.Common",
+      "start_s": 7.3931,
+      "end_s": 8.7253
+     },
+     {
+      "name": "Data.Text.Internal.Encoding",
+      "start_s": 8.7253,
+      "end_s": 11.7394
+     },
+     {
+      "name": "Data.Text.Internal.Validate.Native",
+      "start_s": 11.7394,
+      "end_s": 11.8161
+     },
+     {
+      "name": "Data.Text.Internal.Validate",
+      "start_s": 11.8161,
+      "end_s": 11.8783
+     },
+     {
+      "name": "Data.Text.Unsafe",
+      "start_s": 11.8783,
+      "end_s": 12.0426
+     },
+     {
+      "name": "Data.Text.Show",
+      "start_s": 12.0426,
+      "end_s": 12.1856
+     },
+     {
+      "name": "Data.Text.Internal.Transformation",
+      "start_s": 12.1856,
+      "end_s": 12.5496
+     },
+     {
+      "name": "Data.Text.Internal.Private",
+      "start_s": 12.5496,
+      "end_s": 12.6509
+     },
+     {
+      "name": "Data.Text.Internal.Fusion",
+      "start_s": 12.6509,
+      "end_s": 13.2173
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Fusion.Common",
+      "start_s": 13.2173,
+      "end_s": 13.5183
+     },
+     {
+      "name": "Data.Text.Internal.Lazy.Encoding.Fusion",
+      "start_s": 13.5183,
+      "end_s": 14.5309
+     },
+     {
+      "name": "Data.Text.Internal.IsAscii",
+      "start_s": 14.5309,
+      "end_s": 14.6173
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Fusion",
+      "start_s": 14.6173,
+      "end_s": 14.9258
+     },
+     {
+      "name": "Data.Text.Encoding",
+      "start_s": 14.9258,
+      "end_s": 15.8303
+     },
+     {
+      "name": "Data.Text.Foreign",
+      "start_s": 15.8303,
+      "end_s": 16.0558
+     },
+     {
+      "name": "Data.Text",
+      "start_s": 16.0558,
+      "end_s": 20.811
+     },
+     {
+      "name": "Data.Text.Read",
+      "start_s": 20.811,
+      "end_s": 22.2122
+     },
+     {
+      "name": "Data.Text.Internal.Lazy",
+      "start_s": 22.2122,
+      "end_s": 22.4338
+     },
+     {
+      "name": "Data.Text.Lazy.Internal",
+      "start_s": 22.4338,
+      "end_s": 22.5118
+     },
+     {
+      "name": "Data.Text.Internal.Lazy.Search",
+      "start_s": 22.5118,
+      "end_s": 22.8467
+     },
+     {
+      "name": "Data.Text.Internal.Lazy.Fusion",
+      "start_s": 22.8467,
+      "end_s": 23.1109
+     },
+     {
+      "name": "Data.Text.Lazy.Encoding",
+      "start_s": 23.1109,
+      "end_s": 25.2001
+     },
+     {
+      "name": "Data.Text.Lazy",
+      "start_s": 25.2001,
+      "end_s": 32.6667
+     },
+     {
+      "name": "Data.Text.Lazy.Read",
+      "start_s": 32.6667,
+      "end_s": 34.1696
+     },
+     {
+      "name": "Data.Text.Internal.IO",
+      "start_s": 34.1696,
+      "end_s": 35.0366
+     },
+     {
+      "name": "Data.Text.Lazy.IO",
+      "start_s": 35.0366,
+      "end_s": 35.2936
+     },
+     {
+      "name": "Data.Text.Internal.Builder",
+      "start_s": 35.2936,
+      "end_s": 35.7044
+     },
+     {
+      "name": "Data.Text.Lazy.Builder",
+      "start_s": 35.7044,
+      "end_s": 35.8358
+     },
+     {
+      "name": "Data.Text.Internal.Builder.Functions",
+      "start_s": 35.8358,
+      "end_s": 35.9848
+     },
+     {
+      "name": "Data.Text.Lazy.Builder.Int",
+      "start_s": 35.9848,
+      "end_s": 41.2518
+     },
+     {
+      "name": "Data.Text.Lazy.Builder.RealFloat",
+      "start_s": 41.2518,
+      "end_s": 45.269
+     },
+     {
+      "name": "Data.Text.IO.Utf8",
+      "start_s": 45.269,
+      "end_s": 45.3975
+     },
+     {
+      "name": "Data.Text.IO",
+      "start_s": 45.3975,
+      "end_s": 45.6123
+     }
+    ]
+   },
+   {
+    "ghc_start_s": 0.0,
+    "first_module_s": 1.5009,
+    "link_s": 38.1837,
+    "total_s": 38.1837,
+    "modules": [
+     {
+      "name": "Data.Text.Array",
+      "start_s": 1.5009,
+      "end_s": 1.7084
+     },
+     {
+      "name": "Data.Text.Encoding.Error",
+      "start_s": 1.7084,
+      "end_s": 1.8604
+     },
+     {
+      "name": "Data.Text.Internal.ArrayUtils",
+      "start_s": 1.8604,
+      "end_s": 1.9452
+     },
+     {
+      "name": "Data.Text.Internal.Builder.Int.Digits",
+      "start_s": 1.9452,
+      "end_s": 2.015
+     },
+     {
+      "name": "Data.Text.Internal.Builder.RealFloat.Functions",
+      "start_s": 2.015,
+      "end_s": 2.1654
+     },
+     {
+      "name": "Data.Text.Internal.ByteStringCompat",
+      "start_s": 2.1654,
+      "end_s": 2.2556
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Utf16",
+      "start_s": 2.2556,
+      "end_s": 2.3421
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Utf32",
+      "start_s": 2.3421,
+      "end_s": 2.4115
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Utf8",
+      "start_s": 2.4115,
+      "end_s": 2.6229
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.CaseMapping",
+      "start_s": 2.6229,
+      "end_s": 3.8863
+     },
+     {
+      "name": "Data.Text.Internal.Measure",
+      "start_s": 3.8863,
+      "end_s": 3.9563
+     },
+     {
+      "name": "Data.Text.Internal.PrimCompat",
+      "start_s": 3.9563,
+      "end_s": 4.0076
+     },
+     {
+      "name": "Data.Text.Internal.Read",
+      "start_s": 4.0076,
+      "end_s": 4.1136
+     },
+     {
+      "name": "Data.Text.Internal.Unsafe",
+      "start_s": 4.1136,
+      "end_s": 4.1692
+     },
+     {
+      "name": "Data.Text.Internal.Unsafe.Char",
+      "start_s": 4.1692,
+      "end_s": 4.2455
+     },
+     {
+      "name": "Data.Text.Internal",
+      "start_s": 4.2455,
+      "end_s": 4.4716
+     },
+     {
+      "name": "Data.Text.Internal.StrictBuilder",
+      "start_s": 4.4716,
+      "end_s": 4.68
+     },
+     {
+      "name": "Data.Text.Internal.Search",
+      "start_s": 4.68,
+      "end_s": 4.7804
+     },
+     {
+      "name": "Data.Text.Internal.Reverse",
+      "start_s": 4.7804,
+      "end_s": 4.8524
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.Size",
+      "start_s": 4.8524,
+      "end_s": 5.0962
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.Types",
+      "start_s": 5.0962,
+      "end_s": 5.3024
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.Common",
+      "start_s": 5.3024,
+      "end_s": 6.4914
+     },
+     {
+      "name": "Data.Text.Internal.Encoding",
+      "start_s": 6.4914,
+      "end_s": 9.3132
+     },
+     {
+      "name": "Data.Text.Internal.Validate.Native",
+      "start_s": 9.3132,
+      "end_s": 9.4025
+     },
+     {
+      "name": "Data.Text.Internal.Validate",
+      "start_s": 9.4025,
+      "end_s": 9.4842
+     },
+     {
+      "name": "Data.Text.Unsafe",
+      "start_s": 9.4842,
+      "end_s": 9.7071
+     },
+     {
+      "name": "Data.Text.Show",
+      "start_s": 9.7071,
+      "end_s": 9.8596
+     },
+     {
+      "name": "Data.Text.Internal.Transformation",
+      "start_s": 9.8596,
+      "end_s": 10.2696
+     },
+     {
+      "name": "Data.Text.Internal.Private",
+      "start_s": 10.2696,
+      "end_s": 10.3833
+     },
+     {
+      "name": "Data.Text.Internal.Fusion",
+      "start_s": 10.3833,
+      "end_s": 11.0113
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Fusion.Common",
+      "start_s": 11.0113,
+      "end_s": 11.3831
+     },
+     {
+      "name": "Data.Text.Internal.Lazy.Encoding.Fusion",
+      "start_s": 11.3831,
+      "end_s": 12.3701
+     },
+     {
+      "name": "Data.Text.Internal.IsAscii",
+      "start_s": 12.3701,
+      "end_s": 12.4545
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Fusion",
+      "start_s": 12.4545,
+      "end_s": 12.7758
+     },
+     {
+      "name": "Data.Text.Encoding",
+      "start_s": 12.7758,
+      "end_s": 13.6026
+     },
+     {
+      "name": "Data.Text.Foreign",
+      "start_s": 13.6026,
+      "end_s": 13.783
+     },
+     {
+      "name": "Data.Text",
+      "start_s": 13.783,
+      "end_s": 18.0146
+     },
+     {
+      "name": "Data.Text.Read",
+      "start_s": 18.0146,
+      "end_s": 19.2588
+     },
+     {
+      "name": "Data.Text.Internal.Lazy",
+      "start_s": 19.2588,
+      "end_s": 19.3976
+     },
+     {
+      "name": "Data.Text.Lazy.Internal",
+      "start_s": 19.3976,
+      "end_s": 19.447
+     },
+     {
+      "name": "Data.Text.Internal.Lazy.Search",
+      "start_s": 19.447,
+      "end_s": 19.6936
+     },
+     {
+      "name": "Data.Text.Internal.Lazy.Fusion",
+      "start_s": 19.6936,
+      "end_s": 19.8692
+     },
+     {
+      "name": "Data.Text.Lazy.Encoding",
+      "start_s": 19.8692,
+      "end_s": 21.4418
+     },
+     {
+      "name": "Data.Text.Lazy",
+      "start_s": 21.4418,
+      "end_s": 27.4607
+     },
+     {
+      "name": "Data.Text.Lazy.Read",
+      "start_s": 27.4607,
+      "end_s": 28.7486
+     },
+     {
+      "name": "Data.Text.Internal.IO",
+      "start_s": 28.7486,
+      "end_s": 29.329
+     },
+     {
+      "name": "Data.Text.Lazy.IO",
+      "start_s": 29.329,
+      "end_s": 29.4847
+     },
+     {
+      "name": "Data.Text.Internal.Builder",
+      "start_s": 29.4847,
+      "end_s": 29.8103
+     },
+     {
+      "name": "Data.Text.Lazy.Builder",
+      "start_s": 29.8103,
+      "end_s": 29.8585
+     },
+     {
+      "name": "Data.Text.Internal.Builder.Functions",
+      "start_s": 29.8585,
+      "end_s": 29.91
+     },
+     {
+      "name": "Data.Text.Lazy.Builder.Int",
+      "start_s": 29.91,
+      "end_s": 34.398
+     },
+     {
+      "name": "Data.Text.Lazy.Builder.RealFloat",
+      "start_s": 34.398,
+      "end_s": 37.8909
+     },
+     {
+      "name": "Data.Text.IO.Utf8",
+      "start_s": 37.8909,
+      "end_s": 38.0082
+     },
+     {
+      "name": "Data.Text.IO",
+      "start_s": 38.0082,
+      "end_s": 38.1837
+     }
+    ]
+   },
+   {
+    "ghc_start_s": 0.0,
+    "first_module_s": 1.0931,
+    "link_s": 36.7587,
+    "total_s": 36.7587,
+    "modules": [
+     {
+      "name": "Data.Text.Array",
+      "start_s": 1.0931,
+      "end_s": 1.2411
+     },
+     {
+      "name": "Data.Text.Encoding.Error",
+      "start_s": 1.2411,
+      "end_s": 1.3611
+     },
+     {
+      "name": "Data.Text.Internal.ArrayUtils",
+      "start_s": 1.3611,
+      "end_s": 1.4205
+     },
+     {
+      "name": "Data.Text.Internal.Builder.Int.Digits",
+      "start_s": 1.4205,
+      "end_s": 1.4702
+     },
+     {
+      "name": "Data.Text.Internal.Builder.RealFloat.Functions",
+      "start_s": 1.4702,
+      "end_s": 1.585
+     },
+     {
+      "name": "Data.Text.Internal.ByteStringCompat",
+      "start_s": 1.585,
+      "end_s": 1.6361
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Utf16",
+      "start_s": 1.6361,
+      "end_s": 1.6927
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Utf32",
+      "start_s": 1.6927,
+      "end_s": 1.7511
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Utf8",
+      "start_s": 1.7511,
+      "end_s": 1.9218
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.CaseMapping",
+      "start_s": 1.9218,
+      "end_s": 3.0292
+     },
+     {
+      "name": "Data.Text.Internal.Measure",
+      "start_s": 3.0292,
+      "end_s": 3.0966
+     },
+     {
+      "name": "Data.Text.Internal.PrimCompat",
+      "start_s": 3.0966,
+      "end_s": 3.1427
+     },
+     {
+      "name": "Data.Text.Internal.Read",
+      "start_s": 3.1427,
+      "end_s": 3.2407
+     },
+     {
+      "name": "Data.Text.Internal.Unsafe",
+      "start_s": 3.2407,
+      "end_s": 3.3015
+     },
+     {
+      "name": "Data.Text.Internal.Unsafe.Char",
+      "start_s": 3.3015,
+      "end_s": 3.3751
+     },
+     {
+      "name": "Data.Text.Internal",
+      "start_s": 3.3751,
+      "end_s": 3.5965
+     },
+     {
+      "name": "Data.Text.Internal.StrictBuilder",
+      "start_s": 3.5965,
+      "end_s": 3.7979
+     },
+     {
+      "name": "Data.Text.Internal.Search",
+      "start_s": 3.7979,
+      "end_s": 3.9013
+     },
+     {
+      "name": "Data.Text.Internal.Reverse",
+      "start_s": 3.9013,
+      "end_s": 3.9719
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.Size",
+      "start_s": 3.9719,
+      "end_s": 4.1917
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.Types",
+      "start_s": 4.1917,
+      "end_s": 4.4128
+     },
+     {
+      "name": "Data.Text.Internal.Fusion.Common",
+      "start_s": 4.4128,
+      "end_s": 5.5979
+     },
+     {
+      "name": "Data.Text.Internal.Encoding",
+      "start_s": 5.5979,
+      "end_s": 8.4042
+     },
+     {
+      "name": "Data.Text.Internal.Validate.Native",
+      "start_s": 8.4042,
+      "end_s": 8.4746
+     },
+     {
+      "name": "Data.Text.Internal.Validate",
+      "start_s": 8.4746,
+      "end_s": 8.5413
+     },
+     {
+      "name": "Data.Text.Unsafe",
+      "start_s": 8.5413,
+      "end_s": 8.6956
+     },
+     {
+      "name": "Data.Text.Show",
+      "start_s": 8.6956,
+      "end_s": 8.8224
+     },
+     {
+      "name": "Data.Text.Internal.Transformation",
+      "start_s": 8.8224,
+      "end_s": 9.148
+     },
+     {
+      "name": "Data.Text.Internal.Private",
+      "start_s": 9.148,
+      "end_s": 9.2402
+     },
+     {
+      "name": "Data.Text.Internal.Fusion",
+      "start_s": 9.2402,
+      "end_s": 9.7119
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Fusion.Common",
+      "start_s": 9.7119,
+      "end_s": 9.9793
+     },
+     {
+      "name": "Data.Text.Internal.Lazy.Encoding.Fusion",
+      "start_s": 9.9793,
+      "end_s": 10.8357
+     },
+     {
+      "name": "Data.Text.Internal.IsAscii",
+      "start_s": 10.8357,
+      "end_s": 10.9134
+     },
+     {
+      "name": "Data.Text.Internal.Encoding.Fusion",
+      "start_s": 10.9134,
+      "end_s": 11.2124
+     },
+     {
+      "name": "Data.Text.Encoding",
+      "start_s": 11.2124,
+      "end_s": 12.0046
+     },
+     {
+      "name": "Data.Text.Foreign",
+      "start_s": 12.0046,
+      "end_s": 12.171
+     },
+     {
+      "name": "Data.Text",
+      "start_s": 12.171,
+      "end_s": 16.2807
+     },
+     {
+      "name": "Data.Text.Read",
+      "start_s": 16.2807,
+      "end_s": 17.6017
+     },
+     {
+      "name": "Data.Text.Internal.Lazy",
+      "start_s": 17.6017,
+      "end_s": 17.7317
+     },
+     {
+      "name": "Data.Text.Lazy.Internal",
+      "start_s": 17.7317,
+      "end_s": 17.7796
+     },
+     {
+      "name": "Data.Text.Internal.Lazy.Search",
+      "start_s": 17.7796,
+      "end_s": 18.0178
+     },
+     {
+      "name": "Data.Text.Internal.Lazy.Fusion",
+      "start_s": 18.0178,
+      "end_s": 18.1917
+     },
+     {
+      "name": "Data.Text.Lazy.Encoding",
+      "start_s": 18.1917,
+      "end_s": 19.9607
+     },
+     {
+      "name": "Data.Text.Lazy",
+      "start_s": 19.9607,
+      "end_s": 26.1412
+     },
+     {
+      "name": "Data.Text.Lazy.Read",
+      "start_s": 26.1412,
+      "end_s": 27.4225
+     },
+     {
+      "name": "Data.Text.Internal.IO",
+      "start_s": 27.4225,
+      "end_s": 28.0059
+     },
+     {
+      "name": "Data.Text.Lazy.IO",
+      "start_s": 28.0059,
+      "end_s": 28.1597
+     },
+     {
+      "name": "Data.Text.Internal.Builder",
+      "start_s": 28.1597,
+      "end_s": 28.4951
+     },
+     {
+      "name": "Data.Text.Lazy.Builder",
+      "start_s": 28.4951,
+      "end_s": 28.5451
+     },
+     {
+      "name": "Data.Text.Internal.Builder.Functions",
+      "start_s": 28.5451,
+      "end_s": 28.5983
+     },
+     {
+      "name": "Data.Text.Lazy.Builder.Int",
+      "start_s": 28.5983,
+      "end_s": 33.1105
+     },
+     {
+      "name": "Data.Text.Lazy.Builder.RealFloat",
+      "start_s": 33.1105,
+      "end_s": 36.4893
+     },
+     {
+      "name": "Data.Text.IO.Utf8",
+      "start_s": 36.4893,
+      "end_s": 36.5923
+     },
+     {
+      "name": "Data.Text.IO",
+      "start_s": 36.5923,
+      "end_s": 36.7587
+     }
+    ]
+   }
+  ]
+ },
  "aihc": {
-  "commit": "c0d6acbff",
+  "commit": "c0d6acbff33576dea8bffc9eded08b6d7c32d2f9",
   "command": "aihc install text-2.1.4 --target apple-arm64 (default -O0, workers = getNumCapabilities with -N)",
   "median_run": 3,
   "runs": [

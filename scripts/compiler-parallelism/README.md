@@ -2,27 +2,29 @@
 
 The October 20 post compares how GHC and AIHC schedule the modules of
 `text-2.1.4` on one machine. Both compilers build the same 54 Haskell
-modules: the `pure-haskell` cabal flag is set on both sides, so neither
-compiles the `simdutf` C++ sources. Every other setting is the compiler's
-default. The measurements were made on an Apple M4 Pro MacBook (12 cores)
-with GHC 9.12.4, cabal-install 3.14.2.0, and AIHC commit
+modules at `-O0`: the `pure-haskell` cabal flag is set on both sides, so
+neither compiles the `simdutf` C++ sources. Every other setting is the
+compiler's default. The measurements were made on an Apple M4 Pro MacBook
+(12 cores) with GHC 9.12.4, cabal-install 3.14.2.0, and AIHC commit
 `c0d6acbff33576dea8bffc9eded08b6d7c32d2f9`.
 
 ## GHC
 
 `cabal build lib:text` runs one `ghc --make` for the library. cabal-install
-does not pass `-j` to GHC by default, and the `text.cabal` file sets `-O2`.
-The GHC timeline comes from timestamping the `[ n of 54] Compiling` lines.
-A module ends when the next one starts; the last module ends at
-`Linking...`. The clock starts when cabal runs `ghc --make`, so the stretch
-before the first module (dependency analysis and interface loading) is part
-of the GHC total. A second series adds `--ghc-options=-O0` for comparison.
+does not pass `-j` to GHC by default. The `text.cabal` file sets `-O2`, so
+the primary series adds `--ghc-options=-O0`, which comes last on the GHC
+command line and wins. The GHC timeline comes from timestamping the
+`[ n of 54] Compiling` lines. A module ends when the next one starts; the
+last module ends at `Linking...`. The clock starts when cabal runs
+`ghc --make`, so the stretch before the first module (dependency analysis
+and interface loading) is part of the GHC total. A second series keeps the
+package's `-O2` for comparison.
 
 ```sh
 mkdir ghc && cd ghc && cabal get text-2.1.4
 printf 'packages: text-2.1.4\npackage text\n  flags: +pure-haskell\n' > cabal.project
-cd .. && sh scripts/compiler-parallelism/measure-ghc.sh ghc runs o2-1
-sh scripts/compiler-parallelism/measure-ghc.sh ghc runs o0-1 --ghc-options=-O0
+cd .. && sh scripts/compiler-parallelism/measure-ghc.sh ghc runs o0-1 --ghc-options=-O0
+sh scripts/compiler-parallelism/measure-ghc.sh ghc runs o2-1
 ```
 
 ## AIHC
@@ -48,7 +50,7 @@ sh scripts/compiler-parallelism/measure-aihc.sh /absolute/aihc-with-trace work s
 
 ## Series and output
 
-Five rounds alternate GHC (package default), AIHC, and GHC at `-O0`. Nothing
+Five rounds alternate GHC at `-O0`, AIHC, and GHC at the package's `-O2`. Nothing
 else runs during a round. `parse-runs.py` turns the logs and traces into
 `public/benchmarks/text-compile-parallelism-m4-pro.json`, with every run and
 the index of the median run by total time:

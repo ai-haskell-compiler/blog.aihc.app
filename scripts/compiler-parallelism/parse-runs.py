@@ -44,16 +44,16 @@ def pick_median(rs):
     totals = sorted((r['total_s'], i) for i, r in enumerate(rs))
     return totals[len(totals)//2][1]
 
-ghc = [parse_ghc(p) for p in sorted(glob.glob(os.path.join(runs, 'ghc-o2-*.log')))]
-ghc0 = [parse_ghc(p) for p in sorted(glob.glob(os.path.join(runs, 'ghc-o0-*.log')))]
+ghc = [parse_ghc(p) for p in sorted(glob.glob(os.path.join(runs, 'ghc-o0-*.log')))]
+ghc2 = [parse_ghc(p) for p in sorted(glob.glob(os.path.join(runs, 'ghc-o2-*.log')))]
 aihc = [parse_aihc(p) for p in sorted(glob.glob(os.path.join(runs, 'aihc-*.trace')))]
 result = {
   'package': 'text-2.1.4', 'flags': {'pure-haskell': True, 'simdutf': False}, 'module_count': 54,
   'host': {'cpu': 'Apple M4 Pro', 'cores': 12, 'performance_cores': 8, 'efficiency_cores': 4, 'os': 'macOS (Darwin 25.6.0)'},
-  'ghc': {'version': '9.12.4', 'cabal_version': '3.14.2.0', 'command': 'cabal build lib:text (package ghc-options -O2, no -j; cabal passes --make -O -dynamic-too)', 'median_run': pick_median(ghc), 'runs': ghc},
-  'ghc_O0': {'command': 'cabal build lib:text --ghc-options=-O0', 'median_run': pick_median(ghc0) if ghc0 else None, 'runs': ghc0},
+  'ghc': {'version': '9.12.4', 'cabal_version': '3.14.2.0', 'command': 'cabal build lib:text --ghc-options=-O0 (no -j; cabal passes --make -dynamic-too)', 'median_run': pick_median(ghc), 'runs': ghc},
+  'ghc_O2': {'command': 'cabal build lib:text (package ghc-options -O2)', 'median_run': pick_median(ghc2) if ghc2 else None, 'runs': ghc2},
   'aihc': {'commit': sys.argv[2], 'command': 'aihc install text-2.1.4 --target apple-arm64 (default -O0, workers = getNumCapabilities with -N)', 'median_run': pick_median(aihc), 'runs': aihc},
 }
 json.dump(result, open(sys.argv[3], 'w'), indent=1)
-for name, rs in (('ghc -O2', ghc), ('ghc -O0', ghc0), ('aihc', aihc)):
+for name, rs in (('ghc -O0', ghc), ('ghc -O2', ghc2), ('aihc', aihc)):
     print(name, [r['total_s'] for r in rs])

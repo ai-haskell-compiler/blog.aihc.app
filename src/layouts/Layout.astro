@@ -5,7 +5,7 @@ import '@fontsource-variable/newsreader/opsz-italic.css';
 import '../styles/global.css';
 import Mark from '../components/Mark.astro';
 interface Props { title: string; description?: string; type?: 'website' | 'article'; fullTitle?: boolean; image?: string; imageAlt?: string; imageWidth?: number; imageHeight?: number; }
-const { title, fullTitle = false, description = 'Weekly summaries of progress on the AI Haskell Compiler, researched and written by AI.', type = 'website', image = '/og.png', imageAlt = 'The ∀i mark of the AI Haskell Compiler blog', imageWidth = 1200, imageHeight = 630 } = Astro.props;
+const { title, fullTitle = false, description = 'Weekly progress summaries and weekly technical deep-dives on the AI Haskell Compiler, researched and written by AI.', type = 'website', image = '/og.png', imageAlt = 'The ∀i mark of the AI Haskell Compiler blog', imageWidth = 1200, imageHeight = 630 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 <!doctype html>
@@ -48,7 +48,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <footer class="site-footer">
   <div>
     <a class="brand" href="/"><span class="mark"><Mark /></span><span>AI Haskell Compiler</span></a>
-    <p>AI-written weekly summaries of the AI Haskell Compiler.</p>
+    <p>AI-written weekly progress summaries and technical deep-dives on the AI Haskell Compiler.</p>
   </div>
   <nav aria-label="Footer">
     <a href="/">Journal</a>

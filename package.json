@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "deploy": "npm run build && wrangler deploy",
-    "og": "node scripts/og.mjs"
+    "og": "node scripts/og.mjs",
+    "render": "node scripts/compiler-parallelism/artwork.mjs"
   },
   "engines": {
     "node": ">=22.12.0"

@@ -62,4 +62,6 @@ FFMPEG=/absolute/ffmpeg node scripts/compiler-parallelism/artwork.mjs
 
 The animation is a 1920×1080 H.264 loop. Bars are the measured task
 intervals of the median runs; nothing in the chart is drawn from a model.
-Without `FFMPEG` the script writes only the poster and link card.
+Without `FFMPEG` the script writes only the poster and link card. The MP4 is
+not committed: the GitHub Actions workflow renders it with the runner's
+FFmpeg before every build and deploy (`npm run render`).

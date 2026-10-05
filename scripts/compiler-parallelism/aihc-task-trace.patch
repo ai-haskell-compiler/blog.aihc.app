@@ -1,0 +1,81 @@
+diff --git a/bin/aihc/src/Aihc/Cli/Install.hs b/bin/aihc/src/Aihc/Cli/Install.hs
+index 56ff6db59..0cf79362b 100644
+--- a/bin/aihc/src/Aihc/Cli/Install.hs
++++ b/bin/aihc/src/Aihc/Cli/Install.hs
+@@ -121,6 +121,7 @@ import Aihc.Cli.TaskGraph
+     renderDuration,
+     renderTaskTimeline,
+     runTaskGraphWith,
++    traceTaskLabel,
+   )
+ import Aihc.Cli.TypeArtifact (TypeArtifact (..), decodeTypeArtifact, encodeTypeArtifact, encodeTypeArtifactParts)
+ import Aihc.Fc (DesugarConfig (..), FcDesugarResult (..))
+@@ -1656,6 +1657,7 @@ addModuleBuild graph shared build = do
+             taskDependencies = Set.fromList (map taskId parseTasks <> moduleBuildPartitionAfter build),
+             taskAction = partitionModules graph shared build sourceSlots
+           }
++  mapM_ (\(index, file) -> traceTaskLabel (TaskId (parseBase + index)) (HackageCabal.fileInfoPath file)) (zip [0 ..] files)
+   addTasks graph (parseTasks <> [partitionTask])
+ 
+ -- | Cut the parsed modules into units and add the tasks of each unit and
+@@ -1690,6 +1692,9 @@ partitionModules graph shared build sourceSlots = do
+         <*> newEmptyTMVarIO
+         <*> newEmptyTMVarIO
+         <*> newEmptyTMVarIO
++  forM_ runtimes $ \runtime ->
++    let label = intercalate "," (map (T.unpack . sourceName) (sourceUnitSources (runtimeUnit runtime)))
++     in mapM_ (\task -> traceTaskLabel (task runtime) label) [runtimeResolveTask, runtimeTypeTask, runtimeBackendTask]
+   let runtimeMap = Map.fromList [(sourceUnitId (runtimeUnit runtime), runtime) | runtime <- runtimes]
+       context =
+         PackageTaskContext
+diff --git a/bin/aihc/src/Aihc/Cli/TaskGraph.hs b/bin/aihc/src/Aihc/Cli/TaskGraph.hs
+index 3e84712d8..d3930f964 100644
+--- a/bin/aihc/src/Aihc/Cli/TaskGraph.hs
++++ b/bin/aihc/src/Aihc/Cli/TaskGraph.hs
+@@ -12,6 +12,7 @@ module Aihc.Cli.TaskGraph
+     renderTaskTimeline,
+     runTaskGraph,
+     runTaskGraphWith,
++    traceTaskLabel,
+   )
+ where
+ 
+@@ -39,6 +40,9 @@ import Data.Set qualified as Set
+ import Data.Word (Word64)
+ import GHC.Clock (getMonotonicTimeNSec)
+ import Numeric (showFFloat)
++import System.Environment (lookupEnv)
++import System.IO.Unsafe (unsafePerformIO)
++import Control.Concurrent.MVar (MVar, newMVar, withMVar)
+ 
+ -- | The identity of a task within one graph. The caller numbers its tasks,
+ -- so the graph stores and compares machine integers: naming the tasks made
+@@ -200,6 +204,7 @@ runWorker observer graph worker = do
+       ended <- getMonotonicTimeNSec
+       observeTaskEnd observer kind
+       atomicModifyIORef' (graphTimings graph) (\items -> (TaskTiming worker identifier kind started ended : items, ()))
++      traceTaskLine (unwords ["T", show worker, show kind, show (let TaskId n = identifier in n), show started, show ended])
+       case result of
+         Left exception -> throwIO (exception :: SomeException)
+         Right () -> do
+@@ -370,3 +375,20 @@ spanDecimalPlaces value
+ 
+ padLeft :: Int -> String -> String
+ padLeft width value = replicate (max 0 (width - length value)) ' ' <> value
++
++-- | Local benchmark trace: append one line to the file named by
++-- AIHC_TASK_TRACE, when the variable is set.
++traceTaskLine :: String -> IO ()
++traceTaskLine line = do
++  path <- lookupEnv "AIHC_TASK_TRACE"
++  case path of
++    Just file | not (null file) -> withMVar traceLock (\_ -> appendFile file (line <> "\n"))
++    _ -> pure ()
++
++traceLock :: MVar ()
++traceLock = unsafePerformIO (newMVar ())
++{-# NOINLINE traceLock #-}
++
++-- | Name a task in the trace.
++traceTaskLabel :: TaskId -> String -> IO ()
++traceTaskLabel (TaskId n) label = traceTaskLine (unwords ["N", show n, label])

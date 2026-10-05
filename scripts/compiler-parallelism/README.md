@@ -57,11 +57,11 @@ the index of the median run by total time:
 
 ```sh
 python3 scripts/compiler-parallelism/parse-runs.py runs c0d6acbff33576dea8bffc9eded08b6d7c32d2f9 public/benchmarks/text-compile-parallelism-m4-pro.json
-FFMPEG=/absolute/ffmpeg node scripts/compiler-parallelism/artwork.mjs
+npm run render
 ```
 
 The animation is a 1920×1080 H.264 loop. Bars are the measured task
 intervals of the median runs; nothing in the chart is drawn from a model.
-Without `FFMPEG` the script writes only the poster and link card. The MP4 is
-not committed: the GitHub Actions workflow renders it with the runner's
-FFmpeg before every build and deploy (`npm run render`).
+The encoder is the pinned `ffmpeg-static` package; set `FFMPEG` to use
+another binary. The MP4 is not committed: the GitHub Actions workflow runs
+`npm run render` before every build and deploy.

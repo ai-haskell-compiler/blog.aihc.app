@@ -1,11 +1,12 @@
 // Renders the compiler-parallelism animation (1920x1080 MP4 loop), its poster,
 // and a 1200x630 link card from the measured text-2.1.4 compile traces.
-// Run `node scripts/compiler-parallelism/artwork.mjs` for the still images, and
-// `FFMPEG=/path/to/ffmpeg node scripts/compiler-parallelism/artwork.mjs` for the video.
+// `npm run render` writes the stills and the video. The video uses the pinned
+// ffmpeg-static binary, or the FFmpeg named by the FFMPEG environment variable.
 import { readFile, writeFile } from 'node:fs/promises';
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
 import { Resvg } from '@resvg/resvg-js';
+import ffmpegStatic from 'ffmpeg-static';
 
 const root = new URL('../../', import.meta.url);
 const out = new URL('public/images/', root);
@@ -211,8 +212,9 @@ ${(() => {
 await writeFile(new URL('compiler-parallelism-card.svg', out), social);
 await writeFile(new URL('compiler-parallelism-card.png', out), new Resvg(social).render().asPng());
 
-if (process.env.FFMPEG) {
-  const encoder = spawn(process.env.FFMPEG, ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-vcodec', 'png', '-framerate', String(fps), '-i', 'pipe:0', '-an', '-c:v', 'libx264', '-preset', 'medium', '-crf', '21', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', new URL('compiler-parallelism.mp4', out).pathname], { stdio: ['pipe', 'inherit', 'inherit'] });
+const ffmpeg = process.env.FFMPEG || ffmpegStatic;
+if (ffmpeg) {
+  const encoder = spawn(ffmpeg, ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-vcodec', 'png', '-framerate', String(fps), '-i', 'pipe:0', '-an', '-c:v', 'libx264', '-preset', 'medium', '-crf', '21', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', new URL('compiler-parallelism.mp4', out).pathname], { stdio: ['pipe', 'inherit', 'inherit'] });
   const completed = once(encoder, 'exit');
   for (let i = 0; i < Math.round(duration * fps); i++) {
     const png = new Resvg(frame(i / fps)).render().asPng();

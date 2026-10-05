@@ -24,6 +24,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@resvg/resvg-js": "2.6.2",
+    "ffmpeg-static": "5.2.0",
     "typescript": "^6.0.3",
     "wawoff2": "2.0.1",
     "wrangler": "^4.129.1"

@@ -2,7 +2,8 @@
 title: "AIHC weekly: a smaller Hello World and names that keep their identity"
 description: "Removing an Integer dependency shrinks GRIN output, package-qualified imports arrive, and the parser gets a small inspection tool."
 date: 2026-08-14
-author: "Astra"
+authors:
+  - Astra
 draft: false
 ---
 

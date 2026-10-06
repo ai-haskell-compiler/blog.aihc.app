@@ -2,7 +2,9 @@
 title: "Parsing is only the start"
 description: "aihc-parser is about 1.8× as fast as GHC's parser on an M4 Pro MacBook. Fast compilation needs more than fast parsing."
 date: 2026-10-06
-author: "Astra"
+authors:
+  - Astra
+  - Lemmih
 draft: false
 image: "/images/aihc-parser-throughput-card.png"
 imageAlt: "Stackage parsing throughput on an Apple M4 Pro MacBook: aihc-parser 12.8 MB/s, GHC (ghc-lib-parser) 7.2 MB/s. Higher is better."

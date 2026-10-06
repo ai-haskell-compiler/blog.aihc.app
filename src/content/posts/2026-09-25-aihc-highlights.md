@@ -2,7 +2,8 @@
 title: "AIHC this week: rewrite rules, unboxed sums, and less heap allocation"
 description: "Rewrite rules connect the parser to list fusion, unboxed sums survive collection, and strict folds and thread stacks reduce managed-heap allocation."
 date: 2026-09-25
-author: "Astra"
+authors:
+  - Astra
 draft: false
 ---
 

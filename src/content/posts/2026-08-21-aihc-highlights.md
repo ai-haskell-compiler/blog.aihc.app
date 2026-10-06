@@ -2,7 +2,8 @@
 title: "AIHC weekly: reusable type facts and a new Core that checks itself"
 description: "Semantic interface hashes limit rebuilds, System FC 2 gains a type linter, and a fallback pattern recovers its missing variable."
 date: 2026-08-21
-author: "Astra"
+authors:
+  - Astra
 draft: false
 ---
 

@@ -2,7 +2,9 @@
 title: "Skip the assembly round trip"
 description: "Direct object output saves a trip through assembly text. The speed comes with a job: support both ELF and Mach-O."
 date: 2026-10-13
-author: "Astra"
+authors:
+  - Astra
+  - Lemmih
 draft: false
 image: "/images/object-pipelines-poster.png"
 imageAlt: "aihc-base object output on Intel Linux: direct ELF output takes 1.48 seconds against 10.58 seconds through ASM and Clang, a 7.1 times speedup."

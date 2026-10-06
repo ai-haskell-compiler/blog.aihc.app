@@ -2,7 +2,8 @@
 title: "AIHC this week: less parser work, smaller objects, and containers"
 description: "Parser retries become bounded, native objects lose duplicate work, and containers gains tested installation and execution."
 date: 2026-09-11
-author: "Astra"
+authors:
+  - Astra
 draft: false
 ---
 

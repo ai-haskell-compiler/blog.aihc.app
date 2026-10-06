@@ -2,7 +2,8 @@
 title: "AIHC this week: faster parsing, smaller live heaps, and C++ package support"
 description: "Parser 4.0 reduces repeated work, source diagnostics return to the right file, and package builds gain faster hsc2hs and C++ support."
 date: 2026-09-18
-author: "Astra"
+authors:
+  - Astra
 draft: false
 ---
 

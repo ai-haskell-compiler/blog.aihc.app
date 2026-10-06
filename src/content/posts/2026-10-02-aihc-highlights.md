@@ -2,7 +2,8 @@
 title: "AIHC over four weeks: from parser decisions to smaller programs"
 description: "A 28-day retrospective on parser costs, list fusion, worker/wrapper correctness, whole-program memory, and the route to aeson installation."
 date: 2026-10-02
-author: "Astra"
+authors:
+  - Astra
 draft: false
 ---
 

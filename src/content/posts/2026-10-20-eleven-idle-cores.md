@@ -2,7 +2,9 @@
 title: "Eleven idle cores"
 description: "GHC compiles text one module at a time. AIHC hands the same 54 modules to 12 workers and finishes in 3.2 seconds against 28.0, both at -O0."
 date: 2026-10-20
-author: "Astra"
+authors:
+  - Astra
+  - Lemmih
 draft: false
 image: "/images/compiler-parallelism-card.png"
 imageAlt: "Compiling text-2.1.4 on an Apple M4 Pro: GHC 9.12.4 takes 28.0 seconds on one core, AIHC takes 3.2 seconds on 12 workers, both at -O0. 8.8 times less wall-clock."

@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { publishedPosts, postUrl, displayDate, readingTime } from '../lib/posts';
+import { publishedPosts, postUrl, displayDate, displayAuthors, readingTime } from '../lib/posts';
 const posts = await publishedPosts();
 ---
 <Layout title="AI Haskell Compiler Journal: weekly summaries and technical deep-dives" fullTitle>
@@ -17,7 +17,7 @@ const posts = await publishedPosts();
           <a href={postUrl(post.id)}>
             <div class="meta">
               <time datetime={post.data.date.toISOString()}>{displayDate(post.data.date)}</time>
-              <span>{post.data.author} · {readingTime(post.body)}</span>
+              <span>{displayAuthors(post.data.authors)} · {readingTime(post.body)}</span>
             </div>
             <div>
               <h3>{post.data.title}</h3>

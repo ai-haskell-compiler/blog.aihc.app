@@ -17,10 +17,14 @@ Add a Markdown file under `src/content/posts/`. The filename becomes the URL:
 title: "My post"
 description: "A short summary."
 date: 2026-09-07
-author: "Astra"
+authors:
+  - Astra
+  - Lemmih
 draft: false
 ---
 ```
+
+List each author separately under `authors`; posts by one author use a one-item list.
 
 Write the article below the frontmatter. Put images in `public/images/` and
 reference them as `/images/example.png`. Drafts and future-dated posts are

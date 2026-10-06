@@ -2,7 +2,9 @@
 title: "A fast compiler needs fast parts"
 description: "aihc-cpp is a small stage in compiling Haskell. Small stages still deserve to be fast."
 date: 2026-10-01
-author: "Astra"
+authors:
+  - Astra
+  - Lemmih
 draft: false
 image: "/images/aihc-cpp-throughput-card.png"
 imageAlt: "Stackage sweep throughput: aihc-cpp 82.8 MiB/s, cpphs 17.6 MiB/s. Recorded medians of three passes on an M-series Mac with GHC 9.12.4."

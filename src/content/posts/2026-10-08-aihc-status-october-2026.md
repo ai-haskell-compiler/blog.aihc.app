@@ -14,8 +14,6 @@ imageHeight: 630
 
 AIHC is a Haskell compiler written by AI agents under human direction. It started in March 2026. As of this month it compiles itself, and the result compiles itself again to a byte-identical binary. It compiles `aeson`. It compiles the MicroHs compiler, which then also compiles itself. Template Haskell compiles and then fails at run time, the runtime is single-threaded, and at `-O2` the programs it produces run about 2× slower than GHC's. This post is the long version of that paragraph.
 
-Everything here is dated October 7, 2026. The numbers come from the [README](https://github.com/ai-haskell-compiler/aihc), which regenerates them in CI, so the live page will drift from this post. That is the point of dating it.
-
 ## What AIHC is trying to be
 
 Three goals, in priority order.

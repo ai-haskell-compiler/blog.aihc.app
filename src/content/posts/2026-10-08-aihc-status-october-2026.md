@@ -7,7 +7,7 @@ authors:
   - Lemmih
 draft: false
 image: "/images/aihc-status-2026-10-card.png"
-imageAlt: "AIHC pipeline status, October 2026. Preprocess, parse, resolve, type-check and codegen are complete or nearly complete. ghc-prim and base shims are at 16% and 22% of exports. All 77 self-hosting packages install."
+imageAlt: "It compiles itself, twice. GHC compiles AIHC stage 1, which compiles stage 2, which compiles stage 3. Stages 2 and 3 are byte-for-byte identical. 77 packages self-host, aeson and MicroHs build. Not yet: Template Haskell, -threaded, -O2 parity with GHC."
 imageWidth: 1200
 imageHeight: 630
 ---

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="840" viewBox="0 0 1600 840">
+      <title>AIHC pipeline status, October 2026</title>
+      <desc>Fixture pass rates and export coverage per compiler stage. Preprocess, parse, resolve, codegen and self-host complete; type check 98.7%; desugar 94.4%; ghc-prim 15.7%; base 21.6%.</desc>
+      <rect width="1600" height="840" fill="#faf8f3"/>
+      <rect y="830" width="1600" height="10" fill="#5e5086"/>
+      <g transform="translate(80 62)"><rect width="78" height="78" rx="18" fill="#5e5086"/><g transform="translate(9 9) scale(.6)"><defs><clipPath id="mark-inner"><polygon points="18,18 62,18 40,88"/></clipPath></defs>
+    <g fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M24 54 Q40 36 56 54" clip-path="url(#mark-inner)" stroke-linecap="butt"/>
+      <path d="M18 18 L40 88 L62 18"/><path d="M64 88 L79.1 40"/>
+      <circle cx="86" cy="18" r="6" fill="#fff" stroke="none"/>
+    </g></g></g>
+      <g font-family="Inter Variable, Inter, sans-serif" fill="#1d1a17">
+        <text x="180" y="94" font-size="28" font-weight="600">AI Haskell Compiler</text>
+        <text x="180" y="129" font-size="22" fill="#6b655d">STATUS REPORT / OCTOBER 2026</text>
+        <text x="1520" y="106" font-size="25" text-anchor="end" fill="#5e5086">aihc.app</text>
+        <text x="80" y="231" font-family="Newsreader Variable, Newsreader, serif" font-size="64" letter-spacing="-1">Compiles itself. Not yet Template Haskell.</text>
+        <text x="330" y="299.76" text-anchor="end" font-size="26" font-weight="600" fill="#5e5086">Preprocess</text>
+            <rect x="360" y="278" width="900" height="32" rx="8" fill="#e6e0d6"/>
+            <rect x="360" y="278" width="900" height="32" rx="8" fill="#5e5086"/>
+            <text x="1284" y="299.76" font-size="24" fill="#1d1a17">done</text><text x="330" y="347.76" text-anchor="end" font-size="26" font-weight="600" fill="#5e5086">Parse</text>
+            <rect x="360" y="326" width="900" height="32" rx="8" fill="#e6e0d6"/>
+            <rect x="360" y="326" width="900" height="32" rx="8" fill="#5e5086"/>
+            <text x="1284" y="347.76" font-size="24" fill="#1d1a17">done</text><text x="330" y="395.76" text-anchor="end" font-size="26" font-weight="600" fill="#5e5086">Resolve</text>
+            <rect x="360" y="374" width="900" height="32" rx="8" fill="#e6e0d6"/>
+            <rect x="360" y="374" width="900" height="32" rx="8" fill="#5e5086"/>
+            <text x="1284" y="395.76" font-size="24" fill="#1d1a17">122 / 122</text><text x="330" y="443.76" text-anchor="end" font-size="26" font-weight="600" fill="#6b655d">Type check</text>
+            <rect x="360" y="422" width="900" height="32" rx="8" fill="#e6e0d6"/>
+            <rect x="360" y="422" width="888.1889763779527" height="32" rx="8" fill="#8f7fb8"/>
+            <text x="1284" y="443.76" font-size="24" fill="#1d1a17">376 / 381</text><text x="330" y="491.76" text-anchor="end" font-size="26" font-weight="600" fill="#6b655d">Desugar</text>
+            <rect x="360" y="470" width="900" height="32" rx="8" fill="#e6e0d6"/>
+            <rect x="360" y="470" width="849.9454743729553" height="32" rx="8" fill="#8f7fb8"/>
+            <text x="1284" y="491.76" font-size="24" fill="#1d1a17">866 / 917</text><text x="330" y="539.76" text-anchor="end" font-size="26" font-weight="600" fill="#5e5086">Codegen</text>
+            <rect x="360" y="518" width="900" height="32" rx="8" fill="#e6e0d6"/>
+            <rect x="360" y="518" width="900" height="32" rx="8" fill="#5e5086"/>
+            <text x="1284" y="539.76" font-size="24" fill="#1d1a17">237 / 237</text><text x="330" y="587.76" text-anchor="end" font-size="26" font-weight="600" fill="#6b655d">ghc-prim shim</text>
+            <rect x="360" y="566" width="900" height="32" rx="8" fill="#e6e0d6"/>
+            <rect x="360" y="566" width="140.93357271095152" height="32" rx="8" fill="#b0a69b"/>
+            <text x="1284" y="587.76" font-size="24" fill="#1d1a17">785 / 5,013</text><text x="330" y="635.76" text-anchor="end" font-size="26" font-weight="600" fill="#6b655d">base</text>
+            <rect x="360" y="614" width="900" height="32" rx="8" fill="#e6e0d6"/>
+            <rect x="360" y="614" width="194.3842560381672" height="32" rx="8" fill="#b0a69b"/>
+            <text x="1284" y="635.76" font-size="24" fill="#1d1a17">2,173 / 10,061</text><text x="330" y="683.76" text-anchor="end" font-size="26" font-weight="600" fill="#5e5086">Self-host</text>
+            <rect x="360" y="662" width="900" height="32" rx="8" fill="#e6e0d6"/>
+            <rect x="360" y="662" width="900" height="32" rx="8" fill="#5e5086"/>
+            <text x="1284" y="683.76" font-size="24" fill="#1d1a17">77 / 77 packages</text>
+        <line x1="80" x2="1520" y1="728" y2="728" stroke="#e6e0d6" stroke-width="2"/>
+        <text x="80" y="764" font-size="22" fill="#6b655d">Fixture pass rates and implemented exports from the aihc README · 2026-10-06 · self-host is the 77-package closure of aihc</text>
+        <text x="1520" y="805" font-size="22" text-anchor="end" fill="#5e5086">Typed by robots, designed by a human.</text>
+      </g>
+    </svg>

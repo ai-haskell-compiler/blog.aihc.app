@@ -2,7 +2,10 @@
 // and a 1200x630 link card from the measured text-2.1.4 compile traces.
 // `npm run render` writes the stills and the video. The video uses the pinned
 // ffmpeg-static binary, or the FFmpeg named by the FFMPEG environment variable.
-import { readFile, writeFile } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { decompress } from 'wawoff2';
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
 import { Resvg } from '@resvg/resvg-js';
@@ -186,31 +189,72 @@ const poster = frame(duration - 0.1);
 await writeFile(new URL('compiler-parallelism-poster.svg', out), poster);
 await writeFile(new URL('compiler-parallelism-poster.png', out), new Resvg(poster).render().asPng());
 
-// Link card for social previews.
-const social = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+// Link card for social previews, in the same chrome as the other cards.
+// The site's own fonts are bundled so CI renders the same pixels as a laptop.
+const social = await (async () => {
+  const fontDir = await mkdtemp(join(tmpdir(), 'card-fonts-'));
+  try {
+    const fontFiles = [];
+    for (const file of [
+      'node_modules/@fontsource-variable/newsreader/files/newsreader-latin-opsz-normal.woff2',
+      'node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2',
+    ]) {
+      const target = join(fontDir, file.split('/').pop().replace('.woff2', '.ttf'));
+      await writeFile(target, Buffer.from(await decompress(await readFile(new URL(file, root)))));
+      fontFiles.push(target);
+    }
+    const line = '#e6e0d6';
+    const serif = 'font-family="Newsreader Variable, Newsreader, serif"';
+    const sans = 'font-family="Inter Variable, Inter, sans-serif"';
+    const mark = `<defs><clipPath id="mark-inner"><polygon points="18,18 62,18 40,88"/></clipPath></defs>
+      <g fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M24 54 Q40 36 56 54" clip-path="url(#mark-inner)" stroke-linecap="butt"/>
+        <path d="M18 18 L40 88 L62 18"/><path d="M64 88 L79.1 40"/>
+        <circle cx="86" cy="18" r="6" fill="#fff" stroke="none"/>
+      </g>`;
+    // Miniature Gantt on the right: one GHC row and one row per AIHC worker, same time scale.
+    const gx0 = 640, gx1 = 1140, scale = (gx1 - gx0) / fullMax;
+    const ghcY = 222, ghcH = 40, rowY0 = 318, rowH = 14, gap = 4, axisY = rowY0 + workers * (rowH + gap) + 12;
+    let gantt = `<text x="${gx0}" y="${ghcY - 12}" ${sans} font-size="17" font-weight="600" fill="${gold}">GHC 9.12.4 · ${ghcTotal.toFixed(1)} s</text>`;
+    gantt += `<rect x="${gx0}" y="${ghcY}" width="${gx1 - gx0}" height="${ghcH}" rx="6" fill="#f3ece1"/>`;
+    ghc.modules.forEach((m, i) => { gantt += `<rect x="${gx0 + m.start_s * scale}" y="${ghcY}" width="${(m.end_s - m.start_s) * scale}" height="${ghcH}" fill="${ghcFills[i % 2]}"/>`; });
+    gantt += `<text x="${gx0}" y="${rowY0 - 12}" ${sans} font-size="17" font-weight="600" fill="${purple}">AIHC · ${workers} workers · ${aihcTotal.toFixed(1)} s</text>`;
+    for (let w = 0; w < workers; w++) gantt += `<rect x="${gx0}" y="${rowY0 + w * (rowH + gap)}" width="${gx1 - gx0}" height="${rowH}" rx="3" fill="#f0eafa"/>`;
+    for (const task of aihc.tasks) gantt += `<rect x="${gx0 + task.start_s * scale}" y="${rowY0 + (task.worker - 1) * (rowH + gap)}" width="${Math.max(1.5, (task.end_s - task.start_s) * scale)}" height="${rowH}" fill="${kindFill[task.kind] ?? kindFill.package}"/>`;
+    gantt += `<line x1="${gx0}" y1="${axisY}" x2="${gx1}" y2="${axisY}" stroke="#b8afa1" stroke-width="2"/>`;
+    gantt += `<text x="${gx0}" y="${axisY + 24}" ${sans} font-size="15" fill="${muted}">0 s</text>`;
+    gantt += `<text x="${gx1}" y="${axisY + 24}" ${sans} font-size="15" text-anchor="end" fill="${muted}">${fullMax} s</text>`;
+
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<title>Eleven idle cores: compiling text-2.1.4 with GHC and AIHC</title>
+<desc>GHC 9.12.4 compiles ${moduleCount} modules one at a time in ${ghcTotal.toFixed(1)} seconds. AIHC runs them across ${workers} workers in ${aihcTotal.toFixed(1)} seconds, ${speedup.toFixed(1)} times less wall-clock, both at -O0.</desc>
 <rect width="1200" height="630" fill="${paper}"/>
-<g font-family="Arial,sans-serif">
-${text(60, 75, 'AI HASKELL COMPILER', 28, purple, 650)}
-${text(60, 165, 'Compiling text-2.1.4', 66, ink, 750)}
-${text(60, 275, `${speedup.toFixed(1)}× less wall-clock`, 92, purple, 750)}
-${text(60, 335, `${moduleCount} modules · ${workers} workers against 1`, 40, ink, 650)}
-${text(60, 415, `GHC 9.12.4: ${ghcTotal.toFixed(1)} s`, 40, gold, 650)}
-${text(60, 470, `AIHC: ${aihcTotal.toFixed(1)} s`, 40, purple, 650)}
-${text(60, 574, 'Apple M4 Pro · both at -O0 · measured traces', 30, muted, 500)}
-${(() => {
-  // Miniature Gantt: one GHC row and the AIHC rows, to the same scale.
-  const gx0 = 700, gx1 = 1140, scale = (gx1 - gx0) / fullMax;
-  let body = `<rect x="${gx0}" y="150" width="${gx1 - gx0}" height="44" rx="6" fill="#f3ece1"/>`;
-  ghc.modules.forEach((m, i) => { body += `<rect x="${gx0 + m.start_s * scale}" y="150" width="${(m.end_s - m.start_s) * scale}" height="44" fill="${ghcFills[i % 2]}"/>`; });
-  for (let w = 0; w < workers; w++) body += `<rect x="${gx0}" y="${230 + w * 24}" width="${gx1 - gx0}" height="20" rx="4" fill="#f0eafa"/>`;
-  for (const task of aihc.tasks) body += `<rect x="${gx0 + task.start_s * scale}" y="${230 + (task.worker - 1) * 24}" width="${Math.max(1.5, (task.end_s - task.start_s) * scale)}" height="20" fill="${kindFill[task.kind] ?? kindFill.package}"/>`;
-  body += text(gx0, 136, 'GHC', 26, gold, 700) + text(gx0, 222, 'AIHC', 26, purple, 700);
-  body += `<line x1="${gx0}" y1="530" x2="${gx1}" y2="530" stroke="#b8afa1" stroke-width="3"/>` + text(gx0, 566, '0 s', 26, muted, 500) + text(gx1, 566, `${fullMax} s`, 26, muted, 500, 'end');
-  return body;
-})()}
-</g></svg>`;
-await writeFile(new URL('compiler-parallelism-card.svg', out), social);
-await writeFile(new URL('compiler-parallelism-card.png', out), new Resvg(social).render().asPng());
+<rect y="622" width="1200" height="8" fill="${purple}"/>
+<g transform="translate(60 44)"><rect width="58" height="58" rx="13" fill="${purple}"/><g transform="translate(7 7) scale(.44)">${mark}</g></g>
+<g ${sans}>
+  <text x="134" y="68" font-size="21" font-weight="600" fill="${ink}">AI Haskell Compiler</text>
+  <text x="134" y="94" font-size="16" fill="${muted}">COMPILING TEXT-2.1.4 · ${moduleCount} MODULES</text>
+  <text x="1140" y="78" font-size="19" text-anchor="end" fill="${purple}">aihc.app</text>
+  <text x="60" y="592" font-size="17" fill="${muted}">Apple M4 Pro · both at -O0 · measured traces, medians of ${result.ghc.runs.length} runs</text>
+  <text x="1140" y="592" font-size="17" text-anchor="end" fill="${purple}">Typed by robots, designed by a human.</text>
+</g>
+<text x="60" y="176" ${serif} font-size="64" letter-spacing="-1" fill="${ink}">Eleven idle cores.</text>
+<text x="60" y="330" ${serif} font-size="150" letter-spacing="-4" fill="${purple}">${speedup.toFixed(1)}×</text>
+<text x="60" y="378" ${sans} font-size="26" fill="${ink}">less wall-clock for the same ${moduleCount} modules</text>
+<g ${sans} font-size="24">
+  <text x="60" y="450" fill="${gold}"><tspan font-weight="600">GHC 9.12.4</tspan><tspan fill="${ink}" dx="12">1 core, ${ghcTotal.toFixed(1)} s</tspan></text>
+  <text x="60" y="490" fill="${purple}"><tspan font-weight="600">AIHC</tspan><tspan fill="${ink}" dx="12">${workers} workers, ${aihcTotal.toFixed(1)} s</tspan></text>
+</g>
+<line x1="600" x2="600" y1="200" y2="520" stroke="${line}" stroke-width="2"/>
+${gantt}
+</svg>`;
+    return { svg, png: new Resvg(svg, { font: { fontFiles, loadSystemFonts: false, defaultFontFamily: 'Inter Variable' } }).render().asPng() };
+  } finally {
+    await rm(fontDir, { recursive: true, force: true });
+  }
+})();
+await writeFile(new URL('compiler-parallelism-card.svg', out), social.svg);
+await writeFile(new URL('compiler-parallelism-card.png', out), social.png);
 
 const ffmpeg = process.env.FFMPEG || ffmpegStatic;
 if (ffmpeg) {

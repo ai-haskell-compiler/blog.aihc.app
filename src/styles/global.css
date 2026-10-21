@@ -181,3 +181,27 @@ article { max-width: var(--measure); margin: 40px auto 0; }
   .prose .pipeline-media video { display: none; }
   .prose .pipeline-media .pipeline-still { display: block; }
 }
+
+/* Before/after screenshot comparison. A transparent range input covers the frame,
+   so drag, click and the arrow keys all move the divider. Without JS it stays at 50%. */
+.prose .compare { --pos: 50%; position: relative; left: 50%; width: min(var(--wide), calc(100vw - 40px)); margin: 28px 0; translate: -50% 0; }
+.prose .compare-frame { position: relative; overflow: hidden; border: 1px solid var(--rule); border-radius: 10px; box-shadow: var(--shadow); background: var(--surface); }
+.prose .compare-frame img { display: block; width: 100%; height: auto; margin: 0; border-radius: 0; box-shadow: none; user-select: none; -webkit-user-drag: none; }
+.prose .compare-frame .compare-before { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+.prose .compare-range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; touch-action: pan-y; }
+.prose .compare-line { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 3px; margin-left: -1.5px; background: #fff; box-shadow: 0 0 0 1px rgba(29, 26, 23, 0.25); pointer-events: none; }
+.prose .compare-line::after { content: '‹ ›'; position: absolute; top: 50%; left: 50%; display: grid; place-items: center; width: 40px; height: 40px; translate: -50% -50%; border: 3px solid #fff; border-radius: 50%; background: #5e5086; color: #fff; font: 700 1rem/1 var(--sans); letter-spacing: 0.1em; box-shadow: var(--shadow); }
+.prose .compare-range:focus-visible ~ .compare-line::after { outline: 3px solid var(--accent); outline-offset: 3px; }
+.prose .compare-tag { position: absolute; bottom: 12px; padding: 4px 10px; border-radius: 999px; background: rgba(29, 26, 23, 0.8); color: #fff; font: 600 0.75rem var(--sans); pointer-events: none; }
+.prose .compare-tag-before { left: 12px; }
+.prose .compare-tag-after { right: 12px; }
+.prose .compare figcaption { max-width: var(--measure); margin: 10px auto 0; color: var(--muted); font-size: 0.9rem; text-align: center; }
+.prose .diagram { margin: 28px 0; }
+.prose .diagram img { display: block; width: 100%; height: auto; border-radius: 10px; box-shadow: none; border: 1px solid var(--rule); }
+.prose .diagram figcaption { margin-top: 8px; color: var(--muted); font-size: 0.9rem; text-align: center; }
+@media (max-width: 640px) {
+  .prose .compare-tag { bottom: 6px; padding: 2px 7px; font-size: 0.6rem; }
+  .prose .compare-tag-before { left: 6px; }
+  .prose .compare-tag-after { right: 6px; }
+  .prose .compare-line::after { width: 30px; height: 30px; font-size: 0.8rem; }
+}

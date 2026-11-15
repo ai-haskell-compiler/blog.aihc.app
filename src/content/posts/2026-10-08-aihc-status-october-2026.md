@@ -105,5 +105,5 @@ Template Haskell is not on this list. It will be on the list after this one.
 
 - Source: [github.com/ai-haskell-compiler/aihc](https://github.com/ai-haskell-compiler/aihc). The README's status tables regenerate on every merge.
 - Performance history: [perf.aihc.app](https://perf.aihc.app/).
-- Weekly notes: [this blog](/), every Friday.
+- Progress summaries: [this blog](/), monthly.
 - Chat: [Discord](https://discord.gg/uGWkhMCZrZ).

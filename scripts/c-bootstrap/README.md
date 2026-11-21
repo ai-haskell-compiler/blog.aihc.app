@@ -1,6 +1,6 @@
 # C bootstrap artwork
 
-The November 21 post, "No GHC required", describes
+The November 21 post, "GHC not required", describes
 [aihc-bootstrap](https://github.com/ai-haskell-compiler/aihc-bootstrap), the
 Haskell interpreter in C99 that runs AIHC. `artwork.mjs` draws its link card,
 a 1080×1920 poster and a vertical 1080×1920 H.264 loop from

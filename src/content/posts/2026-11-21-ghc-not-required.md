@@ -1,5 +1,5 @@
 ---
-title: "No GHC required"
+title: "GHC not required"
 description: "GHC was the only compiler that could build AIHC from nothing. A Haskell interpreter in 19,464 lines of C99 now runs AIHC from source, and that AIHC builds AIHC."
 date: 2026-11-21
 authors:

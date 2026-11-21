@@ -49,7 +49,7 @@ function card() {
     <polygon points="${x + 70},310 ${x + 58},303 ${x + 58},317" fill="${muted}"/>
     <text x="${x + 35}" y="296" ${sans} font-size="14" text-anchor="middle" fill="${muted}">${label}</text>`;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-<title>No GHC required: AIHC bootstraps from a C compiler</title>
+<title>GHC not required: AIHC bootstraps from a C compiler</title>
 <desc>A C compiler compiles a Haskell interpreter of ${thousands(cLines)} lines of C99. The interpreter runs AIHC from source, and that AIHC builds a native AIHC. All ${thousands(files)} object files are byte for byte those of a native AIHC building the same sources.</desc>
 <rect width="1200" height="630" fill="${paper}"/>
 <rect y="622" width="1200" height="8" fill="${purple}"/>
@@ -60,7 +60,7 @@ function card() {
   <text x="1140" y="78" font-size="19" text-anchor="end" fill="${purple}">aihc.app</text>
   <text x="1140" y="592" font-size="17" text-anchor="end" fill="${purple}">Typed by robots, designed by a human.</text>
 </g>
-<text x="60" y="176" ${serif} font-size="64" letter-spacing="-1" fill="${ink}">AIHC no longer needs GHC.</text>
+<text x="60" y="176" ${serif} font-size="64" letter-spacing="-1" fill="${ink}">GHC not required.</text>
 ${box(60, 200, 'cc', 'any C99 compiler', false)}${arrow(260, 'compiles')}
 ${box(330, 250, 'Interpreter', `${thousands(cLines)} lines of C`, false)}${arrow(580, 'runs')}
 ${box(650, 200, 'AIHC', 'from source', true)}${arrow(850, 'builds')}
@@ -156,14 +156,14 @@ function frame(time) {
   }
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-<title>No GHC required: AIHC bootstraps from a C compiler</title>
+<title>GHC not required: AIHC bootstraps from a C compiler</title>
 <desc>A C compiler compiles aihc-bootstrap, a Haskell interpreter of ${thousands(cLines)} lines of C99. The interpreter runs AIHC from source, and that AIHC builds a native AIHC. All ${thousands(files)} object files are byte for byte those of a native AIHC building the same sources. The build takes ${build.cpu_hours} hours of processor time.</desc>
 <rect width="${W}" height="${H}" fill="${paper}"/>
 <rect y="${H - 12}" width="${W}" height="12" fill="${purple}"/>
 <g transform="translate(70 84)"><rect width="76" height="76" rx="17" fill="${purple}"/><g transform="translate(9 9) scale(.58)">${mark('video-mark')}</g></g>
 <text x="170" y="134" ${sans} font-size="32" font-weight="600" fill="${ink}">AI Haskell Compiler</text>
-<text x="70" y="266" ${serif} font-size="84" letter-spacing="-1.5" fill="${ink}">AIHC used to need GHC.</text>
-<text x="70" y="354" ${serif} font-size="84" letter-spacing="-1.5" fill="${purple}">Now it needs cc.</text>
+<text x="70" y="266" ${serif} font-size="84" letter-spacing="-1.5" fill="${ink}">GHC</text>
+<text x="70" y="354" ${serif} font-size="84" letter-spacing="-1.5" fill="${purple}">not required.</text>
 <g opacity="${fade.toFixed(3)}">
   <text x="70" y="424" ${sans} font-size="34" font-weight="600" fill="${ink}">${act.caption[0]}</text>
   <text x="70" y="470" ${mono} font-size="31" fill="${muted}">${act.caption[1]}</text>

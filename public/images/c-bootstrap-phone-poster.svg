@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
-<title>No GHC required: AIHC bootstraps from a C compiler</title>
+<title>GHC not required: AIHC bootstraps from a C compiler</title>
 <desc>A C compiler compiles aihc-bootstrap, a Haskell interpreter of 19,464 lines of C99. The interpreter runs AIHC from source, and that AIHC builds a native AIHC. All 1,665 object files are byte for byte those of a native AIHC building the same sources. The build takes 5.8 hours of processor time.</desc>
 <rect width="1080" height="1920" fill="#faf8f3"/>
 <rect y="1908" width="1080" height="12" fill="#5e5086"/>
@@ -10,8 +10,8 @@
     <circle cx="86" cy="18" r="6" fill="#fff" stroke="none"/>
   </g></g></g>
 <text x="170" y="134" font-family="Inter Variable, Inter, sans-serif" font-size="32" font-weight="600" fill="#1d1a17">AI Haskell Compiler</text>
-<text x="70" y="266" font-family="Newsreader Variable, Newsreader, serif" font-size="84" letter-spacing="-1.5" fill="#1d1a17">AIHC used to need GHC.</text>
-<text x="70" y="354" font-family="Newsreader Variable, Newsreader, serif" font-size="84" letter-spacing="-1.5" fill="#5e5086">Now it needs cc.</text>
+<text x="70" y="266" font-family="Newsreader Variable, Newsreader, serif" font-size="84" letter-spacing="-1.5" fill="#1d1a17">GHC</text>
+<text x="70" y="354" font-family="Newsreader Variable, Newsreader, serif" font-size="84" letter-spacing="-1.5" fill="#5e5086">not required.</text>
 <g opacity="1.000">
   <text x="70" y="424" font-family="Inter Variable, Inter, sans-serif" font-size="34" font-weight="600" fill="#1d1a17">A C compiler in. AIHC out. No GHC.</text>
   <text x="70" y="470" font-family="Inter Variable, Inter, sans-serif" font-feature-settings="'tnum'" font-size="31" fill="#6b655d">Read the deep-dive at blog.aihc.app</text>

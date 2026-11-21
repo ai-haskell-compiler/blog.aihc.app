@@ -17,11 +17,6 @@ const out = new URL('public/images/', root);
 const data = JSON.parse(await readFile(new URL('public/benchmarks/c-bootstrap-m4-pro.json', root), 'utf8'));
 
 const cLines = data.interpreter.c_lines;
-const ccSeconds = data.interpreter.build_wall_s;
-const modules = data.aihc.modules;
-const haskellLines = data.aihc.lines;
-const build = data.self_build;
-const files = build.identical_object_files;
 
 const ink = '#1d1a17', muted = '#6b655d', paper = '#faf8f3', purple = '#5e5086', gold = '#b07a2a', green = '#39775b', line = '#e6e0d6';
 const serif = 'font-family="Newsreader Variable, Newsreader, serif"';
@@ -50,7 +45,7 @@ function card() {
     <text x="${x + 35}" y="296" ${sans} font-size="14" text-anchor="middle" fill="${muted}">${label}</text>`;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
 <title>GHC not required: AIHC bootstraps from a C compiler</title>
-<desc>A C compiler compiles a Haskell interpreter of ${thousands(cLines)} lines of C99. The interpreter runs AIHC from source, and that AIHC builds a native AIHC. All ${thousands(files)} object files are byte for byte those of a native AIHC building the same sources.</desc>
+<desc>A C compiler compiles a Haskell interpreter of ${thousands(cLines)} lines of C99. The interpreter runs AIHC from source, and that AIHC builds a native AIHC. The result is byte for byte identical to an AIHC built by a native AIHC.</desc>
 <rect width="1200" height="630" fill="${paper}"/>
 <rect y="622" width="1200" height="8" fill="${purple}"/>
 <g transform="translate(60 44)"><rect width="58" height="58" rx="13" fill="${purple}"/><g transform="translate(7 7) scale(.44)">${mark('card-mark')}</g></g>
@@ -65,112 +60,100 @@ ${box(60, 200, 'cc', 'buildable from a seed', false)}${arrow(260, 'compiles')}
 ${box(330, 250, 'Interpreter', `${thousands(cLines)} lines of C`, false)}${arrow(580, 'runs')}
 ${box(650, 200, 'AIHC', 'from source', true)}${arrow(850, 'builds')}
 ${box(920, 220, 'AIHC', 'native binary', true)}
-<path d="M160 376 v26 h870 v-26" fill="none" stroke="${purple}" stroke-width="3"/>
-<text x="595" y="428" ${sans} font-size="20" font-weight="600" text-anchor="middle" fill="${purple}">every link built from source: no pre-compiled executables</text>
-<g ${sans} font-size="22" fill="${ink}">
-  <text x="60" y="520"><tspan font-weight="600">${thousands(files)} object files</tspan> byte for byte those of a native AIHC</text>
-  <text x="760" y="520"><tspan font-weight="600" fill="${gold}">${build.packages} packages</tspan> in ${build.cpu_hours} h of CPU</text>
-</g>
+<text x="600" y="424" ${sans} font-size="22" font-weight="600" text-anchor="middle" fill="${purple}">Every link is built from source. No pre-compiled executables.</text>
+<text x="60" y="520" ${sans} font-size="24" fill="${ink}">The AIHC that comes out is <tspan font-weight="600">byte for byte identical</tspan> to one built by a native AIHC.</text>
 </svg>`;
 }
 
 // ------------------------------------------------------------ vertical video
 
 const W = 1080, H = 1920, fps = 30;
-// Acts of the loop, in seconds. Each act brings in one part of the picture.
-const acts = [
-  { name: 'problem', length: 2.6, caption: ['AIHC is written in Haskell.', 'Building it took a pre-compiled GHC.'] },
-  { name: 'cc', length: 2.2, caption: ['Now it starts with a C compiler,', 'which can itself be built from a tiny seed.'] },
-  { name: 'interpreter', length: 3.6, caption: ['Compile a small Haskell interpreter.', `${thousands(cLines)} lines of C99, built in ${ccSeconds.toFixed(1)} s.`] },
-  { name: 'source', length: 3.6, caption: ['It runs AIHC straight from source.', `${modules} modules, ${thousands(haskellLines)} lines of Haskell.`] },
-  { name: 'native', length: 3.0, caption: ['The interpreted AIHC builds AIHC.', `${build.packages} packages. Out comes a native compiler.`] },
-  { name: 'proof', length: 4.2, caption: ['Slow is fine. Different is not.', 'Every object file matches a native AIHC.'] },
-  { name: 'cost', length: 4.0, caption: ['It only has to be fast enough once.', `${build.cpu_hours} hours of processor time.`] },
-  { name: 'final', length: 3.4, caption: ['No pre-compiled executables in the chain.', 'Read the deep-dive at blog.aihc.app'] },
-];
-const duration = acts.reduce((sum, act) => sum + act.length, 0);
-const startOf = Object.fromEntries(acts.map((act, i) => [act.name, acts.slice(0, i).reduce((s, a) => s + a.length, 0)]));
+// When each part of the picture arrives, in seconds. Nothing leaves again:
+// the last frame is the whole diagram.
+const T = { ghc: 0.6, aihc: 4.2, seed: 8.6, cc: 10.4, interpreter: 12.8, join: 16.4, same: 19.6 };
+const duration = 25;
+const cx = 290, tx = 566;                    // diagram column, text column
+const ghcRing = { y: 560, r: 96 }, aihcRing = { y: 920, r: 112 };
+const boxes = { interpreter: { y: 1250, h: 112 }, cc: { y: 1440, h: 100 }, seed: { y: 1616, h: 92 } };
 
-const cards = [
-  { act: 'cc', title: 'A C compiler', sub: 'bootstrappable from a few hundred bytes', arrow: 'compiles' },
-  { act: 'interpreter', title: 'aihc-bootstrap', sub: (t) => `Haskell interpreter · ${thousands(cLines * ease((t - startOf.interpreter) / 2.2))} lines of C`, arrow: 'runs' },
-  { act: 'source', title: 'AIHC, interpreted', sub: (t) => `${Math.round(modules * ease((t - startOf.source) / 2.2))} of ${modules} modules, from source`, arrow: 'builds' },
-  { act: 'native', title: 'AIHC, native', sub: 'a compiler that then compiles itself', highlight: true },
-];
+const shown = (t, at, length = 0.5) => ease((t - at) / length);
+
+// A circle with an arrowhead on it and a dot going round: something that needs itself.
+function ring(time, { y, r }, label, stroke, fill, dot) {
+  const head = -0.6, hx = cx + r * Math.cos(head), hy = y + r * Math.sin(head);
+  const tan = [-Math.sin(head), Math.cos(head)], nor = [Math.cos(head), Math.sin(head)];
+  const pt = (along, across) => `${(hx + tan[0] * along + nor[0] * across).toFixed(1)},${(hy + tan[1] * along + nor[1] * across).toFixed(1)}`;
+  const angle = time * 2.2, dx = cx + r * Math.cos(angle), dy = y + r * Math.sin(angle);
+  return `<circle cx="${cx}" cy="${y}" r="${r}" fill="${fill}" stroke="${stroke}" stroke-width="6"/>
+<polygon points="${pt(20, 0)} ${pt(-8, 15)} ${pt(-8, -15)}" fill="${stroke}"/>
+<circle cx="${dx.toFixed(1)}" cy="${dy.toFixed(1)}" r="11" fill="${dot}"/>
+<text x="${cx}" y="${y + 20}" ${serif} font-size="62" text-anchor="middle" fill="${stroke === purple ? purple : ink}">${label}</text>`;
+}
+
+function arrow(y0, y1, label, { dashed = false, side = 'right', color = muted } = {}) {
+  // Drawn from (cx, y0) to (cx, y1); y1 above y0 points up.
+  const dir = Math.sign(y1 - y0);
+  return `<line x1="${cx}" x2="${cx}" y1="${y0}" y2="${y1 - dir * 14}" stroke="${color}" stroke-width="5"${dashed ? ' stroke-dasharray="10 10"' : ''}/>
+<polygon points="${cx},${y1} ${cx - 12},${y1 - dir * 20} ${cx + 12},${y1 - dir * 20}" fill="${color}"/>
+<text x="${side === 'right' ? cx + 24 : cx - 24}" y="${(y0 + y1) / 2 + 9}" ${sans} font-size="26" text-anchor="${side === 'right' ? 'start' : 'end'}" fill="${color}">${label}</text>`;
+}
+
+function box({ y, h }, title, sub) {
+  const w = 400;
+  return `<rect x="${cx - w / 2}" y="${y - h / 2}" width="${w}" height="${h}" rx="20" fill="#ffffff" stroke="${line}" stroke-width="4"/>
+<text x="${cx}" y="${y - 2}" ${serif} font-size="44" text-anchor="middle" fill="${ink}">${title}</text>
+<text x="${cx}" y="${y + 32}" ${mono} font-size="23" text-anchor="middle" fill="${muted}">${sub}</text>`;
+}
+
+// A note in the text column: a bold line and a few plain ones.
+function note(y, bold, lines, color = ink) {
+  return `<text x="${tx}" y="${y}" ${sans} font-size="33" font-weight="600" fill="${color}">${bold}</text>` +
+    lines.map((l, i) => `<text x="${tx}" y="${y + 44 + i * 38}" ${sans} font-size="28" fill="${muted}">${l}</text>`).join('');
+}
+
+const group = (opacity, content) => (opacity <= 0 ? '' : `<g opacity="${opacity.toFixed(3)}">${content}</g>`);
 
 function frame(time) {
-  const t = time % duration;
-  let act = acts[acts.length - 1];
-  for (const a of acts) if (t >= startOf[a.name]) act = a;
-  const into = t - startOf[act.name];
-  const fade = clamp(into / 0.35);
+  const t = Math.min(time, duration);
+  const joined = shown(t, T.join, 0.8);       // 0 before the interpreter reaches AIHC, 1 after
+  const old = 1 - 0.62 * joined;              // the GHC route fades, but stays
 
   let body = '';
-  // Chain of cards, one per act, stacked downwards.
-  const cx = 540, cw = 860, ch = 156, cy0 = 516, pitch = 222;
-  cards.forEach((c, i) => {
-    const p = clamp((t - startOf[c.act]) / 0.5);
-    if (p <= 0) return;
-    const e = ease(p), y = cy0 + i * pitch + (1 - e) * 26;
-    const sub = typeof c.sub === 'function' ? c.sub(t) : c.sub;
-    body += `<g opacity="${e.toFixed(3)}">`;
-    if (i > 0) {
-      const ay = cy0 + (i - 1) * pitch + ch;
-      body += `<line x1="${cx}" x2="${cx}" y1="${ay + 8}" y2="${ay + 46}" stroke="${muted}" stroke-width="4"/>`;
-      body += `<polygon points="${cx},${ay + 58} ${cx - 10},${ay + 42} ${cx + 10},${ay + 42}" fill="${muted}"/>`;
-      body += `<text x="${cx + 26}" y="${ay + 42}" ${sans} font-size="27" fill="${muted}">${cards[i - 1].arrow}</text>`;
-    }
-    body += `<rect x="${cx - cw / 2}" y="${y}" width="${cw}" height="${ch}" rx="24" fill="${c.highlight ? '#efeaf7' : '#ffffff'}" stroke="${c.highlight ? purple : line}" stroke-width="4"/>`;
-    body += `<text x="${cx}" y="${y + 72}" ${serif} font-size="60" text-anchor="middle" fill="${c.highlight ? purple : ink}">${c.title}</text>`;
-    body += `<text x="${cx}" y="${y + 120}" ${mono} font-size="30" text-anchor="middle" fill="${muted}">${sub}</text>`;
-    body += '</g>';
-  });
+  // The old way in: GHC, which needs GHC, compiles the first AIHC.
+  body += group(shown(t, T.ghc) * old, ring(time, ghcRing, 'GHC', '#8a8378', '#ffffff', gold));
+  body += group(shown(t, T.ghc + 0.7), note(516, 'GHC is written in Haskell.', ['It takes a GHC to build GHC.', 'The only way into that loop', 'is a pre-compiled binary.']));
+  body += group(shown(t, T.aihc) * old, arrow(ghcRing.y + ghcRing.r + 10, aihcRing.y - aihcRing.r - 8, 'compiles', { side: 'left', dashed: joined > 0.5 }));
+  body += group(shown(t, T.aihc + 0.4), ring(time, aihcRing, 'AIHC', joined > 0.5 ? purple : ink, joined > 0.5 ? '#efeaf7' : '#ffffff', purple));
+  body += group(shown(t, T.aihc + 1.0), note(868, 'So is AIHC.', ['AIHC builds AIHC, but the', 'first one had to come out', 'of that GHC binary.']));
 
-  // Proof: one square per object file, checked against a native AIHC's.
-  const proofT = t - startOf.proof;
-  if (proofT > 0) {
-    const cols = 95, cell = 9, size = 7, gx = (W - cols * cell + (cell - size)) / 2, gy = 1452;
-    const checked = Math.round(files * clamp(proofT / 3.0));
-    const o = ease(proofT / 0.4).toFixed(3);
-    body += `<g opacity="${o}">`;
-    body += `<text x="${gx}" y="${gy - 24}" ${mono} font-size="30" font-weight="600" fill="${checked === files ? green : ink}">${thousands(checked)} of ${thousands(files)} object files identical</text>`;
-    body += `<text x="${gx}" y="${gy + Math.ceil(files / cols) * cell + 34}" ${sans} font-size="26" fill="${muted}">${build.identical_archives} archives and the executable too</text>`;
-    for (let i = 0; i < files; i++) {
-      const x = gx + (i % cols) * cell, y = gy + Math.floor(i / cols) * cell;
-      body += `<rect x="${x}" y="${y}" width="${size}" height="${size}" rx="2" fill="${i < checked ? green : '#e6e0d6'}"/>`;
-    }
-    body += '</g>';
-  }
+  // The new way in, from the bottom up: seed, C compiler, interpreter.
+  body += group(shown(t, T.seed), box(boxes.seed, 'Seed', 'a few hundred bytes'));
+  body += group(shown(t, T.cc), arrow(boxes.seed.y - boxes.seed.h / 2 - 6, boxes.cc.y + boxes.cc.h / 2 + 6, 'bootstraps') + box(boxes.cc, 'C compiler', 'built from source'));
+  body += group(shown(t, T.cc + 0.6), note(1452, 'C has a way in.', ['A C compiler can be built', 'from a seed: machine code', 'small enough to read.']));
+  body += group(shown(t, T.interpreter), arrow(boxes.cc.y - boxes.cc.h / 2 - 6, boxes.interpreter.y + boxes.interpreter.h / 2 + 6, 'compiles') + box(boxes.interpreter, 'Interpreter', `${thousands(cLines)} lines of C`));
+  body += group(shown(t, T.interpreter + 0.6), note(1222, 'A Haskell interpreter in C.', ['It runs AIHC from source,', 'and that AIHC builds', 'a native AIHC.']));
+  body += group(joined, arrow(boxes.interpreter.y - boxes.interpreter.h / 2 - 6, aihcRing.y + aihcRing.r + 10, 'runs', { color: purple }));
+  body += group(joined, `<rect x="${cx + 26}" y="${(ghcRing.y + ghcRing.r + aihcRing.y - aihcRing.r) / 2 - 24}" width="196" height="48" rx="24" fill="${purple}"/>
+<text x="${cx + 124}" y="${(ghcRing.y + ghcRing.r + aihcRing.y - aihcRing.r) / 2 + 9}" ${sans} font-size="25" font-weight="600" text-anchor="middle" fill="#ffffff">not required</text>`);
+  body += group(shown(t, T.join + 0.6), note(1076, 'The loop has a new way in.', ['Every step is built from source.'], purple));
 
-  // Cost: what the build takes.
-  const costT = t - startOf.cost;
-  if (costT > 0) {
-    const stats = [[`${build.cpu_hours} h`, 'processor time'], [`${build.longest_chain_hours} h`, 'longest chain'], [`${build.peak_memory_gb} GB`, 'peak, one process']];
-    stats.forEach(([value, label], i) => {
-      const o = ease((costT - i * 0.5) / 0.5);
-      if (o <= 0) return;
-      const x = 110 + i * 300;
-      body += `<g opacity="${o.toFixed(3)}"><text x="${x}" y="1746" ${serif} font-size="72" letter-spacing="-1" fill="${purple}">${value}</text>`;
-      body += `<text x="${x}" y="1790" ${sans} font-size="27" fill="${muted}">${label}</text></g>`;
-    });
-  }
+  // The result.
+  body += group(shown(t, T.same), `<line x1="70" x2="${W - 70}" y1="1716" y2="1716" stroke="${line}" stroke-width="3"/>
+<circle cx="112" cy="1794" r="38" fill="${green}"/><path d="M93 1795 l13 14 l26 -30" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="176" y="1786" ${sans} font-size="36" font-weight="600" fill="${ink}">Byte for byte the same AIHC</text>
+<text x="176" y="1828" ${sans} font-size="27" fill="${muted}">as one built by a native AIHC, executable and all.</text>`);
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-<title>GHC not required: AIHC bootstraps from a C compiler</title>
-<desc>A C compiler compiles aihc-bootstrap, a Haskell interpreter of ${thousands(cLines)} lines of C99. The interpreter runs AIHC from source, and that AIHC builds a native AIHC. All ${thousands(files)} object files are byte for byte those of a native AIHC building the same sources. The build takes ${build.cpu_hours} hours of processor time.</desc>
+<title>GHC not required: an interpreter in C breaks AIHC's bootstrap loop</title>
+<desc>GHC is written in Haskell and takes a GHC to build, so the only way into that loop is a pre-compiled binary. AIHC is written in Haskell too, and the first AIHC had to come out of that GHC binary. Now a C compiler, which can itself be bootstrapped from a seed of a few hundred bytes, compiles an interpreter of ${thousands(cLines)} lines of C. The interpreter runs AIHC from source, and that AIHC builds a native AIHC, byte for byte the same as one built by a native AIHC. GHC is not required.</desc>
 <rect width="${W}" height="${H}" fill="${paper}"/>
 <rect y="${H - 12}" width="${W}" height="12" fill="${purple}"/>
 <g transform="translate(70 84)"><rect width="76" height="76" rx="17" fill="${purple}"/><g transform="translate(9 9) scale(.58)">${mark('video-mark')}</g></g>
 <text x="170" y="134" ${sans} font-size="32" font-weight="600" fill="${ink}">AI Haskell Compiler</text>
-<text x="70" y="266" ${serif} font-size="84" letter-spacing="-1.5" fill="${ink}">GHC</text>
-<text x="70" y="354" ${serif} font-size="84" letter-spacing="-1.5" fill="${purple}">not required.</text>
-<g opacity="${fade.toFixed(3)}">
-  <text x="70" y="424" ${sans} font-size="34" font-weight="600" fill="${ink}">${act.caption[0]}</text>
-  <text x="70" y="470" ${mono} font-size="31" fill="${muted}">${act.caption[1]}</text>
-</g>
-<text x="${W - 70}" y="134" ${sans} font-size="28" text-anchor="end" fill="${purple}">aihc.app</text>
+<text x="${W - 70}" y="134" ${sans} font-size="28" text-anchor="end" fill="${purple}">blog.aihc.app</text>
+<text x="70" y="318" ${serif} font-size="112" letter-spacing="-2.5" fill="${ink}">GHC <tspan fill="${purple}">not required.</tspan></text>
+<text x="70" y="388" ${sans} font-size="31" fill="${muted}">How a compiler written in Haskell gets built from source.</text>
 ${body}
-<text x="${W / 2}" y="${H - 36}" ${sans} font-size="23" text-anchor="middle" fill="${muted}">${build.packages} packages at -O 0 · ${build.hackage_packages} from Hackage · sources pinned by SHA-256</text>
 </svg>`;
 }
 
@@ -211,7 +194,7 @@ try {
     if (code !== 0) throw new Error(`FFmpeg exited ${code}`);
   }
   if (process.argv.includes('--frames')) {
-    for (const act of acts) await writeFile(join(tmpdir(), `c-bootstrap-${act.name}.png`), render(frame(startOf[act.name] + act.length - 0.05)));
+    for (const [name, at] of Object.entries(T)) await writeFile(join(tmpdir(), `c-bootstrap-${name}.png`), render(frame(at + 2.2)));
   }
 } finally {
   await rm(fontDir, { recursive: true, force: true });

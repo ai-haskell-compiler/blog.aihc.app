@@ -23,15 +23,15 @@ This is not one binary swapped for another. A C compiler does not need a C compi
 <details open>
 <summary>Bootstrap animation — collapse to hide motion</summary>
 <div class="pipeline-media">
-<video data-looping-animation loop muted playsinline preload="metadata" poster="/images/c-bootstrap-phone-poster.png" width="1080" height="1920" aria-label="The bootstrap chain. A C compiler compiles aihc-bootstrap, a Haskell interpreter of 19,464 lines of C. The interpreter runs AIHC from source: 258 modules. The interpreted AIHC builds a native AIHC from 91 packages. All 1,665 object files are identical to those of a native AIHC building the same sources.">
+<video data-looping-animation loop muted playsinline preload="metadata" poster="/images/c-bootstrap-phone-poster.png" width="1080" height="1920" aria-label="GHC is written in Haskell and takes a GHC to build, so the only way into that loop is a pre-compiled binary. AIHC is written in Haskell too, and the first AIHC had to come out of that GHC binary. Now a seed bootstraps a C compiler, the C compiler compiles an interpreter of 19,464 lines of C, and the interpreter runs AIHC from source. The result is byte for byte the same AIHC as one built by a native AIHC.">
 <source src="/images/c-bootstrap-phone.mp4" type="video/mp4" />
 </video>
-<img class="pipeline-still" src="/images/c-bootstrap-phone-poster.png" alt="A C compiler compiles aihc-bootstrap, which runs AIHC from source, which builds a native AIHC. 1,665 of 1,665 object files are identical to those of a native AIHC. The build takes 5.8 hours of processor time." width="1080" height="1920" loading="lazy" />
+<img class="pipeline-still" src="/images/c-bootstrap-phone-poster.png" alt="Two loops: GHC, which takes a GHC to build, and AIHC, which the GHC binary used to compile. A new chain enters the AIHC loop from below: a seed bootstraps a C compiler, which compiles an interpreter, which runs AIHC. The arrow from GHC is marked not required. The result is byte for byte the same AIHC." width="1080" height="1920" loading="lazy" />
 <button type="button" class="pipeline-toggle">Play animation</button>
 </div>
 </details>
 
-*The counters are animated. The numbers they stop at are measured.*
+*The old way in is at the top, the new one at the bottom. Both end in the same compiler.*
 
 ## An interpreter with one customer
 

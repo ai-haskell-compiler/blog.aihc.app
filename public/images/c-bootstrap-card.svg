@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
 <title>GHC not required: AIHC bootstraps from a C compiler</title>
-<desc>A C compiler compiles a Haskell interpreter of 19,464 lines of C99. The interpreter runs AIHC from source, and that AIHC builds a native AIHC. All 1,665 object files are byte for byte those of a native AIHC building the same sources.</desc>
+<desc>A C compiler compiles a Haskell interpreter of 19,464 lines of C99. The interpreter runs AIHC from source, and that AIHC builds a native AIHC. The result is byte for byte identical to an AIHC built by a native AIHC.</desc>
 <rect width="1200" height="630" fill="#faf8f3"/>
 <rect y="622" width="1200" height="8" fill="#5e5086"/>
 <g transform="translate(60 44)"><rect width="58" height="58" rx="13" fill="#5e5086"/><g transform="translate(7 7) scale(.44)"><defs><clipPath id="card-mark"><polygon points="18,18 62,18 40,88"/></clipPath></defs>
@@ -41,10 +41,6 @@
     <rect x="920" y="250" width="220" height="120" rx="18" fill="#efeaf7" stroke="#5e5086" stroke-width="3"/>
     <text x="1030" y="305" font-family="Newsreader Variable, Newsreader, serif" font-size="38" text-anchor="middle" fill="#5e5086">AIHC</text>
     <text x="1030" y="342" font-family="Inter Variable, Inter, sans-serif" font-size="17" text-anchor="middle" fill="#6b655d">native binary</text>
-<path d="M160 376 v26 h870 v-26" fill="none" stroke="#5e5086" stroke-width="3"/>
-<text x="595" y="428" font-family="Inter Variable, Inter, sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="#5e5086">every link built from source: no pre-compiled executables</text>
-<g font-family="Inter Variable, Inter, sans-serif" font-size="22" fill="#1d1a17">
-  <text x="60" y="520"><tspan font-weight="600">1,665 object files</tspan> byte for byte those of a native AIHC</text>
-  <text x="760" y="520"><tspan font-weight="600" fill="#b07a2a">91 packages</tspan> in 5.8 h of CPU</text>
-</g>
+<text x="600" y="424" font-family="Inter Variable, Inter, sans-serif" font-size="22" font-weight="600" text-anchor="middle" fill="#5e5086">Every link is built from source. No pre-compiled executables.</text>
+<text x="60" y="520" font-family="Inter Variable, Inter, sans-serif" font-size="24" fill="#1d1a17">The AIHC that comes out is <tspan font-weight="600">byte for byte identical</tspan> to one built by a native AIHC.</text>
 </svg>

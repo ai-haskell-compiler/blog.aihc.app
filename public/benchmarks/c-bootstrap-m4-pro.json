@@ -1,0 +1,24 @@
+{
+  "host": { "machine": "Apple M4 Pro, 12 cores", "os": "macOS", "cc": "Apple clang 21.0.0" },
+  "interpreter": {
+    "repository": "https://github.com/ai-haskell-compiler/aihc-bootstrap",
+    "commit": "0c212c3",
+    "c_lines": 19464,
+    "build_wall_s": 1.77
+  },
+  "aihc": { "commit": "fe89952b7", "modules": 258, "lines": 149908 },
+  "self_build": {
+    "source": "https://github.com/ai-haskell-compiler/aihc-bootstrap/pull/21",
+    "note": "Figures as reported in the pull request, which does not name the machine. The host above is where the interpreter build time was measured.",
+    "optimisation": "-O 0",
+    "packages": 91,
+    "hackage_packages": 76,
+    "cpu_hours": 5.8,
+    "longest_chain_hours": 3.4,
+    "peak_memory_gb": 4.8,
+    "identical_object_files": 1665,
+    "identical_archives": 91,
+    "identical_executable": true,
+    "compared_with": "a native AIHC building the same sources at the same paths"
+  }
+}

@@ -6,3 +6,4 @@ dist/
 .dev.vars*
 .DS_Store
 public/images/compiler-parallelism.mp4
+public/images/c-bootstrap-phone.mp4

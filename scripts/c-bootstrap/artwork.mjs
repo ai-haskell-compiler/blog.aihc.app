@@ -56,17 +56,17 @@ function card() {
 <g transform="translate(60 44)"><rect width="58" height="58" rx="13" fill="${purple}"/><g transform="translate(7 7) scale(.44)">${mark('card-mark')}</g></g>
 <g ${sans}>
   <text x="134" y="68" font-size="21" font-weight="600" fill="${ink}">AI Haskell Compiler</text>
-  <text x="134" y="94" font-size="16" fill="${muted}">BOOTSTRAPPING FROM C, WITHOUT GHC</text>
+  <text x="134" y="94" font-size="16" fill="${muted}">BOOTSTRAPPING FROM SOURCE</text>
   <text x="1140" y="78" font-size="19" text-anchor="end" fill="${purple}">aihc.app</text>
   <text x="1140" y="592" font-size="17" text-anchor="end" fill="${purple}">Typed by robots, designed by a human.</text>
 </g>
 <text x="60" y="176" ${serif} font-size="64" letter-spacing="-1" fill="${ink}">GHC not required.</text>
-${box(60, 200, 'cc', 'any C99 compiler', false)}${arrow(260, 'compiles')}
+${box(60, 200, 'cc', 'buildable from a seed', false)}${arrow(260, 'compiles')}
 ${box(330, 250, 'Interpreter', `${thousands(cLines)} lines of C`, false)}${arrow(580, 'runs')}
 ${box(650, 200, 'AIHC', 'from source', true)}${arrow(850, 'builds')}
 ${box(920, 220, 'AIHC', 'native binary', true)}
-<path d="M750 376 v26 h280 v-26" fill="none" stroke="${purple}" stroke-width="3"/>
-<text x="890" y="428" ${sans} font-size="20" font-weight="600" text-anchor="middle" fill="${purple}">no GHC in the chain</text>
+<path d="M160 376 v26 h870 v-26" fill="none" stroke="${purple}" stroke-width="3"/>
+<text x="595" y="428" ${sans} font-size="20" font-weight="600" text-anchor="middle" fill="${purple}">every link built from source: no pre-compiled executables</text>
 <g ${sans} font-size="22" fill="${ink}">
   <text x="60" y="520"><tspan font-weight="600">${thousands(files)} object files</tspan> byte for byte those of a native AIHC</text>
   <text x="760" y="520"><tspan font-weight="600" fill="${gold}">${build.packages} packages</tspan> in ${build.cpu_hours} h of CPU</text>
@@ -79,20 +79,20 @@ ${box(920, 220, 'AIHC', 'native binary', true)}
 const W = 1080, H = 1920, fps = 30;
 // Acts of the loop, in seconds. Each act brings in one part of the picture.
 const acts = [
-  { name: 'problem', length: 2.6, caption: ['Only GHC could compile AIHC.', 'Every AIHC binary descended from GHC.'] },
-  { name: 'cc', length: 2.2, caption: ['Not any more. Start with a C compiler.', ''] },
+  { name: 'problem', length: 2.6, caption: ['AIHC is written in Haskell.', 'Building it took a pre-compiled GHC.'] },
+  { name: 'cc', length: 2.2, caption: ['Now it starts with a C compiler,', 'which can itself be built from a tiny seed.'] },
   { name: 'interpreter', length: 3.6, caption: ['Compile a small Haskell interpreter.', `${thousands(cLines)} lines of C99, built in ${ccSeconds.toFixed(1)} s.`] },
   { name: 'source', length: 3.6, caption: ['It runs AIHC straight from source.', `${modules} modules, ${thousands(haskellLines)} lines of Haskell.`] },
   { name: 'native', length: 3.0, caption: ['The interpreted AIHC builds AIHC.', `${build.packages} packages. Out comes a native compiler.`] },
   { name: 'proof', length: 4.2, caption: ['Slow is fine. Different is not.', 'Every object file matches a native AIHC.'] },
   { name: 'cost', length: 4.0, caption: ['It only has to be fast enough once.', `${build.cpu_hours} hours of processor time.`] },
-  { name: 'final', length: 3.4, caption: ['A C compiler in. AIHC out. No GHC.', 'Read the deep-dive at blog.aihc.app'] },
+  { name: 'final', length: 3.4, caption: ['No pre-compiled executables in the chain.', 'Read the deep-dive at blog.aihc.app'] },
 ];
 const duration = acts.reduce((sum, act) => sum + act.length, 0);
 const startOf = Object.fromEntries(acts.map((act, i) => [act.name, acts.slice(0, i).reduce((s, a) => s + a.length, 0)]));
 
 const cards = [
-  { act: 'cc', title: 'A C compiler', sub: 'cc -std=c99 -pedantic', arrow: 'compiles' },
+  { act: 'cc', title: 'A C compiler', sub: 'bootstrappable from a few hundred bytes', arrow: 'compiles' },
   { act: 'interpreter', title: 'aihc-bootstrap', sub: (t) => `Haskell interpreter · ${thousands(cLines * ease((t - startOf.interpreter) / 2.2))} lines of C`, arrow: 'runs' },
   { act: 'source', title: 'AIHC, interpreted', sub: (t) => `${Math.round(modules * ease((t - startOf.source) / 2.2))} of ${modules} modules, from source`, arrow: 'builds' },
   { act: 'native', title: 'AIHC, native', sub: 'a compiler that then compiles itself', highlight: true },
